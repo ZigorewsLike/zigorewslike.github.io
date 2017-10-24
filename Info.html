@@ -1,0 +1,116 @@
+<Html>
+<head>
+<meta charset="UTF-8">
+ <title>Доп. Информация</title>
+ <link rel="icon" href="http://my-files.ru/Save/smuj64/лого.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+ <script src="https://code.jquery.com/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <link href='style.css' rel='stylesheet' type='text/css'>
+  <div class="container">
+<nav class="navbar navbar-default">
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="Main.html">Главная</a></li>
+  <li role="presentation dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Задания
+  <span class="glyphicon glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+  <ul class="dropdown-menu">
+ <li><a href="Задания/HTML.html">HTML</a></li>
+ <li><a href="Задания/CSS.html">CSS</a></li>
+ <li><a href="Задания/JAVA.html">JavaScript</a></li>
+</ul></li>
+  <li role="presentation"><a href="Info.html">Доп. Информация</a></li>
+  <p class="navbar-text pull-right"><img src="http://my-files.ru/Save/fa10og/321.png.png" width="20px"></p>
+<script>
+ var now = new Date();
+document.write('<p class="navbar-text pull-right">',now.getFullYear(),".",now.getMonth(),".",now.getDate(),"</p>");
+ </script>
+ <p class="navbar-text pull-right"><spacetime></spacetime></p></ul></nav>
+ <script type="text/javascript">
+window.onload = function(){
+    (function(){
+        var date = new Date();
+        var time = date.getHours()+':'+date.getMinutes()+':'+date.getSeconds();
+        document.getElementsByTagName('spacetime')[0].innerHTML = time;
+        window.setTimeout(arguments.callee, 1000);
+    })();
+};
+</script>
+</ul></nav>
+<div class="page-header"> 
+<h1>Небольшой портал WEB Программирования<small> <br>Задания и прочие проекты.</small></h1>
+</div></div>
+ </head> <!-- конец тега head и подключения библиотек для других модулей или веб страниц. -->
+ <body>
+ <div class="container">
+<div class="row">
+<h1>Полезные ссылки по вёрстке и фронтенду</h1><br><p>
+По версии сайта <a href="http://tyapk.ru" target="_blank">Tyapk.ru</a> Все материалы взяты из данного сайта. 
+<a href="http://tyapk.ru/blog/post/useful-links" target="_blank">Ссылка на источник.</a></p>
+</div>
+<div class="row">
+<h2>Блоги</h2>
+<ul>
+<li><a href="https://htmlacademy.ru/blog" target="_blank">Блог HTML академии.</a> Много полезного материала от отличного 
+ресурса дистанционного обучения.</li>
+<li><a href="http://css.yoksel.ru/" target="_blank">Йоксель. </a>Блог Юли Бухваловой, верстальщика Livejournal.
+ Качественные статьи по CSS + множество полезных тематических ссылок, больше чем на странице, которую 
+ Вы сейчас читаете.</li>
+ <li><a href="http://paulradzkov.com/#faq" target="_blank">FAQ на блоге Павла Радькова. </a>Советы по дизайну, вёрстке, 
+ организации труда и веб-разработке в целом</li>
+  <li><a href="http://css-live.ru/" target="_blank">CSS-Live. </a>"Жизнь во фронтедне". Тонны материала.</li>
+  <li><a href="https://pepelsbey.net/" target="_blank">Пепелсбей.net. </a>Блог Вадима Макеева. Не пишет в этот блог 
+  с 2014 года, но всё-равно есть что почитать. Автор <a href="https://shwr.me/" target="_blank">крутого движка 
+  для презентаций в web формате.</a></li>
+  <li><a href="https://ymatuhin.ru/" target="_blank">Блог Юрия Матюхина. </a>В заметках есть неплохие ссылки.</li>
+  <li><a href="https://netology.ru/blog" target="_blank">Блог Нетологии</a></li>
+  <li><a href="http://blog.flppv.me/all/frontend/" target="_blank">Блог Антона Филиппова</a></li>
+</ul>
+<h2>Справочники</h2>
+<ul>
+<li><a href="https://webref.ru/" target="_blank">WebReference. </a>Справочник номер 1 в рунете по HTML, CSS и смежным технологиям,
+ вторая версия HTMLBook. </li>
+<li><a href="http://htmlbook.ru/" target="_blank">HTML book. </a>Устаревшая версия WebReference. Только HTML и CSS Тоже ничего.</li>
+<li><a href="https://caniuse.com/" target="_blank">Can I use. </a>Таблица поддержки браузерами современных веб технологий.</li>
+<li><a href="http://devdocs.io/" target="_blank">Developer Documents. </a>Дока на все случаи жизни.</li>
+</ul>
+<h2>Ресурсы</h2>
+<ul>
+<li><a href="https://css-tricks.com/" target="_blank">CSS Tricks. </a>Just must have. It used to be, believe it or not, 
+primarily about CSS! Решения всех типовых задач CSS и не только. (На английском).</li>
+<li><a href="https://developer.mozilla.org/ru/" target="_blank">Документация от Mozilla. </a>Web технологии, обучение,
+ инструменты разработчика и другие материалы.</li>
+<li><a href="http://learn.javascript.ru/" target="_blank">Учебник по JavaScript. </a>Лучший учебник по JavaScript.</li>
+<li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing magazine. </a>Журнал про веб технологии 
+(на английском).</li>
+</ul>
+<h2>Интересное</h2>
+<ul>
+<li><a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank">Путь веб разработчика 2017. </a>Три возможных пути становления веб-разработчика:frontend,
+ backend и DevOps. С переводом на русский язык от <a href="https://proglib.io/p/2017-web-developer-path/" target="_blank">Библиотеки программиста</a>
+ или <a href="https://habrahabr.ru/company/netologyru/blog/328426/" target="_blank">Нетологии</a></li>
+<li><a href="http://jstherightway.org/" target="_blank">JavaScript Правильный путь</a></li>
+<li><a href="https://gridbyexample.com/" target="_blank">CSS Grid by Example. </a>Обучение, примеры, шаблоны 
+<a href="https://www.w3.org/TR/css3-grid-layout/" target="_blank">CSS Grid.</a></li>
+<li><a href="https://github.com/zualex/devmap" target="_blank">Карта развития веб-разработчика</a></li>
+<li><a href="https://github.com/kamranahmedse/design-patterns-for-humans/blob/master/README.md" target="_blank">Шаблоны 
+проектирования для людей. </a>Примеры про двери, бургеры и т.п. на PHP. Есть переводной вариант 
+<a href="https://habrahabr.ru/company/mailru/blog/325492/" target="_blank">от Mail.ru на Хабре.</a></li>
+</ul>
+<h2>Немного моих ссылок про Bootstrap</h2> <ul>
+<li><a href="http://tokar.ua" target="_blank">Tokar.ua </a>По моему мнению удобный сайт как для новичка, так и для 
+тех, кто знаком с boot но не помнит некоторые хитрости. 
+<a href="https://tokar.ua/read/6901" target="_blank">Вот и сам блог про boot. </a></li> 
+<li><a href="https://getbootstrap.com" target="_blank">Офф. Сайт </a>также имеет 
+<a href="https://getbootstrap.com/docs/3.3/components/" target="_blank">свой блог по компонентоам.</a> Но на наглийском языке</li></ul><br>
+</div>
+<!-- FOOTER. Ну мало ли ты запутаешся в своём мусоре (коде) -->  
+<footer class="panel panel-footer">
+<p class="Footer-text">
+Создатель сайта Черепанов Игорь. <a href="https://vk.com/zi_like"> 
+<img src="http://ktonanovenkogo.ru/image/sozdat-udalit-stranitcu-vkontakte.png" alt="..." width="40px"></a> 
+<a href="https://facebook.com/zigorewslike"> 
+<img src="https://cdn2.iconfinder.com/data/icons/social-buttons-2/512/facebook-256.png" alt="..." width="40px"></a></p>
+</footer></div></body>
+ </html>
+

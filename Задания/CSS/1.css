@@ -1,0 +1,32 @@
+  .colortext{
+  color:red;  
+   margin:20px;  
+  }    
+  .othertext{
+  color:green;
+  }  
+  #main{
+  color:Blue;
+  padding-left:25px;
+  }
+  .hh1{
+  font:bold 40px Arial;
+  color:write;
+  text-shadow:1px 1px 2px black, 0 0 10px lime;
+  text-align:center;
+  }
+  .panel-body-1{
+	background:url(http://user-master.org/media/k2/items/cache/48ee1e8a0a8f50dce4f8cb9ab418e211_XL.jpg);  
+  }
+  .divv{	
+	Width:150px;
+	height:150px;
+	color:lightblue;
+  }
+  .divm{	
+	Width:300px;
+	height:300px;
+  }
+  .panel-body-1{
+	  Height:1400px;
+  }
