@@ -12,9 +12,6 @@
 	color:grey;
 	font-size:15px;
 	background:white;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 3s linear 0s;
 }
 #divan2{
@@ -36,9 +33,6 @@
 	font-size:25px;	
 	text-align:center;
 	background:#1abc9c;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 3.5s linear 0s;
 }
 #maintext2{
@@ -48,9 +42,6 @@
 	font-size:25px;	
 	text-align:center;
 	background:#1abc9c;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 3.5s linear 0s;
 }
 #maintext3{
@@ -62,9 +53,6 @@
 	font-size:25px;	
 	text-align:center;
 	background:#1abc9c;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 3.5s linear 0s;
 }
 #Image1{
@@ -79,9 +67,6 @@
 	font-size:25px;	
 	text-align:center;
 	background:#474e5d;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 4s linear 0s;
 }
 #verymaintext2{
@@ -92,9 +77,6 @@
 	font-size:17px;	
 	text-align:center;
 	background:#474e5d;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 4s linear 0s;
 }
 #lowtext{
@@ -114,9 +96,6 @@
 	font-size:17px;	
 	text-align:center;
 	background:White;
-	margin-left:20%;
-	margin-right:20%;
-	width:60%;
 	Animation:runing 4.5s linear 0s;
 }
 #lowtext1-1{
@@ -137,9 +116,6 @@
 	background:#333;
 	padding-top:80px;  
 	padding-bottom:50px; 
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 4.5s linear 0s;
 }
 @keyframes runing {
