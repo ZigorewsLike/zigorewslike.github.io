@@ -57,7 +57,7 @@
 .Image1{
 	 border-radius: 100%; /* Радиус скругления */
 }
-#verymaintext{
+.verymaintext{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -68,7 +68,7 @@
 	background:#474e5d;
 	Animation:runing 4s linear 0s;
 }
-#verymaintext2{
+.verymaintext2{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box; 
@@ -78,7 +78,7 @@
 	background:#474e5d;
 	Animation:runing 4s linear 0s;
 }
-#lowtext{
+.lowtext{
 	color:grey;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -89,7 +89,7 @@
 	background:White;
 	Animation:runing 4.5s linear 0s;
 }
-#lowtext1{
+.lowtext1{
 	color:grey;
 	box-sizing: border-box;
 	font-size:17px;	
@@ -97,7 +97,7 @@
 	background:White;
 	Animation:runing 4.5s linear 0s;
 }
-#lowtext1-1{
+.lowtext1-1{
 	color:grey;
 	box-sizing: border-box;
 	font-size:17px;	
@@ -106,7 +106,7 @@
 	padding-bottom:80px;
 	Animation:runing 4.5s linear 0s;
 }
-#lowtext2{
+.lowtext2{
 	color:white;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
