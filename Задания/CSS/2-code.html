@@ -45,26 +45,26 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> 
   <link href='2.css' rel='stylesheet' type='text/css'>
-  <div id=divanob>
-<div id=divan class="col-md-8">Я </div> 
-<div id=divan2> <div class="col-md-1">WHO</div> 
-<div class="col-md-1">WHAT</div>
-<div class="col-md-1">WHERE</div></div></div>
 </head>
 <body>
-<div class="col-md-12"></div>
-<div id=maintext class="col-md-8">
+ <div class="container">
+  <div class="row">
+<div class="divan col-md-8">Я </div> 
+<div class="divan2 col-md-4">WHO WHAT WHERE</div> 
+  </div> 
+<div class="row maintext">
 Кто я?
 </div>
-<div id=maintext2 class="col-md-8">
-<img id=Image1 src="http://my-files.ru/Save/w1whco/bird.jpg" alt="FILE NOT FOUND!"></div>
-<div id=maintext3 class="col-md-8">
+<div class="row maintext2">
+<img class="Image1" src="http://my-files.ru/Save/w1whco/bird.jpg" alt="FILE NOT FOUND!">
+  </div>
+<div class="row maintext3">
 Я путешественик
 </div>
-<div id=verymaintext class="col-sm-8">
+<div class="row verymaintext">
 Кто я?
 </div>
-<div id=verymaintext2 class="col-sm-8">
+<div class="row verymaintext2">
 <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. 
 Послушавшись себя даже lorem! За правилами повстречался, они пустился обеспечивает власти
  вершину встретил рыбного, на берегу подпоясал своих имени наш букв предупреждал толку 
@@ -76,65 +76,56 @@
  <button type="button" class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="left" title="Просто кнопка">
  <span class="glyphicon glyphicon-search"></span> Поиск</button> 
  </div>
- <div id=lowtext class="col-sm-12">
+ <div class="row lowtext">
 Где найти меня?
 </div>
- <div id=lowtext1>
-<div id=lowtext1-1 class="col-md-4 col-xs-6">
+ <div class="row">
+<div class="lowtext1-1 col-md-4 col-xs-6">
 <p>
 Над свой, встретил переписывается даль предупреждал свой рот составитель знаках, меня, вскоре 
 инициал путь. Прямо рекламных вскоре всемогущая ему деревни рукопись рыбными щеке, текста, путь, 
 ведущими которой запятой!
 </p><img src="http://my-files.ru/Save/17pn1d/birds1.jpg" alt="FILE NOT FOUND!"></div>
-<div id=lowtext1-1 class="col-md-4 col-xs-6">
+<div class="lowtext1-1 col-md-4 col-xs-6">
 <p>
 Над свой, встретил переписывается даль предупреждал свой рот составитель знаках, меня, вскоре 
 инициал путь. Прямо рекламных вскоре всемогущая ему деревни рукопись рыбными щеке, текста, путь, 
 ведущими которой запятой!
 </p><img src="http://my-files.ru/Save/tbi8pt/birds2.jpg" alt="FILE NOT FOUND!"></div>
-<div id=lowtext1-1 class="col-md-4 col-xs-6">
+<div class="lowtext1-1 col-md-4 col-xs-6">
 <p>
 Над свой, встретил переписывается даль предупреждал свой рот составитель знаках, меня, вскоре 
 инициал путь. Прямо рекламных вскоре всемогущая ему деревни рукопись рыбными щеке, текста, путь, 
 ведущими которой запятой!
 </p><img src="http://my-files.ru/Save/9ysxa2/birds3.jpg" alt="FILE NOT FOUND!"></div></div>
-<div id=lowtext2 class="col-sm-12">
+<div class="lowtext2">
 Темы для тренировки <b>css</b>. Работа Черепанова Игоря.<br>
 </div>
+  </div>
 </body>
 </html>
  </xmp></div>
     <div role="tabpanel" class="tab-pane" id="css"><xmp> 
-#divan{
+.divan{
 	color:grey;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
 	padding:25px; 
-	margin-left:2%;
 	font-size:15px;
 	background:white;
 	Animation:runing 3s linear 0s;
 }
-#divanob{
-	color:grey;
-	font-size:15px;
-	background:white;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
-	Animation:runing 3s linear 0s;
-}
-#divan2{
+.divan2{
 	color:gray;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
 	padding:25px; 
 	font-size:15px;
 	background:white;
-	margin-right:2%;
+	word-spacing:50px;
 	Animation:runing 3s linear 0s;
 }
-#maintext{
+.maintext{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -143,24 +134,20 @@
 	font-size:25px;	
 	text-align:center;
 	background:#1abc9c;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 3.5s linear 0s;
 }
-#maintext2{
+.maintext2{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box; 
 	font-size:25px;	
+	padding-left:15px;
+	padding-right:15px;
 	text-align:center;
 	background:#1abc9c;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 3.5s linear 0s;
 }
-#maintext3{
+.maintext3{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -169,15 +156,12 @@
 	font-size:25px;	
 	text-align:center;
 	background:#1abc9c;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 3.5s linear 0s;
 }
-#Image1{
+.Image1{
 	 border-radius: 100%; /* Радиус скругления */
 }
-#verymaintext{
+.verymaintext{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -186,12 +170,9 @@
 	font-size:25px;	
 	text-align:center;
 	background:#474e5d;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 4s linear 0s;
 }
-#verymaintext2{
+.verymaintext2{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box; 
@@ -199,12 +180,9 @@
 	font-size:17px;	
 	text-align:center;
 	background:#474e5d;
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 4s linear 0s;
 }
-#lowtext{
+.lowtext{
 	color:grey;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -215,18 +193,7 @@
 	background:White;
 	Animation:runing 4.5s linear 0s;
 }
-#lowtext1{
-	color:grey;
-	box-sizing: border-box;
-	font-size:17px;	
-	text-align:center;
-	background:White;
-	margin-left:20%;
-	margin-right:20%;
-	width:60%;
-	Animation:runing 4.5s linear 0s;
-}
-#lowtext1-1{
+.lowtext1-1{
 	color:grey;
 	box-sizing: border-box;
 	font-size:17px;	
@@ -235,7 +202,7 @@
 	padding-bottom:80px;
 	Animation:runing 4.5s linear 0s;
 }
-#lowtext2{
+.lowtext2{
 	color:white;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -244,9 +211,6 @@
 	background:#333;
 	padding-top:80px;  
 	padding-bottom:50px; 
-	margin-left:20%;
-	width:60%;
-	margin-right:20%;
 	Animation:runing 4.5s linear 0s;
 }
 @keyframes runing {
