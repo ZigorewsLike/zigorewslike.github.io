@@ -1,4 +1,4 @@
-#divan{
+.divan{
 	color:grey;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -8,13 +8,13 @@
 	background:white;
 	Animation:runing 3s linear 0s;
 }
-#divanob{
+.divanob{
 	color:grey;
 	font-size:15px;
 	background:white;
 	Animation:runing 3s linear 0s;
 }
-#divan2{
+.divan2{
 	color:gray;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -24,7 +24,7 @@
 	margin-right:2%;
 	Animation:runing 3s linear 0s;
 }
-#maintext{
+.maintext{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
