@@ -35,7 +35,7 @@
 	background:#1abc9c;
 	Animation:runing 3.5s linear 0s;
 }
-#maintext2{
+.maintext2{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box; 
@@ -44,7 +44,7 @@
 	background:#1abc9c;
 	Animation:runing 3.5s linear 0s;
 }
-#maintext3{
+.maintext3{
 	color:White;
 	/*border: 1px dashed grey;*/
 	box-sizing: border-box;
@@ -55,7 +55,7 @@
 	background:#1abc9c;
 	Animation:runing 3.5s linear 0s;
 }
-#Image1{
+.Image1{
 	 border-radius: 100%; /* Радиус скругления */
 }
 #verymaintext{
