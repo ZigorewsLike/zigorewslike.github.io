@@ -93,25 +93,35 @@ if (pass == 'zlgtz') { // Указываем правильный пароль
 
   <div class="container">
 <div class="row">
-<h1>JavaScript Задания</h1>
+<h1>Панель через JQ</h1>
 </div>
 <div class="row">
- <table class="table">
- <thead>
- <tr>
- <th>&#8470;</th>
- <th>Название задания</th>
- <th>Ссылка на решение</th>
- </tr>
- </thead>
- <tbody>
- <tr>
- <td>1</td>
- <td>Найти частное (3+6+…+33)/(I+2+З...10).</td>
- <td><a href="JAVA/1.html" target="_blank">Результат</a></td>
- </tr>
- </tbody>
- </table>
+ <div id="block-for-slider">
+        <div id="viewport">
+            <ul id="slidewrapper">
+                <li class="slide"><img src="https://cdn2.iconfinder.com/data/icons/social-buttons-2/512/facebook-256.png" alt="1" class="slide-img"></li>
+                <li class="slide"><img src="https://cdn2.iconfinder.com/data/icons/social-buttons-2/512/facebook-256.png" alt="2" class="slide-img"></li>
+                <li class="slide"><img src="https://cdn2.iconfinder.com/data/icons/social-buttons-2/512/facebook-256.png" alt="3" class="slide-img"></li>
+                <li class="slide"><img src="https://cdn2.iconfinder.com/data/icons/social-buttons-2/512/facebook-256.png" alt="4" class="slide-img"></li>
+            </ul>
+        </div>
+    </div>
+ <script>
+ function nextSlide() {
+    if (slideNow == slideCount || slideNow <= 0 || slideNow > slideCount) {
+        $('#slidewrapper').css('transform', 'translate(0, 0)');
+        slideNow = 1;
+    } else {
+        translateWidth = -$('#viewport').width() * (slideNow);
+        $('#slidewrapper').css({
+            'transform': 'translate(' + translateWidth + 'px, 0)',
+            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+        });
+        slideNow++;
+    }
+}
+  </script>
 </div><div id="wrapper">
      <div id="pass-window">
      <p><h3>Пожалуйста, введите пароль:</h3></p>
