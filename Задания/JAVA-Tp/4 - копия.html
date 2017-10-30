@@ -26,7 +26,7 @@
  var memory1=0; memory2=1; notInt=-1;
  console.clear();
  function calckey(inkey){
- if (parseInt(document.getElementById('text').value)==memory1 || parseInt(document.getElementById('text').value)==memory2){
+ if (parseFloat(document.getElementById('text').value)==memory1 || parseFloat(document.getElementById('text').value)==memory2){
  document.getElementById('text').value='';
  document.getElementById('text').value+=inkey;
  } else{
@@ -35,7 +35,7 @@ return false;
 }
  function calcplus(inkey){
  if (inkey=='+'){
-memory1=memory1+(document.getElementById('text').value);
+memory1=memory1+parseFloat(document.getElementById('text').value);
 document.getElementById('text').value=''; 
 console.log("Переменная Memory1 = ",memory1);
 document.getElementById('text').value=memory1;}
