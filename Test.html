@@ -122,6 +122,28 @@ if (pass == 'zlgtz') { // Указываем правильный пароль
    <div id="les10_ex1" style="position: relative; left: -1px; top: 6px;" class="ui-draggable"></div>
 </center>
    <br>
+   <script>    
+    $(document).ready(function(){
+    var x;
+    var y;
+    var x2;
+    var y2;
+    var l = -parseInt($('.img_cont img').width()-$('.main_cont').width())/2;
+    var t = -parseInt($('.img_cont img').height()-$('.main_cont').height())/2;
+    $('.img_cont').css('left',l).css('top', t);
+    $('.main_cont').mouseenter(function(e){
+    var x = e.pageX;
+    var y = e.pageY;
+    $('.main_cont').mousemove(function(b,d){
+    var x2 = b.pageX;
+    var y2 = b.pageY;
+    var p = x2-x;
+    var d = y2-y;
+    $('.img_cont').css('left',l-p).css('top',t-d);
+    });
+    });
+    });
+   </script>
    <div class="row">
     <div class="main_cont">
     <div class="img_cont"><img src="http://s4.storage.akamai.coub.com/get/b134/p/coub/simple/cw_timeline_pic/375647624d4/d818bf3d4d23409d420e0/big_1473780457_image.jpg"></div>
