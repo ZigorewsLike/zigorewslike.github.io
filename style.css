@@ -48,7 +48,7 @@ p{
 	animation-fill-mode: forwards;
 	animation-timing-function: ease;
 }
-.panel-info:hover{
+.pb-1:hover{
 	Animation:hoveranim 0.2s ease-out 0s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
