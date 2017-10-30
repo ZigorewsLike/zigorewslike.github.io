@@ -35,7 +35,7 @@ return false;
 }
  function calcplus(inkey){
  if (inkey=='+'){
-memory1=memory1+parseFloat(document.getElementById('text').value);
+memory1=parseFloat(memory1+document.getElementById('text').value);
 document.getElementById('text').value=''; 
 console.log("Переменная Memory1 = ",parseFloat(memory1));
 document.getElementById('text').value=parseFloat(memory1);}
