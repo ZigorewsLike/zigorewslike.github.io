@@ -128,8 +128,8 @@ if (pass == 'zlgtz') { // Указываем правильный пароль
     var y;
     var x2;
     var y2;
-    var l = parseInt($('.img_cont img').width()-$('.main_cont').width())/2;
-    var t = parseInt($('.img_cont img').height()-$('.main_cont').height())/2;
+    var l = -parseInt($('.img_cont img').width()-$('.main_cont').width())/2;
+    var t = -parseInt($('.img_cont img').height()-$('.main_cont').height())/2;
     $('.img_cont').css('left',l).css('top', t);
     $('.main_cont').mouseenter(function(e){
     var x = e.pageX;
