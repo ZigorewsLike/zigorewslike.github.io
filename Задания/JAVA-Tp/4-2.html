@@ -37,8 +37,8 @@ return false;
  if (inkey=='+'){
 memory1=memory1+parseFloat(document.getElementById('text').value);
 document.getElementById('text').value=''; 
-console.log("Переменная Memory1 = ",memory1);
-document.getElementById('text').value=memory1;}
+console.log("Переменная Memory1 = ",parseFloat(memory1));
+parseFloat(document.getElementById('text').value)=parseFloat(memory1);}
  if (inkey=='-'){
  if (memory1==0){memory1=parseFloat(document.getElementById('text').value);
  console.log("Переменная Memory1 = ",memory1);
