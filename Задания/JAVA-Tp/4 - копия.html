@@ -26,7 +26,7 @@
  var memory1=0; memory2=1; notInt=-1;
  console.clear();
  function calckey(inkey){
- if ((document.getElementById('text').value)==memory1 || (document.getElementById('text').value)==memory2){
+ if (parseInt(document.getElementById('text').value)==memory1 || parseInt(document.getElementById('text').value)==memory2){
  document.getElementById('text').value='';
  document.getElementById('text').value+=inkey;
  } else{
