@@ -137,8 +137,8 @@ if (pass == 'zlgtz') { // Указываем правильный пароль
     $('.main_cont').mousemove(function(b,d){
     var x2 = b.pageX;
     var y2 = b.pageY;
-    var p = x2-x;
-    var d = y2-y;
+    var p = (x2-x)/2;
+    var d = (y2-y)/2;
     $('.img_cont').css('left',l-p).css('top',t-d);
     });
     });
