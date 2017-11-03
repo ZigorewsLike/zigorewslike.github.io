@@ -70,6 +70,11 @@
   <script>
     var newsElement = $('li').text();
     console.log(newsElement);
+   for (i = 1; i < newsElement.length; i++) {
+    var textil = newsElement[i].firstChild.data; 
+    textil = textil.trim(); 
+    var count = newsElement[i].getElementsByTagName('li').length; 
+    alert(textil); }
   </script>
   
  </div>
