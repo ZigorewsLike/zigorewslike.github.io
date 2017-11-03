@@ -61,6 +61,27 @@
     <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=BxX-yfMmBBo"></a></div>
     <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=AjyHQM6Ph64"></a></div>
 </div>
+   <script>
+            $(document).ready(function() {
+              $('.owl-carousel').owlCarousel({
+                items: 1,
+                merge: true,
+                loop: true,
+                margin: 10,
+                video: true,
+                lazyLoad: true,
+                center: true,
+                responsive: {
+                  480: {
+                    items: 2
+                  },
+                  600: {
+                    items: 4
+                  }
+                }
+              })
+            })         
+  </script>
  </div>
  </div>
  <div class="panel panel-warning">
