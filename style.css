@@ -72,3 +72,7 @@ background:#DFDFDF;
     -webkit-tap-highlight-color: transparent;
     position: relative;
 }
+.slide{
+height:40%;
+Background:green;
+}	
