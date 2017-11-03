@@ -67,7 +67,16 @@
         </li>
       </ul>
     </li>
-  </ul>
+  </ul> 
+<input type="button" value=Дерево onClick="buton()"class="btn btn-primary">
+    <script>
+	console.clear();
+	console.log('Запуск скрипта произведён!');
+function buton(){
+	console.log('Функция toggle');
+    $("#Main").toggle("slow");
+};
+  </script> 
   <!--  <script>
 $(function () {
   console.clear();
@@ -132,7 +141,6 @@ $(function () {
             <li>Гуппи</li>
             <li>Скалярии</li>
           </ul>
-
         </li>
         <li>Морские
           <ul>
@@ -142,10 +150,16 @@ $(function () {
       </ul>
     </li>
   </ul>
+<input type="button" value=Дерево onClick="buton()">
 </xmp>
 <hr>
 <xmp>
- <script>
+<script>
+  function buton(){
+  $("#Main").toggle("slow");
+  };
+</script> 
+<script>
 $(function () {
   console.clear();
   console.log($("li").length);
@@ -156,7 +170,7 @@ $(function () {
 	alert($.trim(lis)); 
 	}
 	});
-  </script>
+ </script>
 </xmp>
  </div>
  </div>
