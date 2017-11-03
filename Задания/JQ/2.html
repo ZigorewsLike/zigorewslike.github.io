@@ -29,15 +29,25 @@
  <div class="panel-heading"><h2>2 Задание</h2></div>
  <div class="panel-body">
   <script>
-    $('.owl-carousel').owlCarousel({
-        items:1,
-        merge:true,
-        loop:true,
-        margin:10,
-        video:true,
-        lazyLoad:true,
-        center:true,
-    })
+            $(document).ready(function() {
+              $('.owl-carousel').owlCarousel({
+                items: 1,
+                merge: true,
+                loop: true,
+                margin: 10,
+                video: true,
+                lazyLoad: true,
+                center: true,
+                responsive: {
+                  480: {
+                    items: 2
+                  },
+                  600: {
+                    items: 4
+                  }
+                }
+              })
+            })         
   </script>
 <hr>
   <h3>Depeche mode</h3>
