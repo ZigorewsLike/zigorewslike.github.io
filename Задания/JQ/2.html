@@ -31,9 +31,22 @@
  <div class="panel-heading"><h2>2 Задание</h2></div>
  <div class="panel-body">
 <script>
- $(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
-});
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
 </script> 
 <div class="owl-carousel">
   <div> Your Content </div>
