@@ -28,37 +28,41 @@
   <div class="panel panel-warning">
  <div class="panel-heading"><h2>2 Задание</h2></div>
  <div class="panel-body">
-  <h3>Depeche mode</h3>
-    <div class="owl-carousel owl-theme">
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=H8t5M9_Tvzk"></a></div>
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=jsCR05oKROA"></a></div>
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=J6Ultrw6nN8"></a></div>
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=q6yzrZfgQvI"></a></div>
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=I9quy7MfHlk"></a></div>
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=UpuaPfOuxB0"></a></div>
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=BxX-yfMmBBo"></a></div>
-    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=AjyHQM6Ph64"></a></div>
+<div class="owl-carousel owl-theme">
+    <div class="item"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item"><h4>3</h4></div>
+    <div class="item"><h4>4</h4></div>
+    <div class="item"><h4>5</h4></div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
 </div>
    <script>
             $(document).ready(function() {
-              $('.owl-carousel').owlCarousel({
-                items: 1,
-                merge: true,
-                loop: true,
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                stagePadding: 50,
                 margin: 10,
-                video: true,
-                lazyLoad: true,
-                center: true,
+                nav: true,
+                loop: true,
                 responsive: {
-                  480: {
-                    items: 2
+                  0: {
+                    items: 1
                   },
                   600: {
-                    items: 4
+                    items: 3
+                  },
+                  1000: {
+                    items: 5
                   }
                 }
               })
-            })         
+            });  
   </script>
  </div>
  </div>
