@@ -21,7 +21,23 @@
  <li><a href="CSS.html">CSS <span class="badge">6</span></a></li>
  <li><a href="JAVA.html">JavaScript <span class="badge">3</span></a></li>
  <li><a href="#">JQuery <span class="badge">0</span></a></li>
-</ul></li>
+  <p class="navbar-text pull-right"><img src="http://my-files.ru/Save/fa10og/321.png.png" width="20px"></p>
+  <script>
+ var now = new Date();
+document.write('<p class="navbar-text pull-right">',now.getFullYear(),".",now.getMonth()+1,".",now.getDate(),"</p>");
+ </script>
+ <p class="navbar-text pull-right"><spacetime></spacetime></p></ul></nav>
+ <script type="text/javascript">
+window.onload = function(){
+    (function(){
+        var date = new Date();
+        var time = date.getHours()+':'+date.getMinutes()+':'+date.getSeconds();
+        document.getElementsByTagName('spacetime')[0].innerHTML = time;
+        window.setTimeout(arguments.callee, 1000);
+    })();
+};
+</script>
+</ul></nav>
 <li role="presentation"><a href="../Info.html">Доп. Информация</a></li></ul></nav>
 <div class="page-header"> 
 <h1>Небольшой портал WEB Программирования<small> <br>Задания и прочие проекты.</small></h1>
