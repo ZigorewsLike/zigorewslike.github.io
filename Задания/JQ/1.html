@@ -6,9 +6,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
- <link href='../../style.css' rel='stylesheet' type='text/css'>
   <div class="container">
 <nav class="navbar navbar-default">
 <ul class="nav nav-pills">
@@ -26,11 +25,11 @@
 <div class="row">
   <div class="panel panel-warning">
  <div class="panel-heading"><h2>1 Задание</h2></div>
- <div class="panel-body"><h3>Напишите код, который для каждого элемента li выведет:</h3><br>
-<h2>&#9679; Текст непосредственно в нём (без подразделов).<br>
+ <div class="panel-body"><h3>Напишите код, который для каждого элемента li выведет:<br>
+&#9679; Текст непосредственно в нём (без подразделов).<br>
 &#9679; Количество вложенных в него элементов li – всех, с учётом вложенных.<br>
 &#9679; Создайте кнопку с текстом «Дерево», по нажатию не неё дерево ul должно анимировано исчезать, 
-при повторном нажатии анимировано появляется.</h2>
+при повторном нажатии анимировано появляется.</h3>
     <ul>
     <li>Животные
       <ul>
@@ -68,13 +67,37 @@
       </ul>
     </li>
   </ul>
-  <script>
-   var newsElement = $('li').text();
-   var n = $( "li" ).length;
-    alert(newsElement + n); 
-   }
+  <!--  <script>
+$(function () {
+  console.clear();
+  console.log($("li").length);
+  var selectedElements = $("li");
+  var lislen = $("li").length;
+  for (var i = 1; i < lislen; i++) {
+  textli=selectedElements[i].firstChild.data;
+  textli=$.trim(textli);
+  console.log(i); 
+  alert(textli); 
+ // var jqElement = $("li");
+ // var domElements = jqElement.get();
+  //console.log($.text(domElements[i]));
+  //lis=$.text(selectedElements[i]);
+	//alert($.parent(lis)); 
+	}
+	});
+  </script> -->
+      <script>
+$(function () {
+  console.clear();
+  console.log($("li").length);
+  var selectedElements = $("li");
+  var lislen = $("li").length;
+  for (var i = 1; i < lislen; i++) {
+  var lis=$.text(selectedElements[i].firstChild);
+	alert($.trim(lis)); 
+	}
+	});
   </script>
-  
  </div>
  </div>
  <div class="panel panel-warning">
