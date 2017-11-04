@@ -116,34 +116,25 @@ window.onload = function(){
        })
      });
 </script>
-<script type="text/javascript">
-//<![CDATA[
-$(document).ready(function(){
-	$("#jquery_jplayer").jPlayer({
-		ready: function (event) {
-			$(this).jPlayer("setMedia", {
-				title: "Bubble",
-				m4a: "http://jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
-				oga: "http://jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-			});
-		},
-		swfPath: "../../dist/jplayer",
-		supplied: "m4a, oga",
-		wmode: "window",
-		useStateClassSkin: true,
-		autoBlur: false,
-		smoothPlayBar: true,
-		keyEnabled: true,
-		remainingDuration: true,
-		toggleDuration: true
-	});
-});
-//]]>
-</script>
-<div id="jquery_jplayer_1" class="jp-jplayer" style="width: 0px; height: 0px;">
-	<img id="jp_poster_0" style="width: 0px; height: 0px; display: none;">
-	<audio id="jp_audio_0" preload="metadata" src="http://jplayer.org/audio/m4a/Miaow-07-Bubble.m4a" 
-	       title="Bubble"></audio></div>
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+       ready: function () {
+        $(this).jPlayer("setMedia", {
+         m4a: "/media/mysound.mp4",
+         oga: "/media/mysound.ogg"
+        });
+       },
+       swfPath: "/js",
+       supplied: "m4a, oga"
+      });
+     });
+    </script>
+    <div id="jquery_jplayer_1"></div>
+    <div id="jp_container_1">
+     <a href="#" class="jp-play">Play</a>
+     <a href="#" class="jp-pause">Pause</a>
+    </div>
 <!-- FOOTER. Ну мало ли ты запутаешся в своём мусоре (коде) -->  
 <footer class="panel panel-footer">
 <p class="Footer-text">
