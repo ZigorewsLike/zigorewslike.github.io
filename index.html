@@ -114,6 +114,14 @@ window.onload = function(){
          margin: 10,
        })
      });
+owl.on('mousewheel', '.owl-stage', function (e) {
+    if (e.deltaY>0) {
+        owl.trigger('next.owl');
+    } else {
+        owl.trigger('prev.owl');
+    }
+    e.preventDefault();
+});
 </script>	
 <!-- FOOTER. Ну мало ли ты запутаешся в своём мусоре (коде) -->  
 <footer class="panel panel-footer">
