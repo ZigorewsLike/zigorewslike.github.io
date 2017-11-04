@@ -71,6 +71,7 @@ background:#DFDFDF;
 .owl-carousel, .owl-carousel .owl-item {
     -webkit-tap-highlight-color: transparent;
     position: relative;
+	border:1px solid Gray;
 }
 .owl-item{
 height:40%;
