@@ -30,6 +30,7 @@
  <div class="panel-heading"><h2>2 Задание</h2></div>
  <div class="panel-body">
   <h3>Плагин OwlCarousel</h3>
+  <hr>
 <div class="owl-carousel owl-theme">
     <div class="item"><h4>1</h4></div>
     <div class="item"><h4>2</h4></div>
@@ -68,32 +69,139 @@
   </script>
   <hr>
   <h3>Плагин DataTables</h3>
-    <script>
-   $(document).ready(function(){
-    $('#myTable').DataTable();
-});
-  </script> 
-<table id="myTable" class="dataTable">
+<table id="myTable" class="table" cellspacing="0" width="100%">
    <thead>
     <tr>
-    <th>номер</th>
-     <th>имя</th>
-     <th>age</th>
+    <th class="number">Номер</th>
+     <th class="human_name">имя</th>
+     <th class="age">Возраст</th>
     </tr>
  </thead>
    <tbody>
    <tr>  
-     <tb>номер</tb>
-     <tb>имя</tb>
-     <tb>age</tb>
+     <td>1</td>
+     <td>Игорь</td>
+     <td>17</td>
     </tr>
-   <tr>
-     <tb>номер</tb>
-     <tb>имя</tb>
-     <tb>age</tb>
-   </tr>
+   <tr>  
+     <td>2</td>
+     <td>Алекс</td>
+     <td>23</td>
+    </tr>
+   <tr>  
+     <td>3</td>
+     <td>Макс</td>
+     <td>19</td>
+    </tr>
+	   <tr>  
+     <td>4</td>
+     <td>Олег</td>
+     <td>25</td>
+    </tr>
+   <tr>  
+     <td>5</td>
+     <td>Юрий</td>
+     <td>30</td>
+    </tr>
+   <tr>  
+     <td>6</td>
+     <td>Анна</td>
+     <td>15</td>
+    </tr>
+	   <tr>  
+     <td>7</td>
+     <td>Мария</td>
+     <td>24</td>
+    </tr>
+   <tr>  
+     <td>8</td>
+     <td>Роман</td>
+     <td>18</td>
+    </tr>
+   <tr>  
+     <td>9</td>
+     <td>Анастасия</td>
+     <td>27</td>
+    </tr>
+	   <tr>  
+     <td>10</td>
+     <td>Ольга</td>
+     <td>32</td>
+    </tr>
+	   <tr>  
+     <td>11</td>
+     <td>Елена</td>
+     <td>16</td>
+    </tr>
+	   <tr>  
+     <td>12</td>
+     <td>Даниил</td>
+     <td>17</td>
+    </tr>
+   <tr>  
+     <td>13</td>
+     <td>Никита</td>
+     <td>34</td>
+    </tr>
+   <tr>  
+     <td>14</td>
+     <td>Николай</td>
+     <td>24</td>
+    </tr>
+	   <tr>  
+     <td>15</td>
+     <td>Анна</td>
+     <td>31</td>
+    </tr>
+   <tr>  
+     <td>16</td>
+     <td>Андрей</td>
+     <td>22</td>
+    </tr>
+   <tr>  
+     <td>17</td>
+     <td>Леонид</td>
+     <td>30</td>
+    </tr>
+	   <tr>  
+     <td>18</td>
+     <td>Мери</td>
+     <td>18</td>
+    </tr>
+   <tr>  
+     <td>19</td>
+     <td>Максим</td>
+     <td>23</td>
+    </tr>
+   <tr>  
+     <td>20</td>
+     <td>Руслан</td>
+     <td>21</td>
+    </tr>
+	   <tr>  
+     <td>21</td>
+     <td>Александр</td>
+     <td>18</td>
+    </tr>
+	   <tr>  
+     <td>22</td>
+     <td>Елена</td>
+     <td>34</td>
+    </tr>
     </tbody><tbody>
    </tbody></table>
+       <script>
+   $(document).ready(function(){
+    $('#myTable').DataTable({
+	"aoColumnDefs":[{
+        "sTitle":"Имя"
+      , "aTargets": [ "human_name" ]
+  }, {"sTitle":"Номер"
+      , "aTargets": [ "number" ]}
+   , {"sTitle":"Возраст"
+      , "aTargets": [ "age" ]}]});
+});
+  </script> 
  </div>
  </div>
  <div class="panel panel-warning">
