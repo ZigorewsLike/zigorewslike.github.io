@@ -23,43 +23,10 @@
 <h1>JAVA Задания</h1>
 </div>
  <script>
- var memory1=0; memory2=1; notInt=-1;
+ var notInt=-1;
  console.clear();
  function calckey(inkey){
- if (parseInt(document.getElementById('text').value)==memory1 || parseInt(document.getElementById('text').value)==memory2){
- document.getElementById('text').value='';
  document.getElementById('text').value+=inkey;
- } else{
-document.getElementById('text').value+=inkey; }
-return false;
-}
- function calcplus(inkey){
- if (inkey=='+'){
-memory1=memory1+parseInt(document.getElementById('text').value);
-document.getElementById('text').value=''; 
-console.log("Переменная Memory1 = ",memory1);
-document.getElementById('text').value=memory1;}
- if (inkey=='-'){
- if (memory1==0){memory1=parseInt(document.getElementById('text').value);
- console.log("Переменная Memory1 = ",memory1);
- } else {
-memory1=memory1-parseInt(document.getElementById('text').value);
-document.getElementById('text').value=''; 
-console.log("Переменная Memory1 = ",memory1);
-document.getElementById('text').value=memory1;}}
- if (inkey=='*'){
-memory2=memory2*parseInt(document.getElementById('text').value);
-document.getElementById('text').value=''; 
-console.log("Переменная Memory2 = ",memory2);
-document.getElementById('text').value=memory2;}
- if (inkey=='/'){
- if (memory2==1){memory2=parseInt(document.getElementById('text').value);
- console.log("Переменная Memory1 = ",memory2);
- } else {
-memory2=memory2/parseInt(document.getElementById('text').value);
-document.getElementById('text').value=''; 
-console.log("Переменная Memory2 = ",memory2);
-document.getElementById('text').value=memory2;}}
 return false;
 }
  </script>
@@ -76,7 +43,7 @@ return false;
  <input type="button" value=9 
  onClick="calckey(9)" style="width: 30px; height: 30px;">
   <input type="button" value=/ 
- onClick="calcplus('/')" style="width: 30px; height: 30px;"> <br>
+ onClick="calckey('/')" style="width: 30px; height: 30px;"> <br>
  <input type="button" value=4 
  onClick="calckey(4)" style="width: 30px; height: 30px;">
  <input type="button" value=5 
@@ -84,7 +51,7 @@ return false;
  <input type="button" value=6
  onClick="calckey(6)" style="width: 30px; height: 30px;">
  <input type="button" value=*
- onClick="calcplus('*')" style="width: 30px; height: 30px;"> <br>
+ onClick="calckey('*')" style="width: 30px; height: 30px;"> <br>
  <input type="button" value=1 
  onClick="calckey(1)" style="width: 30px; height: 30px;">
  <input type="button" value=2
@@ -92,7 +59,7 @@ return false;
  <input type="button" value=3 
  onClick="calckey(3)" style="width: 30px; height: 30px;">
  <input type="button" value=-
- onClick="calcplus('-')" style="width: 30px; height: 30px;"> <br>
+ onClick="calckey('-')" style="width: 30px; height: 30px;"> <br>
  <input type="button" value=0 
  onClick="calckey(0)" style="width: 30px; height: 30px;">
  <input type="button" value="+/-"
@@ -102,10 +69,12 @@ return false;
  <input type="button" value=, 
  onClick="calckey(',')" style="width: 30px; height: 30px;">
  <input type="button" value=+
- onClick="calcplus('+')" style="width: 30px; height: 30px;"> <br>
+ onClick="calckey('+')" style="width: 30px; height: 30px;"> <br>
   <input type="button" value="Стереть" 
  onClick="document.getElementById('text').value='0'; memory1=0; memory2=1; 
  console.log('Переменная Memory1 отчищена');  console.log('Переменная Memory2 отчищена');" style="width: 132px; height: 30px;">
+  <input type="button" value="=" 
+ onClick="document.getElementById('text').value=eval(document.getElementById('text').value);" style="width: 132px; height: 30px;">
  </form>
 
  </div>
