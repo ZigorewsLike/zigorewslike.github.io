@@ -4,13 +4,11 @@
  <title>Главная страница Zi-Li</title>
  <link rel="icon" href="http://my-files.ru/Save/smuj64/лого.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
- <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>	
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">	
  <script src="https://code.jquery.com/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 <script src="owl/owl.carousel.js"></script>
-<script src="sourse/jquery.mousewheel.js"></script>	
 <link href='owl/owl.theme.default.min.css' rel='stylesheet' type='text/css'>
  <link href='owl/owl.carousel.min.css' rel='stylesheet' type='text/css'>
   <link href='style.css' rel='stylesheet' type='text/css'>
@@ -117,14 +115,6 @@ window.onload = function(){
          margin: 10,
        })
      });
-owl.on('mousewheel', '.owl-stage', function (e) {
-    if (e.deltaY>0) {
-        owl.trigger('next.owl');
-    } else {
-        owl.trigger('prev.owl');
-    }
-    e.preventDefault();
-});
 </script>	
 <!-- FOOTER. Ну мало ли ты запутаешся в своём мусоре (коде) -->  
 <footer class="panel panel-footer">
