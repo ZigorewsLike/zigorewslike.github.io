@@ -97,7 +97,7 @@ window.onload = function(){
  в разделе "Основные задания".
  </p><a href="http://tyapk.ru/storage/app/media/uploaded-files/2017-zadanie-po-jquery.docx" target="_blank" class="btn btn-info button-download" role="button">Скачать задание по JQuery</a></div>
 </div>
-<h1>Зона отдыха</h1>
+<h1>Зона отдыха<br><small>Depeche mode</small></h1>
 <div class="owl-carousel owl-theme">
     <div class="item"><script src="//content.jwplatform.com/players/ILiV64xR-YXhbXGl6.js"></script></div>
     <div class="item"><script src="//content.jwplatform.com/players/Yopgxwd1-YXhbXGl6.js"></script></div>
@@ -108,6 +108,7 @@ window.onload = function(){
     $(document).ready(function() {
        var owl = $('.owl-carousel');
        owl.owlCarousel({
+	 stagePadding: 1,      
          margin: 10,
          nav: true,
          responsive: {
