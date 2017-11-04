@@ -63,7 +63,7 @@ return false;
  <input type="button" value=0 
  onClick="calckey(0)" style="width: 30px; height: 30px;">
  <input type="button" value="+/-"
- onClick="memory1=memory1*notInt; memory2=memory2*notInt; 
+ onClick="document.getElementById('text').value=(document.getElementById('text').value)*notInt; memory2=memory2*notInt; 
  console.log('Переменная Memory1 = ',memory1); console.log('Переменная Memory2 = ',memory2);
  document.getElementById('text').value=-parseInt(document.getElementById('text').value);" style="width: 30px; height: 30px;">
  <input type="button" value=, 
