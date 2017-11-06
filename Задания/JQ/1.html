@@ -94,7 +94,7 @@ $(function () {
 	//alert($.parent(lis)); 
 	}
 	});
-  </script> -->
+  </script> 
       <script>
 $(function () {
   console.clear();
@@ -105,6 +105,17 @@ $(function () {
   var lis=$.text(selectedElements[i].firstChild);
 	alert($.trim(lis)); 
 	}
+	});
+  </script> -->
+<script>
+$(function () {
+  console.clear();
+  console.log($("li").length);
+  var selectedElements = $("li");
+  $('li').each(function(i,elem){
+  var lis=$.text(selectedElements[i].firstChild);
+	alert($.trim(lis) + " " + selectedElements[i].getElementsByTagName('li').length); 
+	})
 	});
   </script>
  </div>
@@ -157,7 +168,8 @@ $(function () {
   function buton(){
   $("#Main").toggle("slow");
   };
-</script> 
+</script>
+///////////////////////////////////////////////////
 <script>
 $(function () {
   console.clear();
@@ -169,7 +181,19 @@ $(function () {
 	alert($.trim(lis)); 
 	}
 	});
- </script>
+ </script> 
+/////////////////////////////////////////////////////
+<script>
+$(function () {
+  console.clear();
+  console.log($("li").length);
+  var selectedElements = $("li");
+  $('li').each(function(i,elem){
+  var lis=$.text(selectedElements[i].firstChild);
+	alert($.trim(lis) + " " + selectedElements[i].getElementsByTagName('li').length); 
+	})
+	});
+  </script>
 </xmp></h5>
  </div>
  </div>
