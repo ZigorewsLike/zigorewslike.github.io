@@ -106,7 +106,7 @@ $(function () {
 	alert($.trim(lis)); 
 	}
 	});
-  </script> -->
+  </script>
 <script>
 $(function () {
   console.clear();
@@ -117,7 +117,15 @@ $(function () {
 	alert($.trim(lis) + " " + selectedElements[i].getElementsByTagName('li').length); 
 	})
 	});
-  </script>
+  </script> -->
+<script>
+	$('li').each(function(index, elem){
+		var title= $(elem).contents().firts().text().trim();
+		var count = $(elem).find('li').length;
+		alert(title + count)
+		}
+	)
+</script>	
  </div>
  </div>
  <div class="panel panel-warning">
