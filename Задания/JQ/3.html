@@ -29,8 +29,15 @@
   
   <form>
   <input type="text" size=20" id="text">
-  <input type="button" id="butt" value="Add">
+  <button type="button" id="butt" value="Add" onClick="AddList()">
   </form>
+  <div id="Listdel"> 
+  </div>                 
+   
+  <script>
+   function AddList()                
+    $('#').append('<div>Add</div>');
+  </script>                                          
                                             
  </div>
  </div>
