@@ -177,31 +177,15 @@ $(function () {
   $("#Main").toggle("slow");
   };
 </script>
-///////////////////////////////////////////////////
+
 <script>
-$(function () {
-  console.clear();
-  console.log($("li").length);
-  var selectedElements = $("li");
-  var lislen = $("li").length;
-  for (var i = 1; i < lislen; i++) {
-  var lis=$.text(selectedElements[i].firstChild);
-	alert($.trim(lis)); 
-	}
-	});
- </script> 
-/////////////////////////////////////////////////////
-<script>
-$(function () {
-  console.clear();
-  console.log($("li").length);
-  var selectedElements = $("li");
-  $('li').each(function(i,elem){
-  var lis=$.text(selectedElements[i].firstChild);
-	alert($.trim(lis) + " " + selectedElements[i].getElementsByTagName('li').length); 
-	})
-	});
-  </script>
+	$('li').each(function(index, elem){
+		var title = $(elem).contents().first().text().trim()
+		var count = $(elem).find('li').length;
+		alert(title + count);
+		}
+	)
+</script>	
 </xmp></h5>
  </div>
  </div>
