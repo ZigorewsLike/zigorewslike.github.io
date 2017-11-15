@@ -13,16 +13,23 @@ a {
     background-color: gray;
 }
 
+a:focus, a:hover {
+    color: DimGray;
+    text-decoration: underline;
+}
+.imageangl{
+ animation: spin 10s linear infinite;   
+}
 
 @keyframes spin{
   0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
+    opacity:0;  
+    width: 10px;
+     height: 10px;
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
+    opacity:1;  
+    width: 500px;
+     height: 500px;
   }
 }
