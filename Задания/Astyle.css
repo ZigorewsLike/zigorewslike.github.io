@@ -12,11 +12,13 @@ a {
     color: #fff;
     background-color: gray;
     animation: spinall 10s linear;
+    animation: spinall 4s linear infinite;
 }
 
 a:focus, a:hover {
     color: DimGray;
     text-decoration: underline;
+    animation: spinall 4s linear infinite;
 }
 .imageangl{
  animation: spin 2s linear infinite;   
