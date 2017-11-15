@@ -11,6 +11,7 @@ a {
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
     color: #fff;
     background-color: gray;
+    animation: spinall 10s linear;
 }
 
 a:focus, a:hover {
@@ -19,6 +20,9 @@ a:focus, a:hover {
 }
 .imageangl{
  animation: spin 10s linear infinite;   
+}
+footer{
+    animation: spinall 10s linear infinite;
 }
 
 @keyframes spin{
@@ -29,7 +33,7 @@ a:focus, a:hover {
   }
   100% {
     opacity:1;  
-    width: 500px;
-     height: 500px;
+    width: 200px;
+     height: 200px;
   }
 }
