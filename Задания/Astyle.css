@@ -24,7 +24,10 @@ a:focus, a:hover {
 footer{
     animation: spinall 4s linear infinite;
 }
-.nav{
+.navbar{
+animation: spinall 4s linear infinite;
+}
+.row{
 animation: spinall 4s linear infinite;
 }
 
