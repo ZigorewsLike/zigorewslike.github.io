@@ -19,16 +19,16 @@ a:focus, a:hover {
     text-decoration: underline;
 }
 .imageangl{
- animation: spin 4s linear infinite;   
+ animation: spin 4s linear;   
 }
 footer{
-    animation: spinall 4s linear infinite;
+    animation: spinall 4s linear;
 }
 .navbar{
-animation: spinall 4s linear infinite;
+animation: spinall 4s linear;
 }
 .row{
-animation: spinall 4s linear infinite;
+animation: spinall 4s linear;
 }
 
 @keyframes spin{
