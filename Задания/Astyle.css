@@ -19,21 +19,33 @@ a:focus, a:hover {
     text-decoration: underline;
 }
 .imageangl{
- animation: spin 10s linear infinite;   
+ animation: spin 2s linear infinite;   
 }
 footer{
-    animation: spinall 10s linear infinite;
+    animation: spinall 4s linear infinite;
 }
 
 @keyframes spin{
   0% {
     opacity:0;  
-    width: 10px;
-     height: 10px;
+    width: 0px;
+     height: 0px;
   }
   100% {
     opacity:1;  
     width: 200px;
      height: 200px;
+  }
+}
+
+@keyframes spinall{
+  0% {
+    opacity:0;  
+  }
+  50% {
+    opacity:0;  
+  }    
+  100% {
+    opacity:1;  
   }
 }
