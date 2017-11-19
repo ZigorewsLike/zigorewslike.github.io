@@ -29,14 +29,14 @@
   
   <form>
   <input type="text" size="20" id="text">
-  <button height="30px" id="butt" value="Add" onClick="AddList()">Add </button>
+  <button height="30px" id="butt" value="Add" onClick="AddListik()">Add </button>
   </form>
   <div id="Listdel"> 
   </div>                 
    
   <script>
-   function AddList()                
-    $('#Listdel').append('<div><p>This is the text in new element.<p></div>');
+   function AddListik()                
+    $('#Listdel').append($(#text).val());
   </script>                                          
                                             
  </div>
