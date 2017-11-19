@@ -33,14 +33,15 @@
   <input type="button" onClick="sum(document.form1.text.value)"> 
    </form>
 <script type='text/javascript'>
- function sum(a)
+ function sum(a){
 var b=0;
  b=a;
 //a=document.form1.st1.value;
 for(j=1;j<=10;j+2)
-b=b+Math.pow(a,2);
-document.write ("<h4>Сумма равна ",b,".</h4>");
- return a
+s=b+Math.pow(a,2);
+document.write ("<h4>Сумма равна ",s,".</h4>");
+ return s
+ }
   </script>
  </div>
  </div>
