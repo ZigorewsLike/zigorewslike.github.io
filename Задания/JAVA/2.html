@@ -34,7 +34,8 @@ var s=0; qrtsum=0.0
  s=a;
   j=1;
 //a=document.form1.st1.value;
-for (j=1;qrtsum < 0.005;j++){
+for (j=1;j>0;j++){
+ if ((Math.pow(s,(j*2)-1))/((j*2)-1)<0.005) break;
 qrtsum=qrtsum+(Math.pow(s,(j*2)-1))/((j*2)-1);
 }
 document.write ("<h4>Сумма равна ",qrtsum,".</h4>");
