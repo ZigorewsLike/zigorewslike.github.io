@@ -2,9 +2,9 @@
 float:right;
   opacity:0;
 }
-.list:hover{
+.item:hover{
   background:#99ccff;
 }
-.list:hover .rc{
+.item:hover .rc{
   opacity:1;
 }
