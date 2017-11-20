@@ -7,4 +7,5 @@ float:right;
 }
 .item:hover .rc{
   opacity:1;
+  border: 1px #0066cc solid; 
 }
