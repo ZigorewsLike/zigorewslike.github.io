@@ -1,3 +1,10 @@
 .rc{
 float:right;
+  opacity:0;
+}
+.list:hover{
+  background:#99ccff;
+}
+.list:hover .rc{
+  opacity:1;
 }
