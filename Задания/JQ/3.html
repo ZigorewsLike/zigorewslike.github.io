@@ -40,7 +40,12 @@
   <script>
    function AddListik(){               
      $("#Listdel").append( function(indx, val){
-     return '<li class="item"> ' + $("#text").val() + ' <div class="rc">X</div></li>';
+     return '<li class="item"> ' + $("#text").val() + ' <div class="rc" onClick="RemListik()">X</div></li>';
+ });
+ }
+    function RemListik(){               
+     $("#Listdel").append( function(indx, val){
+     return '<li class="item"> ' + $("#text").val() + ' <div class="rc" onClick="RemListik()">X</div></li>';
  });
  }
   </script>
