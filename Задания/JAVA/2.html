@@ -30,13 +30,12 @@
 </h3>
   <script type='text/javascript'>
  function sum(a){
-var s=0; qrtsum=0
+var s=0; qrtsum=0.0
  s=a;
   j=1;
 //a=document.form1.st1.value;
-while (qrtsum<0.005){
+for (j=1;qrtsum<0.005;j++){
 qrtsum=qrtsum+(Math.pow(s,(j*2)-1))/((j*2)-1);
- j++
 }
 document.write ("<h4>Сумма равна ",qrtsum,".</h4>");
  return s
