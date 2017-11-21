@@ -89,48 +89,22 @@ $("span").click(function(){
   </script>
  </xmp></div>
     <div role="tabpanel" class="tab-pane" id="css"><xmp> 
-.div{
-	float:top;
-	background:#D2691E;
-	height:10%;
+.rc{
+float:right;
+  opacity:0;
+  width:50px;
+  text-align:center;
 }
-.divLeft{
-	Height:80%;
-	Width:15%;
-	background:#4682B4;
-	float:left;
+.item:hover{
+  background:#99ccff;
 }
-.divLeft-1{
-	Height:80%;
-	Width:15%;
-	background:#F08080;
-	float:left;
+.item:hover .rc{
+  opacity:1;
+  border: 1px #0066cc solid; 
+  cursor: pointer
 }
-.divLeft-2{
-	Height:80%;
-	Width:70%;
-	background:yellow;
-	float:left;
-}
-.divcenter{
-	float:none;
-	background:red;
-	width:50%;
-	height:10%;
-}
-.divcenter-1{
-	float:none;
-	background:#B0C4DE;
-	width:50%;
-	height:10%;
-	margin-left:15%;
-	margin-top:-3%;
-}
-.divBottom{
-	float:Left;
-	background:#228B22;	
-	height:10%;
-	Width:100%
+.item{
+  height:50px;
 }
  </xmp></div>
   </div>
