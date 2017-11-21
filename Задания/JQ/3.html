@@ -68,21 +68,25 @@ $("span").click(function(){
   </ul>
     <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="html"><xmp> 
-<Html>
-<head>
-<meta charset="UTF-8"/>
- <title>верстка</title>
- <link rel="icon" href="http://my-files.ru/Save/i2bld0/glyphicons.png">
-  <link href='3-1.css' rel='stylesheet' type='text/css'>
- </head>
- <body>
-	<div class="div"> </div>
-	<div class="divLeft"> </div>
-	<div class="divLeft-1"> </div>
-	<div class="divLeft-2"><div class="divcenter"></div><div class="divcenter-1"> </div> </div>
-	<div class="divBottom"> </div>
- </body>
- </html>
+<form>
+  <input type="text" size="20" id="text">
+  <input type="button" height="30px" id="butt" value="Add" onClick="AddListik()">
+ </form>	 
+  <ol>
+  <div id="Listdel"> 
+  </div>  
+  </ol> 	
+	    
+  <script>
+   function AddListik(){               
+     $("#Listdel").append( function(indx, val){
+     return '<li class="item"> ' + $("#text").val() + '<span class="rc">X</span>' + '</li>';
+	  });
+$("span").click(function(){
+ $(this).parent().remove();
+});
+ }
+  </script>
  </xmp></div>
     <div role="tabpanel" class="tab-pane" id="css"><xmp> 
 .div{
