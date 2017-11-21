@@ -56,10 +56,57 @@ $("span").click(function(){
  </div>
  <div class="panel panel-warning">
  <div class="panel-heading"><h2>Код</h2></div>
- <div class="panel-body"><h4>...</h4><h5>	 
+ <div class="panel-body"><h4>...</h4><h5>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#html" aria-controls="html" role="tab" data-toggle="tab">Html</a></li>
+    <li><a href="#css" aria-controls="css" role="tab" data-toggle="tab">CSS</a></li>
+</ul>
+ <div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="html">	 
 <xmp>
-
+<form>
+  <input type="text" size="20" id="text">
+  <input type="button" height="30px" id="butt" value="Add" onClick="AddListik()">
+  </form>	
+	
+  <ol>
+  <div id="Listdel"> 
+  </div>  
+  </ol> 
+	
+  <script>
+   function AddListik(){               
+     $("#Listdel").append( function(indx, val){
+     return '<li class="item"> ' + $("#text").val() + '<span class="rc">X</span>' + '</li>';
+	  });
+$("span").click(function(){
+ $(this).parent().remove();
+});
+ }
+  </script>
+	
 </xmp>
+</div>
+<div role="tabpanel" class="tab-pane" id="css">
+<xmp>
+.rc{
+float:right;
+  opacity:0;
+  width:50px;
+  text-align:center;
+}
+.item:hover{
+  background:#99ccff;
+}
+.item:hover .rc{
+  opacity:1;
+  border: 1px #0066cc solid; 
+  cursor: pointer
+}
+.item{
+  height:50px;
+}
+</xmp> </div>	
  </div>
  </div>
  <a href="../JQ.html" class="btn btn-primary" role="button">
