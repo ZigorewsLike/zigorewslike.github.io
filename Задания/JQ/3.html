@@ -58,56 +58,77 @@ $("span").click(function(){
  <div class="panel panel-warning">
  <div class="panel-heading"><h2>Код</h2></div>
  <div class="panel-body"><h4>...</h4><h5>
+ <div>
+  <!-- Навигация -->
   <ul class="nav nav-tabs" role="tablist">
     <li class="active"><a href="#html" aria-controls="html" role="tab" data-toggle="tab">Html</a></li>
     <li><a href="#css" aria-controls="css" role="tab" data-toggle="tab">CSS</a></li>
-</ul>
- <div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="html">	 
-<xmp>
-<form>
-  <input type="text" size="20" id="text">
-  <input type="button" height="30px" id="butt" value="Add" onClick="AddListik()">
-  </form>	
-	
-  <ol>
-  <div id="Listdel"> 
-  </div>  
-  </ol> 
-	
-  <script>
-   function AddListik(){               
-     $("#Listdel").append( function(indx, val){
-     return '<li class="item"> ' + $("#text").val() + '<span class="rc">X</span>' + '</li>';
-	  });
-$("span").click(function(){
- $(this).parent().remove();
-});
- }
-  </script>
-	
-</xmp>
-</div>
-<div role="tabpanel" class="tab-pane" id="css">
-<xmp>
-.rc{
-float:right;
-  opacity:0;
-  width:50px;
-  text-align:center;
+  </ul>
+    <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="html"><xmp> 
+<Html>
+<head>
+<meta charset="UTF-8"/>
+ <title>верстка</title>
+ <link rel="icon" href="http://my-files.ru/Save/i2bld0/glyphicons.png">
+  <link href='3-1.css' rel='stylesheet' type='text/css'>
+ </head>
+ <body>
+	<div class="div"> </div>
+	<div class="divLeft"> </div>
+	<div class="divLeft-1"> </div>
+	<div class="divLeft-2"><div class="divcenter"></div><div class="divcenter-1"> </div> </div>
+	<div class="divBottom"> </div>
+ </body>
+ </html>
+ </xmp></div>
+    <div role="tabpanel" class="tab-pane" id="css"><xmp> 
+.div{
+	float:top;
+	background:#D2691E;
+	height:10%;
 }
-.item:hover{
-  background:#99ccff;
+.divLeft{
+	Height:80%;
+	Width:15%;
+	background:#4682B4;
+	float:left;
 }
-.item:hover .rc{
-  opacity:1;
-  border: 1px #0066cc solid; 
-  cursor: pointer
+.divLeft-1{
+	Height:80%;
+	Width:15%;
+	background:#F08080;
+	float:left;
 }
-.item{
-  height:50px;
+.divLeft-2{
+	Height:80%;
+	Width:70%;
+	background:yellow;
+	float:left;
 }
-</xmp> </div></div>	
+.divcenter{
+	float:none;
+	background:red;
+	width:50%;
+	height:10%;
+}
+.divcenter-1{
+	float:none;
+	background:#B0C4DE;
+	width:50%;
+	height:10%;
+	margin-left:15%;
+	margin-top:-3%;
+}
+.divBottom{
+	float:Left;
+	background:#228B22;	
+	height:10%;
+	Width:100%
+}
+ </xmp></div>
+  </div>
+</div>	
  </div>
  </div>
  <a href="../JQ" class="btn btn-primary" role="button">
