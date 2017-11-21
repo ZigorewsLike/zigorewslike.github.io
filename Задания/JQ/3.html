@@ -23,25 +23,23 @@
 <h1>JQuery Задания</h1>
 </div>
 <div class="row">
-  <div class="panel panel-warning">
- <div class="panel-heading"><h2>3 Задание</h2></div>
- <div class="panel-body">
   <h3>Список дел</h3>
-  <div class="panel-heading">Заголовок
+ <div class="panel panel-default">
+  <div class="panel-heading">
   <form>
   <input type="text" size="20" id="text">
   <input type="button" height="30px" id="butt" value="Add" onClick="AddListik()">
   </form>
-  </div>	  
+  </div> 
   <ol>
   <div id="Listdel"> 
   </div>  
   </ol>  
-   
+  </div> 
   <script>
    function AddListik(){               
      $("#Listdel").append( function(indx, val){
-     return '<li class="item"> ' + $("#text").val() + '<span class="rc">X</span>' + '</li>';
+     return '<div class="panel-body"><li class="item"> ' + $("#text").val() + '<span class="rc">X</span>' + '</li></div>';
 	  });
 $("span").click(function(){
  $(this).parent().remove();
