@@ -34,15 +34,17 @@
   <input type="button" height="30px" id="butt" value="Add" onClick="AddListik()">
   </form>
   </div> 
+<div class="panel-body">	 
   <ol>
   <div id="Listdel"> 
   </div>  
-  </ol>  
+  </ol> 
+  </div>	
   </div> 
   <script>
    function AddListik(){               
      $("#Listdel").append( function(indx, val){
-     return '<div class="panel-body"><li class="item"> ' + $("#text").val() + '<span class="rc">X</span>' + '</li></div>';
+     return '<li class="item"> ' + $("#text").val() + '<span class="rc">X</span>' + '</li>';
 	  });
 $("span").click(function(){
  $(this).parent().remove();
