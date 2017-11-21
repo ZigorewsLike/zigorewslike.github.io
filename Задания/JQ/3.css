@@ -1,6 +1,8 @@
 .rc{
 float:right;
   opacity:0;
+  width:50px;
+  text-align:center;
 }
 .item:hover{
   background:#99ccff;
