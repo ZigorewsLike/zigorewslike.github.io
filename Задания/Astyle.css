@@ -36,18 +36,12 @@ color:White;
 @keyframes spin{
   0% {
     opacity:0;  
-    width: 0px;
-     height: 0px;
   }
   50% {
     opacity:0.75;  
-    width: 100px;
-     height: 100px;
   }    
   100% {
     opacity:1;  
-    width: 200px;
-     height: 200px;
   }
 }
 
