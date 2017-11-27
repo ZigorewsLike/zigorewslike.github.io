@@ -1,0 +1,442 @@
+<Html>
+<head>
+<meta charset="UTF-8">
+ <title>Angular Code</title>
+ <link rel="icon" href="http://my-files.ru/Save/smuj64/лого.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+ <script src="https://code.jquery.com/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+ <link href='../../style.css' rel='stylesheet' type='text/css'>
+  <div class="container">
+<nav class="navbar navbar-default">
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="../../../">Главная</a></li>
+</ul></nav>
+<div class="page-header"> 
+<h1>Небольшой портал WEB Программирования<small> <br>Задания и прочие проекты.</small></h1>
+</div></div>
+ </head> <!-- конец тега head и подключения библиотек для других модулей или веб страниц. -->
+ <body>
+ <div class="container">
+<div class="row">
+<h1>Angular Задания</h1>
+</div>
+<div class="row">
+  <div class="panel panel-warning">
+ <div class="panel-heading"><h2>2 задание
+ <br>Код</h2></div>
+ <div class="panel-body">
+  <div>
+  <!-- Навигация -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#htmlindex" aria-controls="htmlindex" role="tab" data-toggle="tab">Main.html</a></li>
+    <li><a href="#maincss" aria-controls="maincss" role="tab" data-toggle="tab">MainStyle.css</a></li>
+    <li><a href="#appcomponenthtml" aria-controls="appcomponenthtml" role="tab" data-toggle="tab">app.component.html</a></li>
+    <li><a href="#appcomponentcss" aria-controls="appcomponentcss" role="tab" data-toggle="tab">app.component.css</a></li>   
+    <li><a href="#appcomponentjs" aria-controls="appcomponentjs" role="tab" data-toggle="tab">app.component.js</a></li>  
+    <li><a href="#appmodulejs" aria-controls="appmodulejs" role="tab" data-toggle="tab">app.module.js</a></li>  
+    <li><a href="#mainjs" aria-controls="mainjs" role="tab" data-toggle="tab">main.js</a></li>  
+  </ul>
+    <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="htmlindex"><xmp> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Angular</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+        <script src="systemjs.config.js"></script>
+        <script>
+            System.import('app').catch(function(err){ console.error(err); });
+        </script>
+    </head>
+
+    <body>
+        <center>
+       <app><h4>Загрузка...</h4></app> 
+        </center>
+    </body>
+</html>
+ </xmp></div>
+    <div role="tabpanel" class="tab-pane" id="maincss"><xmp> 
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    height: 100vh;
+    color: #757575;
+    background-color: #fafafa;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+button {
+    background: 0 0;
+    border: none;
+    border-radius: 2px;
+    color: #757575;
+    position: relative;
+    height: 36px;
+    margin: 0;
+    min-width: 64px;
+    padding: 0 16px;
+    display: inline-block;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    overflow: hidden;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 36px;
+    vertical-align: middle;
+}
+button:hover {
+    background-color: rgba(158,158,158,.2);
+}
+button:active {
+    background-color: rgba(158,158,158,.4);
+}
+button.icon {
+    border-radius: 50%;
+    font-size: 24px;
+    height: 32px;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 32px;
+    width: 32px;
+    padding: 0;
+    overflow: hidden;
+    line-height: normal;
+}
+button.icon .material-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-12px,-12px);
+    transform: translate(-12px,-12px);
+    line-height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+button[disabled] {
+    color: rgba(0,0,0,.26);
+    cursor: default;
+    background-color: transparent;
+}
+input {
+    font-size: 16px;
+    color: #757575;
+    background-color: #fafafa;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    padding: .25em;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    outline: none;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1976D2;
+    height: 56px;
+    min-height: 56px;
+    padding: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+    color: white;
+}
+header img {
+    width: 50px;
+}
+header h1 {
+    font-weight: 400;
+    margin: 0 0 0 10px;
+}
+main {
+    width: 600px;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.todo-form,
+.todo-list {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 2px;
+    width: 100%;
+    background-color: white;
+}
+/* Todo form */
+.todo-form {
+    display: flex;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+.todo-form input {
+    flex: 1;
+}
+.todo-form input:focus {
+    border: 1px solid #1976D2;
+}
+.todo-form input:focus.ng-invalid.ng-dirty {
+    border: 1px solid #ffb2c4;
+}
+.todo-form button {
+    margin-left: 16px;
+}
+/* Todo list */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+}
+.todo-item {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+.todo-item:not(:first-child) {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.todo-item .checkbox {
+    margin-right: .25em;
+}
+.todo-item.completed .title {
+    text-decoration: line-through;
+}
+.todo-item.completed .title,
+.todo-item.completed .material-icons {
+    color: lightgray;
+}
+
+.todo-item input {
+    flex: 1;
+    margin-right: 1rem;
+}
+.todo-item .actions {
+    margin-left: auto;
+    opacity: 0;
+    transition: all .2s;
+}
+.todo-item:hover .actions {
+    opacity: 1;
+}
+ </xmp></div>
+    <div role="tabpanel" class="tab-pane" id="appcomponenthtml"><xmp> 
+ <header>
+    <img src="img/angular.svg"/>
+    <h1>Калькулятор кредитов через {{ title }}</h1>
+    </header>
+    <main>
+        <h1>Калькулятор кредитов</h1>
+        <div class="todo-list">
+                <h2>Введите данные</h2>
+                </div>
+        <form class="todo-form" (ngSubmit)="create(titleCalc1.value,titleCalc2.value); todoForm.reset()" #todoForm="ngForm">
+        <input type="text" name="title" [(ngModel)]="newTodoTitle" placeholder="Сумма кредита" #titleCalc1
+            required>
+            <input type="text" name="title2" [(ngModel)]="newTodoTitle2" placeholder="Срок кредитования (в месяцах)" #titleCalc2
+            required>
+            <Button type="submit" [disabled]="todoForm.form.invalid">Добавить</Button>  
+        </form>
+        <div class="todo-list">
+        <h3>Ставка	12.9%</h3>
+        <h3><div id="EnterNember">Сумма кредита 0 руб.</div></h3>
+        <h3><div id="EnterNember2">Срок кредита 0 мес.</div></h3>
+        </div>
+        <div class="todo-list">
+                <h3><div id="EnterNember3">
+                 Ежемесячный платеж 0 руб.
+                </div></h3>
+        </div>    
+    </main>    
+  </xmp></div>
+    <div role="tabpanel" class="tab-pane" id="appcomponentcss"><xmp> 
+ header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1976D2;
+    height: 56px;
+    min-height: 56px;
+    padding: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+    color: white;
+    animation: colorbkg 20s infinite;
+}
+
+header img {
+    width: 50px;
+}
+
+header h1 {
+    font-weight: 400;
+    margin: 0 0 0 10px;
+}
+
+main {
+    width: 900px;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+@keyframes colorbkg{
+    0% {
+        background: #1976D2;  
+    }
+    50% {
+        background: rgb(140, 0, 255); 
+    }    
+    100% {
+        background: #1976D2;  
+    }
+  }
+     </xmp></div>
+    <div role="tabpanel" class="tab-pane" id="appcomponentjs"><xmp> 
+ "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var Todo = (function () {
+    function Todo(title, completed) {
+        if (completed === void 0) { completed = false; }
+        this.title = title;
+        this.completed = completed;
+    }
+    return Todo;
+}());
+var todos = [
+    { title: 'Изучить JavaScript',
+        completed: true
+    },
+    { title: 'Изучить Angular 2',
+        completed: false
+    },
+    { title: 'Написать приложение',
+        completed: false
+    }
+];
+var AppComponent = (function () {
+    function AppComponent() {
+        this.title = 'Angular 2';
+        this.todos = todos;
+        this.newTodoTitle = '';
+        this.newTodoTitle2 = '';
+    }
+    AppComponent.prototype.create = function () {
+        var onetext = (this.newTodoTitle);
+        var twotext = (this.newTodoTitle2);
+        var sumcredit = (onetext/twotext);
+        sumcredit=sumcredit+((sumcredit/100)*12.9)
+        document.getElementById('EnterNember').textContent="Сумма кредита " + onetext + " руб.";
+        document.getElementById('EnterNember2').textContent="Срок кредита " + twotext + " мес.";
+        document.getElementById('EnterNember3').textContent="Ежемесячный платеж " + sumcredit + " руб.";
+    };
+    AppComponent.prototype.toggle = function (todo) {
+        todo.completed = !todo.completed;
+    };
+    AppComponent.prototype.delete = function (todo) {
+        var index = this.todos.indexOf(todo);
+        if (index > -1) {
+            this.todos.splice(index, 1);
+        }
+    };
+    AppComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'app',
+            templateUrl: 'app.component.html',
+            styleUrls: ['app.component.css']
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AppComponent);
+    return AppComponent;
+}());
+exports.AppComponent = AppComponent;
+     </xmp></div>
+    <div role="tabpanel" class="tab-pane" id="appmodulejs"><xmp> 
+    "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
+var app_component_1 = require('./app.component');
+var AppModule = (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+            declarations: [app_component_1.AppComponent],
+            bootstrap: [app_component_1.AppComponent]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AppModule);
+    return AppModule;
+}());
+exports.AppModule = AppModule;
+     </xmp></div>
+    <div role="tabpanel" class="tab-pane" id="mainjs"><xmp> 
+    "use strict";
+var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
+var app_module_1 = require('./app.module');
+var platform = platform_browser_dynamic_1.platformBrowserDynamic();
+platform.bootstrapModule(app_module_1.AppModule);
+     </xmp></div>   
+
+
+  </div>
+</div>
+ </div>
+ </div>
+ <a href="../Angular" class="btn btn-primary" role="button">
+ <span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Назад
+ </a>
+<!-- FOOTER. Ну мало ли ты запутаешся в своём мусоре (коде) -->  
+<footer class="panel panel-footer">
+<p class="Footer-text">
+Создатель сайта Черепанов Игорь. <a href="https://vk.com/zi_like"> 
+<img src="http://ktonanovenkogo.ru/image/sozdat-udalit-stranitcu-vkontakte.png" alt="..." width="40px"></a> 
+<a href="https://facebook.com/zigorewslike"> 
+<img src="https://cdn2.iconfinder.com/data/icons/social-buttons-2/512/facebook-256.png" alt="..." width="40px"></a></p>
+</footer></div></body>
+</html>
