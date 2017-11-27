@@ -1,5 +1,6 @@
 body{
 background:black;
+color:White; 
 }
 head{
 background:black;
@@ -29,6 +30,7 @@ animation: spinall 4s linear;
 }
 .row{
 animation: spinall 4s linear;
+color:White;    
 }
 
 @keyframes spin{
