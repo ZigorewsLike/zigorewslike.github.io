@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1976D2;
+    height: 56px;
+    min-height: 56px;
+    padding: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+    color: white;
+    animation: colorbkg 20s infinite;
+}
+
+header img {
+    width: 50px;
+}
+
+header h1 {
+    font-weight: 400;
+    margin: 0 0 0 10px;
+}
+
+main {
+    width: 900px;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+@keyframes colorbkg{
+    0% {
+        background: #1976D2;  
+    }
+    50% {
+        background: rgb(140, 0, 255); 
+    }    
+    100% {
+        background: #1976D2;  
+    }
+  }
