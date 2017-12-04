@@ -69,7 +69,7 @@ return false;
  <input type="button" value=+
  onClick="calckey('+')" style="width: 30px; height: 30px;"> <br>
   <input type="button" value="C" 
- onClick="document.getElementById('text').value='0'; 
+ onClick="document.getElementById('text').value=''; 
  console.log('Калькулятор чист');" style="width: 63px; height: 30px;">
   <input type="button" value="=" 
  onClick="document.getElementById('text').value=eval(document.getElementById('text').value);" style="width: 63px; height: 30px;">
@@ -91,7 +91,7 @@ return false;
  </script>
  </xmp><hr><xmp>
 <form id="Calc">
- <input type="text" size=17 id="text" value="0"> <br> <br>
+ <input type="text" size=17 id="text" value=""> <br> <br>
  <input type="button" value=7 
  onClick="calckey(7)" style="width: 30px; height: 30px;">
  <input type="button" value=8 
