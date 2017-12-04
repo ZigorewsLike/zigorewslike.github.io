@@ -1,0 +1,112 @@
+<Html>
+<head>
+<meta charset="UTF-8">
+ <title>1.2 задание</title>
+ <link rel="icon" href="http://my-files.ru/Save/smuj64/лого.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+ <script src="https://code.jquery.com/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+ <link href='../../style.css' rel='stylesheet' type='text/css'>
+  <div class="container">
+<nav class="navbar navbar-default">
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="../../../">Главная</a></li>
+</ul></nav>
+<div class="page-header"> 
+<h1>Небольшой портал WEB Программирования<small> <br>Задания и прочие проекты.</small></h1>
+</div></div>
+ </head> <!-- конец тега head и подключения библиотек для других модулей или веб страниц. -->
+ <body>
+ <div class="container">
+<div class="row">
+<h1>JAVA Задания</h1>
+</div>
+<div class="row">
+  <div class="panel panel-warning">
+ <div class="panel-heading"><h2>1.3 задание (Вариант 16)</h2></div>
+ <div class="panel-body"><h3>Дана последовательность 1 , -3Х , 9Х2 , -27X3,… 
+ Найти сумму элементов, превышающих по абсолютной величине 0,006. Примечание Х < 1.
+</h3>
+  <script type='text/javascript'>
+ function sum(a){
+var s=0; qrtsum=0.0
+ s=a;
+  j=1;
+  rezz=1;
+//a=document.form1.st1.value;
+for (j=1;j>0;j++){
+var rezz=(Math.pow(-1,j))*(((j*2)-1)*3)*(s*j);
+console.log('Слагаемое - ',rezz);
+console.log('Первый множетель - ',((j*2)-1)*3);
+console.log('Второй множетель - ',(s*j));
+ if (qrtsum > 0.006) break;
+qrtsum=qrtsum+rezz;
+console.info('Сумма - ',qrtsum);
+}
+console.warn('Сумма - ',qrtsum+1);
+document.getElementById('SumText').textContent="Сумма равна " + (qrtsum+1) + ".";
+ return s
+ }
+  </script>
+  <form name="form1">
+  <input type="text" name="text" placeholder="Введите X (X<1)">
+  <input type="button" onClick="sum(document.form1.text.value)"> 
+   </form>
+   <h4>
+  <div id="SumText">
+  </div>
+   </h4>
+ </div>
+ </div>
+ <div class="panel panel-warning">
+ <div class="panel-heading"><h2>Код</h2></div>
+ <div class="panel-body">
+ <xmp>  
+ 
+<script type='text/javascript'>
+ function sum(a){
+var s=0; qrtsum=0.0
+ s=a;
+  j=1;
+  rezz=1;
+//a=document.form1.st1.value;
+for (j=1;j>0;j++){
+var rezz=(Math.pow(-1,j))*(((j*2)-1)*3)*(s*j);
+console.log('Слагаемое - ',rezz);
+console.log('Первый множетель - ',((j*2)-1)*3);
+console.log('Второй множетель - ',(s*j));
+ if (qrtsum > 0.006) break;
+qrtsum=qrtsum+rezz;
+console.info('Сумма - ',qrtsum);
+}
+console.warn('Сумма - ',qrtsum+1);
+document.getElementById('SumText').textContent="Сумма равна " + (qrtsum+1) + ".";
+ return s
+ }
+  </script>
+ 
+ <form name="form1">
+  <input type="text" name="text" placeholder="Введите X (X<1)">
+  <input type="button" onClick="sum(document.form1.text.value)"> 
+   </form>
+   <h4>
+  <div id="SumText">
+  </div>
+   </h4>
+   
+   </xmp>
+ </div>
+ </div>
+ <a href="../JAVA.html" class="btn btn-primary" role="button">
+ <span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Назад
+ </a>
+<!-- FOOTER. Ну мало ли ты запутаешся в своём мусоре (коде) -->  
+<footer class="panel panel-footer">
+<p class="Footer-text">
+Создатель сайта Черепанов Игорь. <a href="https://vk.com/zi_like"> 
+<img src="http://ktonanovenkogo.ru/image/sozdat-udalit-stranitcu-vkontakte.png" alt="..." width="40px"></a> 
+<a href="https://facebook.com/zigorewslike"> 
+<img src="https://cdn2.iconfinder.com/data/icons/social-buttons-2/512/facebook-256.png" alt="..." width="40px"></a></p>
+</footer></div></body>
+</html>
