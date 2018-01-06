@@ -78,7 +78,7 @@ p{
 }
 .panel-footer{
 	background:#333;
-	height:65px;
+	min-height:65px;
 }
 .Footer-text{
 	font-size:15px;
