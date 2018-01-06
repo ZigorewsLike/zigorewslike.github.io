@@ -52,13 +52,13 @@
   <div class="panel panel-default row">
   <div class="panel-body"> 
   <h1 class="Label1">&#171;Вместе с "Ирис" Вы можете кардинально сменить имидж или придать лёгкие коррективы...&#187;</h1><br><hr>
-  <div class="col-md-4 image">
+  <div class="col-md-4 col-xs-12 image">
   <img src="Res/h1.jpg" width="100%">
   </div>
-  <div class="col-md-4 image">
+  <div class="col-md-4 col-xs-6 image">
   <img src="Res/h2.jpg" width="100%">
   </div>
-  <div class="col-md-4 image">
+  <div class="col-md-4 col-xs-6 image">
   <img src="Res/h3.jpg" width="100%">
   </div>
   </div></div><hr>
@@ -251,36 +251,51 @@
 <h1>Мастера своего дела</h1>
   <div class="panel panel-default row">
   <div class="panel-body"> 
-	<div class="col-md-2">
+	<div class="col-md-2 col-xs-4">
 	<img src="Res/noname.jpg" width="100%">
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-2 col-xs-4">
 	<img src="Res/noname.jpg" width="100%">
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-2 col-xs-4">
 	<img src="Res/noname.jpg" width="100%">
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-2 col-xs-4">
 	<img src="Res/noname.jpg" width="100%">
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-2 col-xs-4">
 	<img src="Res/noname.jpg" width="100%">
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-2 col-xs-4">
 	<img src="Res/noname.jpg" width="100%">
 	</div>
   </div></div>
  <script> $(document).ready(function() {
  var owl = $('.owl-carousel'); 
  owl.owlCarousel({ 
-	items:3,
+
 	margin: 10, 
 	loop: true,
 	center:true,
 	lazyLoad: true,
 	autoplay:true,
     autoplayTimeout:2000,
-    autoplayHoverPause:true
+    autoplayHoverPause:true,
+	responsive:{
+        0:{
+            items:1,
+            center:false
+        },
+        600:{
+            items:3,
+            center:true
+		},
+		1000:{
+            items:4,
+            center:false
+		}
+			
+			}
 	 }) 
 	 }); </script>
 <!-- FOOTER. Ну мало ли ты запутаешся в своём мусоре (коде) -->  
@@ -294,4 +309,3 @@
 mullenna732@gmail.com</p>
 </footer></div></body>
  </html>
-
