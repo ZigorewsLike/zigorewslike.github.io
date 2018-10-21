@@ -5,14 +5,19 @@ package lab4;
  * @author иго
  */
 import java.util.*;
-import java.io.FileReader;
+import java.io.*;
 
 public class Lab4 {
     public static void main(String[] args) throws Exception{
-        FileReader file = new FileReader("C:/1.txt");
+        System.out.println("-Введите абсолютный путь до файла-");
+        Scanner dir = new Scanner(System.in);
+        String path = dir.nextLine();
+        File myFile = new File(path);
+         if(!myFile.exists()){
+             System.out.println("-ОШИБКА! Файл не найден!-");
+         }else{
+        FileReader file = new FileReader(path);
         Scanner scn = new Scanner(file);
-        
-        
         int i = 1;
         String []textEx = new String [4]; 
         textEx[0] = "\\chapter";
@@ -25,7 +30,7 @@ public class Lab4 {
         existText[2] = false;
         existText[3] = false;
         
-        
+        System.out.println("-Результат (Вывод заголовков):-");
         while (scn.hasNextLine()) {
             String str = scn.nextLine();
             //System.out.println(i + " : '" + str + "' length = " + str.length());
@@ -54,8 +59,9 @@ public class Lab4 {
             }
             i++;
         }
-
+        
         file.close();
+        }
     }
     
 }
