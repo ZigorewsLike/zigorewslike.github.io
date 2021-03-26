@@ -1,0 +1,73 @@
+new Vue({
+    el: '#app',
+    data(){
+        return{
+            message: "BOOBA",
+            publications: [
+                {
+                    title: "On automated workflow for fine-tuning deepneural network models for table detection in document images",
+                    authors: "Cherepanov, I., Mikhailov, A., Shigarov, A., Paramonov, V.",
+                    conf: "2020 43rd International Convention on Information, Communication and Electronic Technology, MIPRO 2020 - Proceedings, 2020, pages 1130–1133, 9245241",
+                    abstract: {
+                        show: false,
+                        text: "Nowadays methods and software for extracting tables from document images and portable documents (PDF) continue to be actively developed. One of the promising approaches to this task is the usage of fine-tuned object detection models. However, this approach involves many manipulations with data preparation and training process configuration. This paper proposes an automated workflow for fine-tuning deep neural network models for the table detection in document images. It enables us to automate two sub-tasks: (i) preparing a training dataset in the PascalVOC format with image transformation and augmentation; (ii) training a table detection model by using the well-known Faster R-CNN architecture. Implementation of the workflow design simplifies the use of the approach proposed by decreasing the number of required manipulations.",
+                    },
+                    citation: {
+                        show: false,
+                        text: "@INPROCEEDINGS{9245241,  author={I. {Cherepanov} and A. {Mikhailov} and A. {Shigarov} and V. {Paramonov}},  booktitle={2020 43rd International Convention on Information, Communication and Electronic Technology (MIPRO)},   title={On automated workflow for fine-tuning deepneural network models for table detection in document images},   year={2020},  volume={},  number={},  pages={1130-1133},  doi={10.23919/MIPRO48935.2020.9245241}}"
+                    },
+                    link: {
+                        exist: true,
+                        link: "https://ieeexplore.ieee.org/document/9245241",
+                    },
+                },
+                {
+                    title: "Towards end-to-end transformation of arbitrary tables from untagged portable documents (PDF) to linked data",
+                    authors: "Alexey Shigarov, Igor Cherepanov, Evgeniy Cherkashin, Nikita Dorodnykh, Vasiliy Khristyuk, Andrey Mikhailov , Viacheslav Paramonov, Egor Rozhkow, and Alexandr Yurin",
+                    conf: "CEUR Workshop Proceedings, 2019, 2463, pages 1–12",
+                    abstract: {
+                        show: false,
+                        text: "The paper is devoted to the problem of an end-to-end table transformation from untagged portable documents (PDF) to linked data. It covers the issues of the table extraction from documents, the reconstruction of logical table structure, the conceptualization of their natural-language content, and the linking of extracted data with external vocabularies. We consider some perspective approaches for the deeplearning-based table detection, heuristic-based table structure recognition, rule-based table analysis, and knowledge-based table interpretation. They can be used as a basis to develop a consistent solution for this problem. Our application experience confirms that such solutions are demanded for populating databases and generating ontologies with tabular data being extracted from weakly and semi-structured documents.",
+                    },
+                    citation: {
+                        show: false,
+                        text: "@INPROCEEDINGS{2463,  author={A. {Shigarov}, I. {Cherepanov}, E. {Cherkashin}, N. {Dorodnykh}, V. {Khristyuk}, A. {Mikhailov} , V. {Paramonov}, E. {Rozhkow}, and A. {Yurin}},  booktitle={CEUR-WS Proc.},   title={Towards end-to-end transformation of arbitrary tables from untagged portable documents (PDF) to linked data.},   year={2019},  volume={},  number={},   pages={1-12},  }"
+                    },
+                    link: {
+                        exist: true,
+                        link: "http://ceur-ws.org/Vol-2463/paper1.pdf",
+                    },
+                }
+            ]
+        }
+    },
+    created: function(){
+        
+    },
+    updated: function () {
+        
+              
+    },
+    methods: {
+        publAbstractShow(index){
+            for(let i=0;i<this.publications.length;i++){
+                this.publications[i].citation.show = false;
+                if(i != index)
+                    this.publications[i].abstract.show = false;
+            }
+            this.publications[index].abstract.show = !this.publications[index].abstract.show;
+            console.log("clcik");
+        },
+        publCitationShow(index){
+            for(let i=0;i<this.publications.length;i++){
+                this.publications[i].abstract.show = false;
+                if(i != index)
+                    this.publications[i].citation.show = false;
+            }
+            this.publications[index].citation.show = !this.publications[index].citation.show;
+        },
+        publLink(index){
+            window.open(this.publications[index].link.link, '_blank');
+        },
+    }
+});

@@ -1,76 +1,42 @@
 body{
 	font-family: 'Roboto', sans-serif;
+	margin-top: 25px;
+	-background-color: rgb(9, 9, 15);
+	-color: white;
 }
 head{
 	font-family: 'Roboto', sans-serif;
 }
-h1{
-	text-Align:center;
-	padding-bottom:15px;
+.logo{
+	object-fit: cover;
+	-border-radius: 20%;
+	border-style: none;
+	margin-right: 20px;
 }
-h2{
-	text-Align:center;
+.my_name{
+	font-size: 34px;
+	margin-bottom: 0px;
 }
-h3{
-	text-Align:center;
-}
-h4{
-	text-Align:center;
-}
-.block-1{
-	display:flex;
-	justify-content:space-between;
-}
-p{
-	font-size:15px;
-	text-align:center;
-}
-.button-download{
+.divFlex{
 	display: flex;
-    justify-content: center;
-	align-items: center;
-	overflow: auto;
+	align-items:center;
+	margin-bottom: 5px;
 }
-.panel-footer{
-	background:#333;
+i{
+	margin-right: 10px;
 }
-.Footer-text{
-	font-size:18px;
-	color:white; 
+.publications{
+	margin-top: 50px;
 }
-#calc{
-	margin:10px;
-	text-align:center;
+.paper{
+	margin-bottom: 10px;
+	margin-left: 15px;
 }
-.thumbnail:hover{
-	Animation:hoveranim 0.2s ease-out 0s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+.paperBlocks > div{
+	margin-left: 12px;
+	margin-right: 12px;
+	color: rgb(123, 75, 255);
+	cursor: pointer;
 }
-.pb-1:hover{
-	Animation:hoveranim 0.2s ease-out 0s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
-}
-.ImgMain{	
-	text-align:center;
-}
-.imgcat{
-border-radius: 2%;
-border:1px solid #cfe8f5;	
-}
-@keyframes hoveranim {
-0% {
-background:white;
-}
-100% {
-background:#DFDFDF;
-}
-.owl-carousel, .owl-carousel .owl-item {
-    -webkit-tap-highlight-color: transparent;
-    position: relative;
-}
-.owl-item{
-}	
+
+

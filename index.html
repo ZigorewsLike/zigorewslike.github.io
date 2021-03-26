@@ -1,139 +1,68 @@
 <Html>
 <head>
 <meta charset="UTF-8">
- <title>Главная страница Zi-Li</title>
- <link rel="icon" href="http://my-files.ru/Save/smuj64/лого.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">	
- <script src="https://code.jquery.com/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
- <script src="../../owl/owl.carousel.js"></script>
- <link href='../../owl/owl.theme.default.css' rel='stylesheet' type='text/css'>
- <link href='../../owl/owl.carousel.min.css' rel='stylesheet' type='text/css'>
- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-  <link href='style.css' rel='stylesheet' type='text/css'>
+<title>About me</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link href='style.css' rel='stylesheet' type='text/css'>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div id="app">
   <div class="container">
-<nav class="navbar navbar-default">
-<ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="../">Главная</a></li>
-  <li role="presentati on dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Задания
-  <span class="glyphicon glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
-  <ul class="dropdown-menu">
- <li><a href="Задания/HTML">HTML <span class="badge">4</span></a></li>
- <li><a href="Задания/CSS">CSS <span class="badge">5</span></a></li>
- <li><a href="Задания/JAVA">JavaScript <span class="badge">3</span></a></li>
-<li><a href="Задания/JQ">JQuery <span class="badge">2</span></a></li>
-<li><a href="Задания/Angular">Angular <span class="badge">X</span></a></li></ul></li>
-  <li role="presentation"><a href="Info">Доп. Информация</a></li>
-<p class="navbar-text pull-right"><img src="http://my-files.ru/Save/fa10og/321.png.png" width="20px"></p>
-<script>
- var now = new Date();
-document.write('<p class="navbar-text pull-right">',now.getFullYear(),".",now.getMonth()+1,".",now.getDate(),"</p>");
- </script>
- <p class="navbar-text pull-right"><spacetime></spacetime></p></ul></nav>
- <script type="text/javascript">
-window.onload = function(){
-    (function(){
-        var date = new Date();
-        var time = date.getHours()+':'+date.getMinutes()+':'+date.getSeconds();
-        document.getElementsByTagName('spacetime')[0].innerHTML = time;
-        window.setTimeout(arguments.callee, 1000);
-    })();
-};
-</script>
-<div class="page-header"> 
-<h1>Небольшой портал WEB Программирования<small> <br>Задания и прочие проекты.</small></h1>
-</div></div>
- </head> <!-- конец тега head и подключения библиотек для других модулей или веб страниц. -->
- <body>
+    <div class="divFlex"> 
+      <!-- <img class="logo img-thumbnail" width="200px" src="source/profile.png" alt="logo"> -->
+      <img class="logo img-thumbnail" width="200px" src="https://avatars.githubusercontent.com/u/30562858" alt="logo">
+      <div>
+        <!-- <p class="my_name">Igor Cherepanov {{message}}</p> -->
+        <div class="divFlex head_locate">
+          <i class="material-icons home">home</i>
+          <div>Irkutsk | Russia</div>
+        </div>
+        <div class="divFlex head_work">
+          <i class="material-icons">work</i>
+          <div>ISDCT SB RAS</div>
+        </div>
+        <div class="divFlex head_educ">
+          <i class="material-icons">school</i>
+          <div>ISU IMIT (Student from 2017)</div>
+        </div>
+        <div class="divFlex head_educ">
+          <i class="material-icons">alternate_email</i>
+          <div><a href="mailto:zigorewslike@gmail.com">zigorewslike@gmail.com</a></div>
+        </div>
+        <div><a href="https://github.com/ZigorewsLike">GitHub</a> | <a href="https://www.facebook.com/zigorewslike/">Facebook</a> | <a href="https://ieeexplore.ieee.org/author/37088548949">IEEE Xplore</a></div>
+      </div>
+      
+    </div>
+    <div class="publications">
+      <h1>Publications: </h1>
+      <div v-for="(item, index) in publications">
+        <div class="divFlex">
+          <i class="material-icons fs-2">article</i>
+          <div class="paper">
+            <br>
+            <div class="fs-4">{{item.title}}</div>
+            <div class="fs-6">{{item.authors}}</div>
+            <div class="fs-6"> <b>{{item.conf}}</b> </div>
+          </div>
+        </div>
+        <div class="divFlex paperBlocks"> 
+          <div v-on:click="publAbstractShow(index)">Show abstract</div>
+          <div v-on:click="publCitationShow(index)">Citation</div>
+          <div v-if="item.link.exist" v-on:click="publLink(index)">Link</div>
+        </div>
+        <div v-if="item.abstract.show">
+          {{item.abstract.text}}
+        </div>
+        <div v-if="item.citation.show">{{item.citation.text}}</div>
+      </div>
 
- <div class="container">
-<div class="row">  
-
-<h1>То, что используют для создания сайтов</h1>
-<div class="block-1">
-	 <div class="col-xs-4 col-md-4 thumbnail">
-    <h1>HTML</h1> 
-	  <a href="https://ru.wikipedia.org/wiki/HTML" class="thumbnail" target="_blank">
-      <img src="sourse/Html-pict.jpg" alt="" onerror="this.src='NulImg.png'"></a>
-	  <div class="caption">	  
-		<p><strong>HTML</strong> (от англ. HyperText Markup Language — «язык гипертекстовой разметки»)
-		— стандартизированный язык разметки документов во Всемирной паутине. Большинство веб-страниц 
-		содержат описание разметки на языке HTML (или XHTML).</p>
-		<a href="https://ru.wikipedia.org/wiki/HTML" class="btn btn-success" role="button" target="_blank">
-		<span class="glyphicons glyphicon glyphicon-exclamation-sign"></span> Подробнее на wiki </a>
-      </div> </div>	
-     <div class="col-xs-4 col-md-4 thumbnail">
-    <h1>CSS</h1> 
-	  <a href="https://ru.wikipedia.org/wiki/CSS" class="thumbnail" target="_blank">
-      <img src="sourse/Css-pict.jpg" onerror="this.src='NulImg.png'" alt=""></a>
-	  <div class="caption">	  
-		<p><strong>CSS</strong> (Cascading Style Sheets — каскадные таблицы стилей) — 
-		формальный язык описания внешнего вида документа, написанного с использованием языка разметки.</p>
-		<a href="https://ru.wikipedia.org/wiki/CSS" class="btn btn-success" role="button" target="_blank">
-		<span class="glyphicons glyphicon glyphicon-exclamation-sign"></span> Подробнее на wiki</a>
-      </div>   </div>		
-	 <div class="col-xs-4 col-md-4 thumbnail">
-    <h1>JavaScript</h1> 
-	  <a href="https://ru.wikipedia.org/wiki/Java" class="thumbnail" target="_blank">
-      <img src="sourse/Java-pict.jpg" onerror="this.src='NulImg.png'"></a>
-	  <div class="caption">	  
-		<p><strong>JavaScript</strong> — мультипарадигменный язык программирования. Поддерживает объектно-ориентированный, 
-		императивный и функциональный стили. Является реализацией языка ECMAScript.</p>
-		<a href="https://ru.wikipedia.org/wiki/Java" class="btn btn-success" role="button" target="_blank">
-		<span class="glyphicons glyphicon glyphicon-exclamation-sign"></span> Подробнее на wiki</a>
-      </div></div>     </div></div>
-	<!-- Другой блок -->  
- <div class="panel panel-info">
- <div class="panel-heading"><h3>Последние новости</h3></div>
- <div class="panel-body pb-1">  <div  class="ImgMain"> <a href="#">
- <img src="sourse/News.jpg" class="imgcat" onerror="this.src='NulImg.png'"></a></div><p>
- <strong>jQuery </strong>— библиотека JavaScript, фокусирующаяся на взаимодействии JavaScript и HTML. 
-Библиотека jQuery помогает легко получать доступ к любому элементу DOM, обращаться к атрибутам и содержимому 
-элементов DOM, манипулировать ими. На сайте <a href="http://tyapk.ru" target="_blank">Tyapk.ru</a>,
-	 по библиотеке JQuery, появились задания.
- Лекция по JQuery находится на сайте <a href="http://tyapk.ru" target="_blank">Tyapk.ru</a>. 
-	 <a href="http://tyapk.ru/storage/app/media/uploaded-files/08%20jQuery.pdf" target="_blank">Прямая ссылка на лекцию.</a>
- Задание можно скачать также по ссылке внизу (кнопка скачать) либо на <a href="http://tyapk.ru/web-programming-lectures" target="_blank">сайте</a>
- в разделе "Основные задания".
- </p><a href="http://tyapk.ru/storage/app/media/uploaded-files/2017-zadanie-po-jquery.docx" target="_blank" class="btn btn-info button-download" role="button">Скачать задание по JQuery</a></div>
+    </div>
+    
+  </div> 
 </div>
-<h1>Зона отдыха<br><small>Depeche mode</small></h1>
-<div class="owl-carousel owl-theme">
-    <div class="item-video"><script src="//content.jwplatform.com/players/ILiV64xR-YXhbXGl6.js"></script></div>
-    <div class="item-video"><script src="//content.jwplatform.com/players/Yopgxwd1-YXhbXGl6.js"></script></div>
-    <div class="item-video"><script src="//content.jwplatform.com/players/ye1O5QQW-YXhbXGl6.js"></script></div>
-    <div class="item-video"><script src="//content.jwplatform.com/players/jWp49nsA-YXhbXGl6.js"></script></div>
-    <div class="item-video"><script src="//content.jwplatform.com/players/sP3PQTdY-YXhbXGl6.js"></script></div>
-</div>
-<script>
-    $(document).ready(function() {
-       var owl = $('.owl-carousel');
-       owl.owlCarousel({
-	 video:true, 
-	 items:3,      
-         margin: 10,
-       })
-     });
-</script>
-<!-- FOOTER. Ну мало ли ты запутаешся в своём мусоре (коде) -->  
-<footer class="panel panel-footer">
-<p class="Footer-text">
-Создатель сайта Черепанов Игорь. <a href="https://vk.com/zi_like" target="_blank"> 
-<img src="http://ktonanovenkogo.ru/image/sozdat-udalit-stranitcu-vkontakte.png" alt="..." width="40px"></a> 
-<a href="https://facebook.com/zigorewslike" target="_blank"> 
-<img src="https://cdn2.iconfinder.com/data/icons/social-buttons-2/512/facebook-256.png" alt="..." width="40px"></a>
-<!--LiveInternet counter--><script type="text/javascript">
-document.write("<a href='//www.liveinternet.ru/click' "+
-"target=_blank><img src='//counter.yadro.ru/hit?t18.6;r"+
-escape(document.referrer)+((typeof(screen)=="undefined")?"":
-";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-";"+Math.random()+
-"' alt='' title='LiveInternet: показано число просмотров за 24"+
-" часа, посетителей за 24 часа и за сегодня' "+
-"border='0' width='88' height='31'><\/a>")
-</script><!--/LiveInternet-->	
-</p>
-</footer></div></body>
+<script src="app.js"></script>
+</body>
 </html>
