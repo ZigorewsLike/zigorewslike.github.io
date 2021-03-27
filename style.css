@@ -28,15 +28,44 @@ i{
 .publications{
 	margin-top: 50px;
 }
+.projects{
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+.projects > h1{
+	margin-bottom: 20px;
+}
 .paper{
 	margin-bottom: 10px;
 	margin-left: 15px;
 }
-.paperBlocks > div{
+.paperBlocks > div,
+.projectLinks{
 	margin-left: 12px;
 	margin-right: 12px;
 	color: rgb(123, 75, 255);
 	cursor: pointer;
+}
+.projectLinks{
+	margin-top: 20px;
+}
+.project{
+	display: flex;
+	align-items: stretch;
+	margin-bottom: 5px;
+}
+.textblock{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 99%;
+}
+.projectLogo{
+	margin-right: 15px;
+}
+.linkContainer{
+	display: flex;
+	flex-direction: row;
 }
 
 

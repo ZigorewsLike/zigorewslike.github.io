@@ -15,7 +15,7 @@
       <!-- <img class="logo img-thumbnail" width="200px" src="source/profile.png" alt="logo"> -->
       <img class="logo img-thumbnail" width="200px" src="https://avatars.githubusercontent.com/u/30562858" alt="logo">
       <div>
-        <!-- <p class="my_name">Igor Cherepanov {{message}}</p> -->
+        <p class="my_name">Игорь Черепанов</p>
         <div class="divFlex head_locate">
           <i class="material-icons home">home</i>
           <div>Irkutsk | Russia</div>
@@ -36,8 +36,30 @@
       </div>
       
     </div>
+    <div class="projects">
+      <h1>Проекты: </h1>
+      <div v-for="(item, index) in projects">
+        <div class="project">
+          <div>
+            <img :src="item.logo" alt="logo" :width="item.logo_width" class="projectLogo">
+          </div>
+          
+          <div>
+            <h2>{{item.name}}</h2>
+            <div class="projectDescr" v-html="item.description"></div>
+            <div class="divFlex">
+              <div v-for="(link, index) in item.links">
+                <div class="projectLinks" v-on:click="openLink(link.link)">{{link.name}}</div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="publications">
-      <h1>Publications: </h1>
+      <h1>Публикации:</h1>
       <div v-for="(item, index) in publications">
         <div class="divFlex">
           <i class="material-icons fs-2">article</i>
@@ -51,14 +73,13 @@
         <div class="divFlex paperBlocks"> 
           <div v-on:click="publAbstractShow(index)">Show abstract</div>
           <div v-on:click="publCitationShow(index)">Citation</div>
-          <div v-if="item.link.exist" v-on:click="publLink(index)">Link</div>
+          <div v-if="item.link.exist" v-on:click="openLink(item.link.link)">Link</div>
         </div>
         <div v-if="item.abstract.show">
           {{item.abstract.text}}
         </div>
         <div v-if="item.citation.show">{{item.citation.text}}</div>
       </div>
-
     </div>
     
   </div> 

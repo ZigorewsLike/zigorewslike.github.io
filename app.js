@@ -38,6 +38,20 @@ new Vue({
                         link: "http://ceur-ws.org/Vol-2463/paper1.pdf",
                     },
                 }
+            ],
+            projects:[
+                {
+                    name: "Cuda_convolution_image",
+                    description: '<b>Cuda_convolution_image</b> - это C# проект с пользовательским интерфейсом, который применяет матрицу свёртки к загруженному изображению. Все вычисления (применение свёртки) происходят на видеокарте от компании <u>Nvidia</u>. Проект загружает Cuda ядро, которое скомпилировано в dll файл. <br> Доступные размеры от 3 до 9 (нечётные значения)',
+                    links: [
+                        {
+                            name: "GitHub link",
+                            link: "https://github.com/ZigorewsLike/cuda_convolution_image",
+                        }
+                    ],
+                    logo: "github_rep/cuda_conv/workflow.gif",
+                    logo_width: "350px"
+                },
             ]
         }
     },
@@ -66,8 +80,8 @@ new Vue({
             }
             this.publications[index].citation.show = !this.publications[index].citation.show;
         },
-        publLink(index){
-            window.open(this.publications[index].link.link, '_blank');
+        openLink(link){
+            window.open(link, '_blank');
         },
     }
 });
