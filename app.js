@@ -41,15 +41,83 @@ new Vue({
             ],
             projects:[
                 {
+                    name: "Dl4td",
+                    description: '<b>Dl4td</b> is the control script that allow to automate data preparation process, namely datasets conversion, image conversion, data augmentation, creation of TF Records files. These scripts help to create DNN-models for table detection in image documents. They aim at reducing user efforts needed for DL preparation and configuration.',
+                    links: [
+                        {
+                            name: "Paper",
+                            link: "https://ieeexplore.ieee.org/document/9245241",
+                        },
+                        {
+                            name: "Project (Google colab)",
+                            link: "https://colab.research.google.com/drive/1TDoXxlxGhrbeZfkID5xK0DNK7ikicbZC",
+                        },
+                        {
+                            name: "GitHub",
+                            link: "https://github.com/tabbydoc/dl4td",
+                        }
+                    ],
+                    logo: "github_rep/dl4td/tables.png",
+                    gif:{
+                        anim: false,
+                        path: "",
+                        frame: "",
+                    },
+                    logo_width: "350px"
+                },
+                {
+                    name: "Xml_generator_online",
+                    description: '<b>Xml_generator_online</b> - это веб-приложения, которое принимает пользовательское изображение и даёт возможность пользователю выделять области интереса так, как ему нужно и с той точностью, которая необходима. После выделения областей веб-приложение генерирует и сохранять результат в виде XML файла на компьютер пользователя. Проект создан на языке python  с использованием Django.',
+                    links: [
+                        {
+                            name: "GitHub",
+                            link: "https://github.com/ZigorewsLike/xml_generator_online",
+                        }
+                    ],
+                    logo: "github_rep/xml_gen_online/workflow.png",
+                    gif:{
+                        anim: true,
+                        path: "github_rep/xml_gen_online/workflow.gif",
+                        frame: "github_rep/xml_gen_online/workflow.png",
+                    },
+                    logo_width: "350px"
+                },
+                {
+                    name: "Nasa_rover_photos",
+                    description: '<b>Nasa_rover_photos</b> - это веб-приложения, с помощью которого можно смотреть фотографию любого из 4 марсоходов на заданную дату. Получение изображений осуществляется через <a href=\"https://api.nasa.gov\">Nasa Api</a>. <br> На сайте нужно первым делом выбрать ровер, а при выборе даты запрос автоматически отправится и покажет фотографии при наличии.',
+                    links: [
+                        {
+                            name: "Проект",
+                            link: "https://zigorewslike.github.io/nasa_rover_photos/",
+                        },
+                        {
+                            name: "GitHub",
+                            link: "https://github.com/ZigorewsLike/nasa_rover_photos",
+                        }
+                    ],
+                    logo: "github_rep/nasa_rover_web/logo.png",
+                    gif:{
+                        anim: false,
+                        path: "",
+                        frame: "",
+                    },
+                    logo_width: "350px"
+                },
+                {
                     name: "Cuda_convolution_image",
                     description: '<b>Cuda_convolution_image</b> - это C# проект с пользовательским интерфейсом, который применяет матрицу свёртки к загруженному изображению. Все вычисления (применение свёртки) происходят на видеокарте от компании <u>Nvidia</u>. Проект загружает Cuda ядро, которое скомпилировано в dll файл. <br> Доступные размеры от 3 до 9 (нечётные значения)',
                     links: [
                         {
-                            name: "GitHub link",
+                            name: "GitHub",
                             link: "https://github.com/ZigorewsLike/cuda_convolution_image",
                         }
                     ],
-                    logo: "github_rep/cuda_conv/workflow.gif",
+                    logo: "github_rep/cuda_conv/workflow.png",
+                    gif:{
+                        anim: true,
+                        path: "github_rep/cuda_conv/workflow.gif",
+                        frame: "github_rep/cuda_conv/workflow.png",
+                    },
                     logo_width: "350px"
                 },
             ]
@@ -82,6 +150,16 @@ new Vue({
         },
         openLink(link){
             window.open(link, '_blank');
+        },
+        gifPlay(index){
+            if(this.projects[index].gif.anim){
+                this.projects[index].logo = this.projects[index].gif.path;
+            }
+        },
+        gifStop(index){
+            if(this.projects[index].gif.anim){
+                this.projects[index].logo = this.projects[index].gif.frame;
+            }
         },
     }
 });
