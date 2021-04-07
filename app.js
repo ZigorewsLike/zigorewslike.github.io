@@ -63,7 +63,21 @@ new Vue({
                         path: "",
                         frame: "",
                     },
-                    logo_width: "350px"
+                    logo_width: "400px"
+                },
+                {
+                    name: "NoJpg",
+                    description: '...',
+                    links: [
+                        
+                    ],
+                    logo: "github_rep/nojpeg/logo.png",
+                    gif:{
+                        anim: false,
+                        path: "",
+                        frame: "",
+                    },
+                    logo_width: "400px"
                 },
                 {
                     name: "Xml_generator_online",
@@ -80,7 +94,7 @@ new Vue({
                         path: "github_rep/xml_gen_online/workflow.gif",
                         frame: "github_rep/xml_gen_online/workflow.png",
                     },
-                    logo_width: "350px"
+                    logo_width: "400px"
                 },
                 {
                     name: "Nasa_rover_photos",
@@ -101,7 +115,7 @@ new Vue({
                         path: "",
                         frame: "",
                     },
-                    logo_width: "350px"
+                    logo_width: "400px"
                 },
                 {
                     name: "Cuda_convolution_image",
@@ -118,7 +132,7 @@ new Vue({
                         path: "github_rep/cuda_conv/workflow.gif",
                         frame: "github_rep/cuda_conv/workflow.png",
                     },
-                    logo_width: "350px"
+                    logo_width: "400px"
                 },
             ]
         }
@@ -147,9 +161,6 @@ new Vue({
                     this.publications[i].citation.show = false;
             }
             this.publications[index].citation.show = !this.publications[index].citation.show;
-        },
-        openLink(link){
-            window.open(link, '_blank');
         },
         gifPlay(index){
             if(this.projects[index].gif.anim){

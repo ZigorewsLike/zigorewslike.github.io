@@ -46,6 +46,10 @@ i{
 	color: rgb(123, 75, 255);
 	cursor: pointer;
 }
+a{
+	text-decoration:none;
+	color: rgb(123, 75, 255);
+}
 .projectLinks{
 	margin-top: 20px;
 }

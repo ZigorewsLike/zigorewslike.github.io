@@ -50,7 +50,7 @@
         <div class="divFlex paperBlocks"> 
           <div v-on:click="publAbstractShow(index)">Show abstract</div>
           <div v-on:click="publCitationShow(index)">Citation</div>
-          <div v-if="item.link.exist" v-on:click="openLink(item.link.link)">Link</div>
+          <a v-if="item.link.exist" :href="item.link.link" target="_blank">Link</a>
         </div>
         <transition name="slide-fade">
           <div v-show="item.abstract.show">
@@ -71,7 +71,7 @@
         <div class="project">
           <div>
             <i v-if="item.gif.anim && item.logo == item.gif.frame" class="material-icons fs-2 play_icon">animation</i>
-            <img :src="item.logo" alt="logo" :width="item.logo_width" class="projectLogo">
+            <a :href="item.logo" target="_blank"><img :src="item.logo" alt="logo" :width="item.logo_width" class="projectLogo"></a>
           </div>
           
           <div>
@@ -79,7 +79,7 @@
             <div class="projectDescr" v-html="item.description"></div>
             <div class="divFlex">
               <div v-for="(link, index) in item.links">
-                <div class="projectLinks" v-on:click="openLink(link.link)">{{link.name}}</div>
+                <a class="projectLinks" :href="link.link" target="_blank">{{link.name}}</a>
               </div>
             </div>
             
