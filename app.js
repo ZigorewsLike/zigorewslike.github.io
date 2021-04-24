@@ -3,6 +3,7 @@ new Vue({
     data(){
         return{
             message: "BOOBA",
+            themeMode: "dark_mode",
             publications: [
                 {
                     title: "On automated workflow for fine-tuning deepneural network models for table detection in document images",
@@ -175,5 +176,14 @@ new Vue({
                 this.projects[index].logo = this.projects[index].gif.frame;
             }
         },
+        switchMode(){
+            if(this.themeMode == "dark_mode"){
+                this.themeMode = "light_mode";
+                document.body.setAttribute('style', 'background-color: #161b1f; color: rgba(255, 255, 255, 0.86);');
+            }else{
+                this.themeMode = "dark_mode";
+                document.body.setAttribute('style', '');
+            }
+        }
     }
 });

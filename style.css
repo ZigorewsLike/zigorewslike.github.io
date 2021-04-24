@@ -1,8 +1,8 @@
 body{
 	font-family: 'Roboto', sans-serif;
 	margin-top: 25px;
-	-background-color: rgb(9, 9, 15);
-	-color: white;
+	-background-color: #161b1f;
+	-color: rgba(255, 255, 255, 0.86);
 }
 head{
 	font-family: 'Roboto', sans-serif;

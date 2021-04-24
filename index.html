@@ -15,7 +15,15 @@
       <!-- <img class="logo img-thumbnail" width="200px" src="source/profile.png" alt="logo"> -->
       <img class="logo img-thumbnail" width="200px" src="https://avatars.githubusercontent.com/u/30562858" alt="logo">
       <div>
-        <p class="my_name">Игорь Черепанов</p>
+        <div class="divFlex">
+          <p class="my_name">Игорь Черепанов</p>
+          <div style="margin-left: 10px; cursor: pointer;" v-on:click="switchMode">
+            <i class="material-icons">
+              {{themeMode}}
+            </i>
+          </div>
+        </div>
+        
         <div class="divFlex head_locate">
           <i class="material-icons home">home</i>
           <div>Irkutsk | Russia</div>
