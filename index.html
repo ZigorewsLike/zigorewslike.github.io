@@ -70,14 +70,18 @@
       <div v-for="(item, index) in projects" style="margin-bottom: 50px;" v-on:mousemove="gifPlay(index)" v-on:mouseleave="gifStop(index)">
         <div class="project">
           <div>
-            <i v-if="item.gif.anim && item.logo == item.gif.frame" class="material-icons fs-2 play_icon">animation</i>
+            <div>
+              <i v-if="item.gif.anim && item.logo == item.gif.frame" class="material-icons fs-1 play_icon">gif</i>
+              <div class="triangle"></div>
+            </div>
+            
             <a :href="item.logo" target="_blank"><img :src="item.logo" alt="logo" :width="item.logo_width" class="projectLogo"></a>
           </div>
           
           <div>
             <h2>{{item.name}}</h2>
             <div class="projectDescr" v-html="item.description"></div>
-            <div class="divFlex">
+            <div class="divFlex" style="margin-top: 10px;">
               <div v-for="(link, index) in item.links">
                 <a class="projectLinks" :href="link.link" target="_blank">{{link.name}}</a>
               </div>

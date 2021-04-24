@@ -71,6 +71,9 @@ a{
 	justify-content: space-between;
 	height: 99%;
 }
+a > .projectLogo{
+	cursor: zoom-in;
+}
 .projectLogo{
 	margin-right: 15px;
 }
@@ -82,10 +85,14 @@ a{
 	position: absolute;
 	padding: 5px;
 	color: rgba(255, 255, 255);
-	opacity: 0.80;
-	text-shadow: 1px 1px 2px black, 0 0 5px rgb(0, 0, 0);
+	opacity: 0.90;
+	text-shadow: 1px 1px 5px black, 0 0 5px rgb(0, 0, 0), -1px 0 rgb(31, 31, 31), 0 1px rgb(31, 31, 31), 1px 0 rgb(31, 31, 31), 0 -1px rgb(31, 31, 31);
 }
-
+div > .play_icon{
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 70px;
+	clip-path: polygon(0% 0%, 100% 0%, 40% 100%, 0% 100%);
+}
 .slide-fade-enter-active {
     transition: opacity .5s;
 }
