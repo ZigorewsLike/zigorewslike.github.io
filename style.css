@@ -72,7 +72,7 @@ a{
 	height: 99%;
 }
 a > .projectLogo{
-	cursor: zoom-in;
+	cursor: pointer;
 }
 .projectLogo{
 	margin-right: 15px;

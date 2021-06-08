@@ -3,11 +3,11 @@ new Vue({
     data(){
         return{
             message: "BOOBA",
-            themeMode: "dark_mode",
+            themeMode: "light_mode",
             publications: [
                 {
                     title: "On automated workflow for fine-tuning deepneural network models for table detection in document images",
-                    authors: "Cherepanov, I., Mikhailov, A., Shigarov, A., Paramonov, V.",
+                    authors: "Igor Cherepanov, Andrey Mikhailov, Alexey Shigarov, and Viacheslav Paramonov",
                     conf: "2020 43rd International Convention on Information, Communication and Electronic Technology, MIPRO 2020 - Proceedings, 2020, pages 1130–1133, 9245241",
                     abstract: {
                         show: false,
@@ -20,6 +20,23 @@ new Vue({
                     link: {
                         exist: true,
                         link: "https://ieeexplore.ieee.org/document/9245241",
+                    },
+                },
+                {
+                    title: "On Graph-Based Verification for PDF Table Detection",
+                    authors: "Andrey Mikhailov, Alexey Shigarov, Egor Rozhkov, and Igor Cherepanov",
+                    conf: "2020 Ivannikov Ispras Open Conference (ISPRAS)",
+                    abstract: {
+                        show: false,
+                        text: "Many non-editable documents are shared in PDF (Portable Document Format). They are typically not accompanied by tags for annotating the page layout, including table positions. One of the important challenges of the analysis and understanding of such documents is table detection. This paper outlines a novel two-phase approach to the table detection in untagged PDF documents. The first phase uses deep neural networks (DNN) to predict some table candidates. The second phase selects probable tables from the candidates by verifying their graph representation. We build a weighted directed graph from text blocks inside a predicted area of a table. A set of such graphs produced from the “ICDAR 2013 Table Competition” dataset allowed us to train a verification model based on the Random Forest technique. The empirical results for competitive dataset demonstrated high performance of our implementation of this approach. We showed that additional verification enables reduction of errors and improvement of results of the PDF table detection.",
+                    },
+                    citation: {
+                        show: false,
+                        text: "@INPROCEEDINGS{9394071, author={Mikhailov, Andrey and Shigarov, Alexey and Rozhkov, Egor and Cherepanov, Igor}, booktitle={2020 Ivannikov Ispras Open Conference (ISPRAS)},  title={On Graph-Based Verification for PDF Table Detection},  year={2020}, volume={}, number={}, pages={91-95}, doi={10.1109/ISPRAS51486.2020.00020}}"
+                    },
+                    link: {
+                        exist: true,
+                        link: "https://ieeexplore.ieee.org/document/9394071",
                     },
                 },
                 {
@@ -111,6 +128,10 @@ new Vue({
                         {
                             name: "GitHub",
                             link: "https://github.com/ZigorewsLike/nasa_rover_photos",
+                        },
+                        {
+                            name: "Android",
+                            link: "https://play.google.com/store/apps/details?id=com.intercoder.mynasarover",
                         }
                     ],
                     logo: "github_rep/nasa_rover_web/logo.png",
@@ -142,7 +163,11 @@ new Vue({
         }
     },
     created: function(){
-        
+        if(this.themeMode == "dark_mode"){
+            document.body.setAttribute('style', '');
+        }else{
+            document.body.setAttribute('style', 'background-color: #161b1f; color: rgba(255, 255, 255, 0.86);');
+        }
     },
     updated: function () {
         
@@ -156,7 +181,6 @@ new Vue({
                     this.publications[i].abstract.show = false;
             }
             this.publications[index].abstract.show = !this.publications[index].abstract.show;
-            console.log("clcik");
         },
         publCitationShow(index){
             for(let i=0;i<this.publications.length;i++){
