@@ -19,7 +19,7 @@ new Vue({
                     },
                     link: {
                         exist: true,
-                        link: "https://ieeexplore.ieee.org/document/9245241",
+                        link: "https://doi.org/10.23919/MIPRO48935.2020.9245241",
                     },
                 },
                 {
@@ -36,7 +36,7 @@ new Vue({
                     },
                     link: {
                         exist: true,
-                        link: "https://ieeexplore.ieee.org/document/9394071",
+                        link: "https://doi.org/10.1109/ISPRAS51486.2020.00020",
                     },
                 },
                 {
@@ -64,7 +64,7 @@ new Vue({
                     links: [
                         {
                             name: "Paper",
-                            link: "https://ieeexplore.ieee.org/document/9245241",
+                            link: "https://doi.org/10.23919/MIPRO48935.2020.9245241",
                         },
                         {
                             name: "Project (Google colab)",
