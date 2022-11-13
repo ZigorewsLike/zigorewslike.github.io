@@ -26,21 +26,21 @@
         
         <div class="divFlex head_locate">
           <i class="material-icons home">home</i>
-          <div>Irkutsk | Russia</div>
+          <div>Saint Petersburg | Russia</div>
         </div>
         <div class="divFlex head_work">
           <i class="material-icons">work</i>
-          <div>ISDCT SB RAS</div>
+          <div>Control System</div>
         </div>
         <div class="divFlex head_educ">
           <i class="material-icons">school</i>
-          <div>ISU IMIT (Student from 2017)</div>
+          <div>ISU IMIT (2017 - 2021)</div>
         </div>
         <div class="divFlex head_educ">
           <i class="material-icons">alternate_email</i>
           <div><a href="mailto:zigorewslike@gmail.com">zigorewslike@gmail.com</a></div>
         </div>
-        <div><a href="https://github.com/ZigorewsLike">GitHub</a> | <a href="https://www.facebook.com/zigorewslike/">Facebook</a> | <a href="https://ieeexplore.ieee.org/author/37088548949">IEEE Xplore</a></div>
+        <div><a href="https://github.com/ZigorewsLike">GitHub</a> | <a href="https://www.linkedin.com/in/inter-coder/">LinkedIn</a> | <a href="https://ieeexplore.ieee.org/author/37088548949">IEEE Xplore</a></div>
       </div>
     </div>
     <div class="publications">
@@ -83,11 +83,22 @@
               <div class="triangle"></div>
             </div>
             
-            <a :href="item.logo" target="_blank"><img :src="item.logo" alt="logo" :width="item.logo_width" class="projectLogo"></a>
+            <a v-if="!item.video_logo" :href="item.logo" target="_blank"><img :src="item.logo" alt="logo" :width="item.logo_width" class="projectLogo"></a>
+            <a v-else :href="item.logo" target="_blank"><video class="projectLogo" autoplay loop
+              :width="item.logo_width"
+              height="250"
+              muted>
+              <source :src="item.logo" type="video/webm">
+          </video></a>
           </div>
           
           <div>
-            <h2>{{item.name}}</h2>
+            <h2><p>{{item.name}} <span v-if="item.develope_mode" class="developSpan">В разработке</span></p></h2>
+            <div class="tagsContainer">
+              <div v-for="(tag, index) in item.tags" class="tagBlock">
+                {{tag}}
+              </div>
+            </div>
             <div class="projectDescr" v-html="item.description"></div>
             <div class="divFlex" style="margin-top: 10px;">
               <div v-for="(link, index) in item.links">

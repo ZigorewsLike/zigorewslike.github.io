@@ -2,7 +2,6 @@ new Vue({
     el: '#app',
     data(){
         return{
-            message: "BOOBA",
             themeMode: "light_mode",
             publications: [
                 {
@@ -59,7 +58,29 @@ new Vue({
             ],
             projects:[
                 {
+                    name: "PhotoDraw",
+                    develope_mode: true,
+                    description: 'Фоторедактор на pyqt5 с аппаратным ускорением через <a href="https://www.khronos.org/opencl/">OpenCL</a> (Своя версия фотошопа). Позволяет открывать и редактировать большие изображения без потери качества. <br><br> Реализованно: <lu><li>Домашняя страница с последними файлами</li><li>Открытие изображения</li><li>Изменение яркости, контрастности и <a href="https://helpx.adobe.com/photoshop/using/levels-adjustment.html">уровней</a></li></lu>',
+                    links: [
+                        {
+                            name: "GitHub",
+                            link: "https://github.com/ZigorewsLike/PhotoDraw",
+                        }
+                    ],
+                    tags: ["Python", "PyQt5", "OpenCL"],
+                    video_logo: true,
+                    logo: "github_rep/photo_draw/workflow.webm",
+                    gif:{
+                        anim: false,
+                        path: "",
+                        frame: "",
+                    },
+                    logo_width: "400px"
+                },
+                {
                     name: "Dl4td",
+                    develope_mode: false,
+                    tags: ["Python", "TensorFlow"],
                     description: '<b>Dl4td</b> is the control script that allow to automate data preparation process, namely datasets conversion, image conversion, data augmentation, creation of TF Records files. These scripts help to create DNN-models for table detection in image documents. They aim at reducing user efforts needed for DL preparation and configuration.',
                     links: [
                         {
@@ -85,6 +106,8 @@ new Vue({
                 },
                 {
                     name: "NoJpg",
+                    develope_mode: false,
+                    tags: ["Python", "TensorFlow", "DVS"],
                     description: 'Некоторые изображения в интернете сохранены с потерей качества. В таких изображениях градиент цветов становился грубым, а мелкие детали пропадали вовсе. Восстановить такие изображения методом эвристик очень сложно. Эвристикой можно восстановить плавность некоторых участков изображения, но тогда оно станет мыльным и изображение не будет детальным. <br><b>NoJpeg_gan</b> - это проект, который убирает сжатие с JPG фотографии с помощью обученной глубокой нейронной сети. За основу взята архитектура сети <a href="https://arxiv.org/abs/1611.07004">pix2pix</a> и расширена до приёма изображения размеров 512 на 512 пикселей.',
                     links: [
                         {
@@ -102,6 +125,8 @@ new Vue({
                 },
                 {
                     name: "Xml_generator_online",
+                    develope_mode: false,
+                    tags: ["Vue", "Django"],
                     description: '<b>Xml_generator_online</b> - это веб-приложения, которое принимает пользовательское изображение и даёт возможность пользователю выделять области интереса так, как ему нужно и с той точностью, которая необходима. После выделения областей веб-приложение генерирует и сохранять результат в виде XML файла на компьютер пользователя. Проект создан на языке python  с использованием Django.',
                     links: [
                         {
@@ -119,6 +144,8 @@ new Vue({
                 },
                 {
                     name: "Nasa_rover_photos",
+                    develope_mode: false,
+                    tags: ["Vue", "CreateJs"],
                     description: '<b>Nasa_rover_photos</b> - это веб-приложения, с помощью которого можно смотреть фотографию любого из 4 марсоходов на заданную дату. Получение изображений осуществляется через <a href=\"https://api.nasa.gov\">Nasa Api</a>. <br> На сайте нужно первым делом выбрать ровер, а при выборе даты запрос автоматически отправится и покажет фотографии при наличии.',
                     links: [
                         {
@@ -144,6 +171,8 @@ new Vue({
                 },
                 {
                     name: "Cuda_convolution_image",
+                    develope_mode: false,
+                    tags: ["C#", "Cuda"],
                     description: '<b>Cuda_convolution_image</b> - это C# проект с пользовательским интерфейсом, который применяет матрицу свёртки к загруженному изображению. Все вычисления (применение свёртки) происходят на видеокарте от компании <u>Nvidia</u>. Проект загружает Cuda ядро, которое скомпилировано в dll файл. <br> Доступные размеры от 3 до 9 (нечётные значения)',
                     links: [
                         {

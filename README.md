@@ -1,3 +1,3 @@
-Look at this dude [About me](https://zigorewslike.github.io)
+Look at this 👉 [About me](https://zigorewslike.github.io)
 
-![](https://cdn.betterttv.net/emote/5fa99424eca18f6455c2bca5/3x)
+![](https://cdn.betterttv.net/emote/612373ae76ea4e2b9f78d751/3x)
