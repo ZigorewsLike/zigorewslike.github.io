@@ -1,0 +1,41 @@
+# UI strings (English). Edit labels to taste.
+lang_name: "English"
+
+nav:
+  projects: "Projects"
+  experience: "Experience"
+  education: "Education"
+  publications: "Publications"
+  contacts: "Contacts"
+
+sections:
+  projects: "Projects"
+  experience: "Work Experience"
+  education: "Education"
+  publications: "Publications"
+  contacts: "Contacts"
+
+categories:
+  python: "Python"
+  shaders: "Shaders / Graphics"
+
+filter_all: "All"
+
+project:
+  back: "Back to all projects"
+  screenshots: "Screenshots"
+  date: "Date"
+  category: "Category"
+  stack: "Stack"
+  tags: "Tags"
+
+contacts:
+  email: "Email"
+  location: "Location"
+
+empty: "No projects yet. Add a folder to content/projects/."
+footer: "Built with Flask + Jinja2"
+
+not_found:
+  message: "This page does not exist."
+  home: "Go home"

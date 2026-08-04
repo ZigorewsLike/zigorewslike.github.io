@@ -1,0 +1,56 @@
+# ============================================================
+# Personal data (EN) for the header and the Experience,
+# Education, Publications, Contacts sections. All sections optional.
+# ============================================================
+
+name: "First Last"
+title: "Python Developer · Graphics Programming"
+tagline: "I build tools in Python and experiment with graphics and shaders."
+
+# Avatar: put a file in static/ and reference it relative to static/, e.g. "img/avatar.jpg"
+avatar: ""
+
+email: "you@example.com"
+location: "City, Country"
+
+socials:
+  - { label: "GitHub", url: "https://github.com/username" }
+  - { label: "Telegram", url: "https://t.me/username" }
+  - { label: "ArtStation", url: "https://artstation.com/username" }
+
+# ---------- Work experience ----------
+experience:
+  - period: "2023 — present"
+    role: "Python Developer"
+    company: "Company"
+    description: "Short summary of the role and responsibilities."
+    highlights:
+      - "Key achievement or task #1"
+      - "Achievement #2"
+  - period: "2021 — 2023"
+    role: "Junior Developer"
+    company: "Another company"
+    description: "What I worked on."
+
+# ---------- Education ----------
+education:
+  - period: "2017 — 2021"
+    degree: "BSc, Applied Mathematics"
+    school: "University"
+    description: "Specialization, if relevant."
+
+# ---------- Publications ----------
+# Papers, talks, posts. url/venue/description are optional.
+publications:
+  - title: "Paper or talk title"
+    authors: "Last F., Coauthor A."
+    venue: "Journal / conference name"
+    year: 2024
+    url: "https://doi.org/..."
+    description: "One or two sentences about the work."
+  - title: "Second talk / paper"
+    authors: "Last F."
+    venue: "Conference XYZ"
+    year: 2023
+    url: ""
+    description: ""

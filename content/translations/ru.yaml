@@ -1,0 +1,41 @@
+# UI-строки (русский). Правь подписи под себя.
+lang_name: "Русский"
+
+nav:
+  projects: "Проекты"
+  experience: "Опыт"
+  education: "Образование"
+  publications: "Публикации"
+  contacts: "Контакты"
+
+sections:
+  projects: "Проекты"
+  experience: "Опыт работы"
+  education: "Образование"
+  publications: "Публикации"
+  contacts: "Контакты"
+
+categories:
+  python: "Python"
+  shaders: "Shaders / Graphics"
+
+filter_all: "Все"
+
+project:
+  back: "Ко всем проектам"
+  screenshots: "Скриншоты"
+  date: "Дата"
+  category: "Категория"
+  stack: "Стек"
+  tags: "Теги"
+
+contacts:
+  email: "Email"
+  location: "Локация"
+
+empty: "Пока нет ни одного проекта. Добавь папку в content/projects/."
+footer: "Собрано на Flask + Jinja2"
+
+not_found:
+  message: "Такой страницы нет."
+  home: "На главную"

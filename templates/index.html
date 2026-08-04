@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block content %}
+{# ==================== ШАПКА: личные данные ==================== #}
+<section class="hero">
+  <div class="container hero__inner">
+    {% if profile.avatar %}
+      <img class="hero__avatar" src="{{ url_for('static', filename=profile.avatar) }}" alt="{{ profile.name }}">
+    {% endif %}
+    <div class="hero__text">
+      <h1 class="hero__name">{{ profile.name }}</h1>
+      {% if profile.title %}<p class="hero__title">{{ profile.title }}</p>{% endif %}
+      {% if profile.tagline %}<p class="hero__tagline">{{ profile.tagline }}</p>{% endif %}
+
+      {% if profile.socials %}
+      <ul class="hero__socials">
+        {% for s in profile.socials %}
+          <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{# ==================== ПРОЕКТЫ ==================== #}
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section__title">{{ t.sections.projects }}</h2>
+
+    {# Фильтр по категориям (чистый JS, без перезагрузки) #}
+    <div class="filter" role="tablist">
+      <button class="filter__btn is-active" data-filter="all">{{ t.filter_all }}</button>
+      {% for key in category_keys %}
+        <button class="filter__btn" data-filter="{{ key }}">{{ t.categories[key] }}</button>
+      {% endfor %}
+    </div>
+
+    {% for key in category_keys %}
+      {% set items = grouped.get(key, []) %}
+      {% if items %}
+      <div class="project-group" data-category="{{ key }}">
+        <h3 class="project-group__title">{{ t.categories[key] }}</h3>
+        <div class="card-grid">
+          {% for p in items %}
+            {% include "_project_card.html" %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+
+    {% if total == 0 %}
+      <p class="empty">{{ t.empty }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{# ==================== ОПЫТ РАБОТЫ ==================== #}
+{% if profile.experience %}
+<section id="experience" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">{{ t.sections.experience }}</h2>
+    <ul class="timeline">
+      {% for job in profile.experience %}
+      <li class="timeline__item">
+        <div class="timeline__period">{{ job.period }}</div>
+        <div class="timeline__body">
+          <h3 class="timeline__role">{{ job.role }}{% if job.company %} · <span class="timeline__company">{{ job.company }}</span>{% endif %}</h3>
+          {% if job.description %}<p>{{ job.description }}</p>{% endif %}
+          {% if job.highlights %}
+            <ul class="timeline__highlights">
+              {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+{# ==================== ОБРАЗОВАНИЕ ==================== #}
+{% if profile.education %}
+<section id="education" class="section">
+  <div class="container">
+    <h2 class="section__title">{{ t.sections.education }}</h2>
+    <ul class="timeline">
+      {% for edu in profile.education %}
+      <li class="timeline__item">
+        <div class="timeline__period">{{ edu.period }}</div>
+        <div class="timeline__body">
+          <h3 class="timeline__role">{{ edu.degree }}{% if edu.school %} · <span class="timeline__company">{{ edu.school }}</span>{% endif %}</h3>
+          {% if edu.description %}<p>{{ edu.description }}</p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+{# ==================== ПУБЛИКАЦИИ ==================== #}
+{% if profile.publications %}
+<section id="publications" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">{{ t.sections.publications }}</h2>
+    <ul class="pub-list">
+      {% for pub in profile.publications %}
+      <li class="pub">
+        <div class="pub__year">{{ pub.year }}</div>
+        <div class="pub__body">
+          <h3 class="pub__title">
+            {% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener">{{ pub.title }}</a>
+            {% else %}{{ pub.title }}{% endif %}
+          </h3>
+          <p class="pub__meta">
+            {% if pub.authors %}<span class="pub__authors">{{ pub.authors }}</span>{% endif %}
+            {% if pub.venue %}<span class="pub__venue">{{ pub.venue }}</span>{% endif %}
+          </p>
+          {% if pub.description %}<p class="pub__desc">{{ pub.description }}</p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+{# ==================== КОНТАКТЫ ==================== #}
+<section id="contacts" class="section{% if not profile.publications %} section--alt{% endif %}">
+  <div class="container">
+    <h2 class="section__title">{{ t.sections.contacts }}</h2>
+    <ul class="contacts">
+      {% if profile.email %}
+        <li><span class="contacts__label">{{ t.contacts.email }}</span> <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></li>
+      {% endif %}
+      {% if profile.location %}
+        <li><span class="contacts__label">{{ t.contacts.location }}</span> {{ profile.location }}</li>
+      {% endif %}
+      {% for s in profile.socials or [] %}
+        <li><span class="contacts__label">{{ s.label }}</span> <a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.url }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+{% endblock %}

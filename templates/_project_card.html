@@ -1,0 +1,19 @@
+{# Карточка проекта на главной. Ожидает переменную `p` (Project). #}
+<a class="card" href="{{ url_for('project', slug=p.slug) }}" data-category="{{ p.category }}">
+  <div class="card__media">
+    {% if p.cover_url %}
+      <img src="{{ p.cover_url }}" alt="{{ p.title }}" loading="lazy">
+    {% else %}
+      <div class="card__placeholder">{{ p.title[:1] | upper }}</div>
+    {% endif %}
+  </div>
+  <div class="card__body">
+    <h4 class="card__title">{{ p.title }}</h4>
+    {% if p.summary %}<p class="card__summary">{{ p.summary }}</p>{% endif %}
+    {% if p.tags %}
+      <div class="card__tags">
+        {% for tag in p.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</a>

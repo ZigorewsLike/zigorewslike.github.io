@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} · {{ profile.name }}{% endblock %}
+{% block description %}{{ project.summary }}{% endblock %}
+{% block head_extra %}
+  {% if project.cover_url and site_base_url %}
+    <meta property="og:image" content="{{ site_base_url }}{{ project.cover_url }}">
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+{# ============ ЕДИНЫЙ ШАБЛОН СТРАНИЦЫ ПРОЕКТА (itch.io-стиль) ============ #}
+<article class="project">
+  {# --- Обложка/герой --- #}
+  <div class="project__hero{% if not project.cover_url %} project__hero--plain{% endif %}">
+    {% if project.cover_url %}
+      <img class="project__cover" src="{{ project.cover_url }}" alt="{{ project.title }}">
+    {% endif %}
+    <div class="container project__hero-overlay">
+      <a class="project__back" href="{{ url_for('index') }}#projects">← {{ t.project.back }}</a>
+      <span class="badge badge--{{ project.category }}">{{ t.categories[project.category] }}</span>
+      <h1 class="project__title">{{ project.title }}</h1>
+      {% if project.summary %}<p class="project__summary">{{ project.summary }}</p>{% endif %}
+    </div>
+  </div>
+
+  <div class="container project__layout">
+    {# --- Основной контент (свободное тело + галерея + видео) --- #}
+    <div class="project__main">
+
+      {% if project.video %}
+      <div class="project__video">
+        <div class="embed-16x9">
+          <iframe src="{{ project.video }}" title="{{ project.title }} — видео"
+                  frameborder="0" allowfullscreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+      </div>
+      {% endif %}
+
+      {# Тело из Markdown. Может содержать сырой HTML (canvas/iframe/video для интерактива). #}
+      {% if project.body_html %}
+      <div class="project__body prose">
+        {{ project.body_html | safe }}
+      </div>
+      {% endif %}
+
+      {% if project.gallery %}
+      <div class="project__gallery">
+        <h2 class="project__section-title">{{ t.project.screenshots }}</h2>
+        <div class="gallery">
+          {% for shot in project.gallery %}
+          <figure class="gallery__item">
+            <a href="{{ project.asset_url(shot.src) }}" target="_blank" rel="noopener">
+              <img src="{{ project.asset_url(shot.src) }}" alt="{{ shot.caption or project.title }}" loading="lazy">
+            </a>
+            {% if shot.caption %}<figcaption>{{ shot.caption }}</figcaption>{% endif %}
+          </figure>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    {# --- Сайдбар: метаданные и ссылки --- #}
+    <aside class="project__sidebar">
+      {% if project.links %}
+      <div class="sidebar-block">
+        {% for link in project.links %}
+          <a class="btn btn--{{ link.icon }}" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <dl class="meta">
+        {% if project.date %}
+          <dt>{{ t.project.date }}</dt><dd>{{ project.date }}</dd>
+        {% endif %}
+        <dt>{{ t.project.category }}</dt><dd>{{ t.categories[project.category] }}</dd>
+        {% if project.tech %}
+          <dt>{{ t.project.stack }}</dt>
+          <dd>
+            <div class="chips">{% for item in project.tech %}<span class="chip">{{ item }}</span>{% endfor %}</div>
+          </dd>
+        {% endif %}
+        {% if project.tags %}
+          <dt>{{ t.project.tags }}</dt>
+          <dd>
+            <div class="chips">{% for item in project.tags %}<span class="tag">{{ item }}</span>{% endfor %}</div>
+          </dd>
+        {% endif %}
+      </dl>
+    </aside>
+  </div>
+</article>
+{% endblock %}
