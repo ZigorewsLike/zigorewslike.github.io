@@ -5,6 +5,12 @@
 
 name: "First Last"
 title: "Python Developer · Graphics Programming"
+
+# Browser tab title and the brand label in the site header.
+# Leave empty to fall back to name.
+site_title: "First Last · Portfolio"
+brand: "code&shaders"
+
 tagline: "I build tools in Python and experiment with graphics and shaders."
 
 # Avatar: put a file in static/ and reference it relative to static/, e.g. "img/avatar.jpg"

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{{ profile.name or "Portfolio" }}{% endblock %}</title>
+  <title>{% block title %}{{ site_title }}{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ profile.tagline or "" }}{% endblock %}">
 
   {# Open Graph — для красивых превью при шаринге ссылок #}
@@ -25,7 +25,7 @@
 <body>
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="site-header__brand" href="{{ url_for('index') }}">{{ profile.name or "Portfolio" }}</a>
+      <a class="site-header__brand" href="{{ url_for('index') }}">{{ brand }}</a>
       <nav class="site-nav">
         <a href="{{ url_for('index') }}#projects">{{ t.nav.projects }}</a>
         <a href="{{ url_for('index') }}#experience">{{ t.nav.experience }}</a>

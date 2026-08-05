@@ -178,14 +178,30 @@ img { max-width: 100%; display: block; }
 .contacts__label { display: inline-block; width: 100px; color: var(--text-dim); }
 
 /* ---------- Project page ---------- */
-.project__hero { position: relative; overflow: hidden; background: var(--bg-alt); }
-.project__hero--plain { padding-top: 40px; }
-.project__cover { width: 100%; max-height: 420px; object-fit: cover; opacity: 0.9; }
-.project__hero-overlay { position: relative; padding: 32px 20px; }
-.project__hero:not(.project__hero--plain) .project__hero-overlay {
-  margin-top: -120px; position: relative; z-index: 2;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+/* Шапка проекта. Ширина ограничена контейнером, высота задана в пикселях,
+   поэтому блок почти не меняется от размера экрана. */
+.project__hero { padding: 24px 0 0; }
+.project__hero-inner {
+  position: relative; overflow: hidden;
+  border-radius: var(--radius); border: 1px solid var(--border);
+  background: var(--bg-alt); padding: 28px 24px;
 }
+.project__hero--banner .project__hero-inner {
+  min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end;
+}
+.project__banner { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.project__banner-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(8, 10, 16, 0.92) 0%, rgba(8, 10, 16, 0.6) 45%, rgba(8, 10, 16, 0.2) 100%);
+}
+.project__hero-text { position: relative; z-index: 2; }
+.project__hero--banner .project__title { color: #fff; }
+.project__hero--banner .project__summary,
+.project__hero--banner .project__back { color: rgba(255, 255, 255, 0.82); }
+@media (max-width: 640px) {
+  .project__hero--banner .project__hero-inner { min-height: 220px; padding: 20px 16px; }
+}
+
 .project__back { display: inline-block; margin-bottom: 12px; color: var(--text-dim); font-size: 0.9rem; }
 .project__title { font-size: 2.2rem; margin: 10px 0 8px; }
 .project__summary { color: var(--text-dim); max-width: 60ch; font-size: 1.05rem; }

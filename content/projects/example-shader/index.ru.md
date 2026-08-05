@@ -7,6 +7,7 @@ featured: true
 tags: [glsl, webgl, realtime]
 tech: [GLSL, WebGL, JavaScript]
 # cover: cover.png
+# banner: banner.png
 links:
   - { label: "Исходники", url: "https://github.com/username/shader", icon: github }
   - { label: "Живое демо", url: "https://shadertoy.com/view/XXXX", icon: external }

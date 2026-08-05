@@ -20,7 +20,9 @@ Frontmatter проекта (все поля кроме title/category опцио
   date:     2025-06                      (для сортировки; строка или дата)
   tags:     [numpy, cli]
   tech:     [Python, PyTorch]            (стек — показывается отдельным блоком)
-  cover:    cover.png                     (файл в assets/ — обложка карточки/шапки)
+  cover:    cover.png                     (файл в assets/ — обложка карточки на главной)
+  banner:   banner.png                    (файл в assets/ — широкая картинка шапки
+                                           страницы проекта; без неё шапка без картинки)
   featured: true                         (поднять в начало списка)
   links:                                 (кнопки-ссылки сбоку, itch-стиль)
     - {label: "GitHub", url: "https://...", icon: github}
@@ -87,6 +89,7 @@ class Project:
     tags: list[str] = field(default_factory=list)
     tech: list[str] = field(default_factory=list)
     cover: str | None = None
+    banner: str | None = None
     featured: bool = False
     links: list[Link] = field(default_factory=list)
     gallery: list[GalleryItem] = field(default_factory=list)
@@ -100,6 +103,12 @@ class Project:
     @property
     def cover_url(self) -> str | None:
         return self.asset_url(self.cover) if self.cover else None
+
+    @property
+    def banner_url(self) -> str | None:
+        """Картинка шапки страницы проекта. Обложка карточки сюда не подставляется:
+        у баннера другие пропорции, поэтому его задают отдельным файлом."""
+        return self.asset_url(self.banner) if self.banner else None
 
     @property
     def _sort_key(self) -> tuple[int, str]:
@@ -192,6 +201,7 @@ def _load_project(project_dir: Path, lang: str) -> Project | None:
         tags=[str(t) for t in _as_list(meta.get("tags"))],
         tech=[str(t) for t in _as_list(meta.get("tech"))],
         cover=meta.get("cover"),
+        banner=meta.get("banner"),
         featured=bool(meta.get("featured", False)),
         links=links,
         gallery=gallery,

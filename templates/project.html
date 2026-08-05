@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ project.title }} · {{ profile.name }}{% endblock %}
+{% block title %}{{ project.title }} · {{ site_title }}{% endblock %}
 {% block description %}{{ project.summary }}{% endblock %}
 {% block head_extra %}
   {% if project.cover_url and site_base_url %}
@@ -11,18 +11,23 @@
 {% block content %}
 {# ============ ЕДИНЫЙ ШАБЛОН СТРАНИЦЫ ПРОЕКТА (itch.io-стиль) ============ #}
 <article class="project">
-  {# --- Обложка/герой --- #}
-  <div class="project__hero{% if not project.cover_url %} project__hero--plain{% endif %}">
-    {% if project.cover_url %}
-      <img class="project__cover" src="{{ project.cover_url }}" alt="{{ project.title }}">
-    {% endif %}
-    <div class="container project__hero-overlay">
-      <a class="project__back" href="{{ url_for('index') }}#projects">← {{ t.project.back }}</a>
-      <span class="badge badge--{{ project.category }}">{{ t.categories[project.category] }}</span>
-      <h1 class="project__title">{{ project.title }}</h1>
-      {% if project.summary %}<p class="project__summary">{{ project.summary }}</p>{% endif %}
+  {# --- Шапка проекта: баннер (banner из frontmatter) + заголовок поверх него --- #}
+  <header class="project__hero{% if project.banner_url %} project__hero--banner{% endif %}">
+    <div class="container">
+      <div class="project__hero-inner">
+        {% if project.banner_url %}
+          <img class="project__banner" src="{{ project.banner_url }}" alt="" aria-hidden="true">
+          <span class="project__banner-shade"></span>
+        {% endif %}
+        <div class="project__hero-text">
+          <a class="project__back" href="{{ url_for('index') }}#projects">← {{ t.project.back }}</a>
+{#          <span class="badge badge--{{ project.category }}">{{ t.categories[project.category] }}</span>#}
+          <h1 class="project__title">{{ project.title }}</h1>
+          {% if project.summary %}<p class="project__summary">{{ project.summary }}</p>{% endif %}
+        </div>
+      </div>
     </div>
-  </div>
+  </header>
 
   <div class="container project__layout">
     {# --- Основной контент (свободное тело + галерея + видео) --- #}

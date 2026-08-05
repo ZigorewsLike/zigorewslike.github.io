@@ -72,9 +72,14 @@ def portfolio_app(config: type[Config] = Config) -> Flask:
     @app.context_processor
     def inject_globals():
         lang = g.get("lang", DEFAULT_LANG)
+        profile = store.profile(lang)
         return {
             "lang": lang,
-            "profile": store.profile(lang),
+            "profile": profile,
+            # Заголовок вкладки и подпись кнопки в шапке задаются в профиле
+            # отдельными полями; если их нет — берётся имя.
+            "site_title": profile.get("site_title") or profile.get("name") or "Portfolio",
+            "brand": profile.get("brand") or profile.get("name") or "Portfolio",
             "t": store.translations(lang),
             "category_keys": CATEGORY_KEYS,
             "languages": LANGUAGES,
