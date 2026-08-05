@@ -60,19 +60,28 @@
 {% if profile.experience %}
 <section id="experience" class="section section--alt">
   <div class="container">
-    <h2 class="section__title">{{ t.sections.experience }}</h2>
+    <h2 class="section__title">
+      {{ t.sections.experience }}
+      {% if profile.experience_total %}
+        <span class="section__total">{{ t.experience.total }} · {{ profile.experience_total }}</span>
+      {% endif %}
+    </h2>
     <ul class="timeline">
       {% for job in profile.experience %}
       <li class="timeline__item">
-        <div class="timeline__period">{{ job.period }}</div>
+        <div class="timeline__period">
+          {{ job.period }}
+          {% if job.duration %}<span class="timeline__duration">{{ job.duration }}</span>{% endif %}
+        </div>
         <div class="timeline__body">
           <h3 class="timeline__role">{{ job.role }}{% if job.company %} · <span class="timeline__company">{{ job.company }}</span>{% endif %}</h3>
-          {% if job.description %}<p>{{ job.description }}</p>{% endif %}
-          {% if job.highlights %}
+          {% if job.description %}<div class="timeline__desc">{{ job.description }}</div>{% endif %}
+          {% for group in job.highlights %}
+            {% if group.title %}<h4 class="timeline__group">{{ group.title }}</h4>{% endif %}
             <ul class="timeline__highlights">
-              {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
+              {% for h in group['items'] %}<li>{{ h }}</li>{% endfor %}
             </ul>
-          {% endif %}
+          {% endfor %}
         </div>
       </li>
       {% endfor %}
@@ -92,7 +101,7 @@
         <div class="timeline__period">{{ edu.period }}</div>
         <div class="timeline__body">
           <h3 class="timeline__role">{{ edu.degree }}{% if edu.school %} · <span class="timeline__company">{{ edu.school }}</span>{% endif %}</h3>
-          {% if edu.description %}<p>{{ edu.description }}</p>{% endif %}
+          {% if edu.description %}<div class="timeline__desc">{{ edu.description }}</div>{% endif %}
         </div>
       </li>
       {% endfor %}
@@ -119,7 +128,12 @@
             {% if pub.authors %}<span class="pub__authors">{{ pub.authors }}</span>{% endif %}
             {% if pub.venue %}<span class="pub__venue">{{ pub.venue }}</span>{% endif %}
           </p>
-          {% if pub.description %}<p class="pub__desc">{{ pub.description }}</p>{% endif %}
+          {% if pub.description %}
+            <details class="pub__abstract">
+              <summary>{{ t.publications.abstract }}</summary>
+              <div class="pub__desc">{{ pub.description }}</div>
+            </details>
+          {% endif %}
         </div>
       </li>
       {% endfor %}

@@ -29,6 +29,12 @@ project:
   stack: "Stack"
   tags: "Tags"
 
+experience:
+  total: "Total experience"
+
+publications:
+  abstract: "Abstract"
+
 contacts:
   email: "Email"
   location: "Location"

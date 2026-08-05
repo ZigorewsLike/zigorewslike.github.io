@@ -3,54 +3,127 @@
 # «Публикации», «Контакты». Все секции опциональны.
 # ============================================================
 
-name: "Имя Фамилия"
+name: "Черепанов Игорь"
 title: "Python-разработчик · Graphics Programming"
 tagline: "Пишу инструменты на Python и экспериментирую с графикой и шейдерами."
 
 # Аватар: положи файл в static/ и укажи путь относительно static/, напр. "img/avatar.jpg"
 avatar: ""
 
-email: "you@example.com"
-location: "Город, Страна"
+email: "zigorewslike@gmail.com"
+location: "Санкт-Петербург, Россия"
 
 socials:
-  - { label: "GitHub", url: "https://github.com/username" }
-  - { label: "Telegram", url: "https://t.me/username" }
-  - { label: "ArtStation", url: "https://artstation.com/username" }
+  - { label: "GitHub", url: "https://github.com/ZigorewsLike" }
+  - { label: "Telegram", url: "https://t.me/interCoder" }
+#  - { label: "ArtStation", url: "https://artstation.com/username" }
 
 # ---------- Опыт работы ----------
+# start / end: "ГГГГ-ММ" (можно и просто "ГГГГ", это январь).
+# Пустой end = работаю по сей день. Подпись периода («май 2023 – по настоящее
+# время») и стаж считаются автоматически. Чтобы задать подпись вручную,
+# добавь поле period, оно перекрывает автоматическое.
+#
+# highlights: либо просто строки, либо группы с заголовком:
+#   highlights:
+#     - "Пункт без группы"
+#     - group: "Заголовок группы"
+#       items: ["Пункт", "Ещё пункт"]
+#
+# В описаниях и пунктах работает Markdown: [подпись](https://ссылка),
+# **жирный**, списки. Голый адрес https://... тоже станет ссылкой.
+# Многострочный текст пиши блоком `|`, тогда пустая строка даст новый абзац:
+#   description: |
+#     Первый абзац.
+#
+#     Второй абзац.
+# В кавычках YAML склеит строки в одну и абзацы потеряются.
 experience:
-  - period: "2023 — сейчас"
-    role: "Python Developer"
-    company: "Компания"
-    description: "Кратко о роли и задачах."
+  - start: "2021-10"   # поставь реальный месяц начала
+    end: ""
+    role: "Ведущий Python-разработчик/ML-инженер"
+    company: "ООО \"КОНТРОЛ СИСТЕМС\""
+    description: |
+      Разработка различных ИИ решений для крупных промышленных компаний (Газстойпром, НЛМК и другие),
+      разработка ПО, управление командой ML-инженеров (тимлид).
     highlights:
-      - "Достижение или ключевая задача №1"
-      - "Достижение №2"
-  - period: "2021 — 2023"
-    role: "Junior Developer"
-    company: "Другая компания"
-    description: "Что делал."
+      - group: "Задачи NLP/LLM"
+        items:
+          - "Применение LLM для суммаризации текста и ответов на вопросы пользователя с обращением к базе данных через SQL-запрос. Работа с llama_cpp."
+          - "Дообучение LLM с помощью LoRA на SQL-данных."
+          - "Автоматизация заполнения сводной документации с использованием NLP и ML. Дообучение BERT через MLM/Contrastive learning с добавлением полносвязного слоя для классификации."
+          - "Разбиение PDF-документов по ключевым словам с помощью OCR. Использование архитектур и решений Tesseract, EasyOCR (с дообучением), DolphinOCR."
+          - "Создание сервиса для генерации протоколов встреч через Whisper."
+          - "Создание и поддержка API для перечисленных задач на FastAPI."
+          - "Автоматическое построение календарно-сетевых графиков (КСГ) через NLP."
+      - group: "Задачи CV"
+        items:
+          - "Обучение свёрточной нейронной сети для семантической сегментации малых объектов на больших рентгеновских снимках размером до 150 000 x 2 000 пикселей."
+          - "Разработка десктопного приложения на PyQt для разметки DICONDE-снимков (помимо классических DCM, PNG, JPG, TIFF). Встраивание свёрточной сети в приложение, квантизация весов в ONNX, оптимизация алгоритмов: приложение работало на ноутбуках и серверах без видеокарты."
+          - "Разработка конвертеров DCM в PNG и API для разбиения DCM-снимков на тайлы. Бэкенд-сервис онлайн-просмотра больших снимков."
+          - "Обнаружение СИЗ (каски, жилеты), система детекции пересечения запретной зоны, детекция людей и транспорта."
+          - "Определение износа техники в горнодобывающей промышленности: отсутствие зубьев у экскаватора, износ ленты, сегментация гранулометрического состава руды."
+      - group: "Работа с 3D"
+        items:
+          - "3D-классификация объектов: классификация отдельных объектов 3D-модели площадки."
+          - "Сегментация облаков точек: разметка данных через CloudCompare и обучение моделей сегментации дорог, дорожных знаков, карьеров."
+          - "Написание алгоритмов обратной вокселизации и разбиения облаков точек по матрицам камеры."
+      - group: "Прочее"
+        items:
+          - "Разработка скриптов для бэкенд-стенда, импорт данных на портал через XLSX-файл."
+          - "Проектирование архитектуры программных решений."
+          - "Ведение код-ревью."
+          - "Настройка GitLab CI/CD."
+          - "Участие в демопоказах заказчику."
+  - start: "2019-01"   # поставь реальные месяцы
+    end: "2021-07"
+    role: "Инженер-программист"
+    company: "Институт динамики систем и теории управления Сибирского отделения Российской академии наук"
+    description: |
+      Работал в лаборатории над научным проектом TabbyPDF (автоматическое распознавание
+      и извлечение таблиц из документов), финансируемым Российским научным фондом.
+
+      [Профиль в Scopus](https://www.scopus.com/authid/detail.uri?authorId=57211335591)
+    highlights:
+      - group: "Научная деятельность"
+        items:
+          - "Написал [статью](https://doi.org/10.23919/MIPRO48935.2020.9245241), которая была опубликована в трудах конференции MIPRO 2020, индексируемых Scopus. Также в соавторстве написаны ещё 2 статьи, индексируемые Scopus."
+      - group: "Обязанности"
+        items:
+          - "Обучение глубокой нейронной сети для обнаружения таблиц на изображениях документов."
+          - "Написание скриптов для преобразования наборов данных."
+          - "Разработка общей схемы алгоритма подготовки данных для обучения."
+          - "Автоматизация процесса подготовки данных и обучения глубокой нейронной сети."
 
 # ---------- Образование ----------
 education:
+  - period: "2023 — 2025"
+    degree: "Магистр"
+    school: "Санкт-Петербургский государственный университет аэрокосмического приборостроения, Санкт-Петербург"
+    description: "Информатика и вычислительная техника"
   - period: "2017 — 2021"
-    degree: "Бакалавр, Прикладная математика"
-    school: "Университет"
-    description: "Специализация, если нужно."
+    degree: "Бакалавр"
+    school: "Иркутский государственный университет, Иркутск"
+    description: "Математическое обеспечение и администрирование информационных систем"
 
 # ---------- Публикации ----------
 # Статьи, доклады, посты. Поля url/venue/description опциональны.
 publications:
-  - title: "Название статьи или доклада"
-    authors: "Фамилия И., Соавтор А."
-    venue: "Название журнала / конференции"
-    year: 2024
-    url: "https://doi.org/..."
-    description: "Одно-два предложения, о чём работа."
-  - title: "Второй доклад / статья"
-    authors: "Фамилия И."
-    venue: "Конференция XYZ"
-    year: 2023
-    url: ""
-    description: ""
+  - title: "On automated workflow for fine-tuning deepneural network models for table detection in document images"
+    authors: "Igor Cherepanov, Andrey Mikhailov, Alexey Shigarov, and Viacheslav Paramonov"
+    venue: "43rd International Convention on Information, Communication and Electronic Technology, MIPRO 2020 - Proceedings, 2020, pages 1130–1133"
+    year: 2020
+    url: "https://doi.org/10.23919/MIPRO48935.2020.9245241"
+    description: "Nowadays methods and software for extracting tables from document images and portable documents (PDF) continue to be actively developed. One of the promising approaches to this task is the usage of fine-tuned object detection models. However, this approach involves many manipulations with data preparation and training process configuration. This paper proposes an automated workflow for fine-tuning deep neural network models for the table detection in document images. It enables us to automate two sub-tasks: (i) preparing a training dataset in the PascalVOC format with image transformation and augmentation; (ii) training a table detection model by using the well-known Faster R-CNN architecture. Implementation of the workflow design simplifies the use of the approach proposed by decreasing the number of required manipulations."
+  - title: "On Graph-Based Verification for PDF Table Detection"
+    authors: "Andrey Mikhailov, Alexey Shigarov, Egor Rozhkov, and Igor Cherepanov"
+    venue: "Ivannikov Ispras Open Conference (ISPRAS)"
+    year: 2020
+    url: "https://doi.org/10.1109/ISPRAS51486.2020.00020"
+    description: "Many non-editable documents are shared in PDF (Portable Document Format). They are typically not accompanied by tags for annotating the page layout, including table positions. One of the important challenges of the analysis and understanding of such documents is table detection. This paper outlines a novel two-phase approach to the table detection in untagged PDF documents. The first phase uses deep neural networks (DNN) to predict some table candidates. The second phase selects probable tables from the candidates by verifying their graph representation. We build a weighted directed graph from text blocks inside a predicted area of a table. A set of such graphs produced from the “ICDAR 2013 Table Competition” dataset allowed us to train a verification model based on the Random Forest technique. The empirical results for competitive dataset demonstrated high performance of our implementation of this approach. We showed that additional verification enables reduction of errors and improvement of results of the PDF table detection."
+  - title: "Towards end-to-end transformation of arbitrary tables from untagged portable documents (PDF) to linked data"
+    authors: "Alexey Shigarov, Igor Cherepanov, Evgeniy Cherkashin, Nikita Dorodnykh, Vasiliy Khristyuk, Andrey Mikhailov , Viacheslav Paramonov, Egor Rozhkow, and Alexandr Yurin"
+    venue: "CEUR Workshop Proceedings, 2463, pages 1–12"
+    year: 2019
+    url: "http://ceur-ws.org/Vol-2463/paper1.pdf"
+    description: "The paper is devoted to the problem of an end-to-end table transformation from untagged portable documents (PDF) to linked data. It covers the issues of the table extraction from documents, the reconstruction of logical table structure, the conceptualization of their natural-language content, and the linking of extracted data with external vocabularies. We consider some perspective approaches for the deeplearning-based table detection, heuristic-based table structure recognition, rule-based table analysis, and knowledge-based table interpretation. They can be used as a basis to develop a consistent solution for this problem. Our application experience confirms that such solutions are demanded for populating databases and generating ontologies with tabular data being extracted from weakly and semi-structured documents."

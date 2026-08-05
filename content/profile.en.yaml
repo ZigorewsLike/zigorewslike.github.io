@@ -19,15 +19,41 @@ socials:
   - { label: "ArtStation", url: "https://artstation.com/username" }
 
 # ---------- Work experience ----------
+# start / end: "YYYY-MM" (or just "YYYY", meaning January).
+# An empty end means "still working here". The period label ("May 2023 –
+# present") and the durations are computed automatically. To write the label
+# by hand, add a `period` field: it overrides the computed one.
+#
+# highlights: either plain strings or groups with a heading:
+#   highlights:
+#     - "Ungrouped bullet"
+#     - group: "Group heading"
+#       items: ["Bullet", "Another bullet"]
+#
+# Descriptions and bullets support Markdown: [label](https://link), **bold**,
+# lists. A bare https://... address becomes a link too. Write multi-line text
+# as a `|` block, so a blank line starts a new paragraph:
+#   description: |
+#     First paragraph.
+#
+#     Second paragraph.
+# Inside quotes YAML folds the lines into one and the paragraphs are lost.
 experience:
-  - period: "2023 — present"
+  - start: "2023-01"   # put the real starting month here
+    end: ""
     role: "Python Developer"
     company: "Company"
     description: "Short summary of the role and responsibilities."
     highlights:
-      - "Key achievement or task #1"
-      - "Achievement #2"
-  - period: "2021 — 2023"
+      - group: "NLP / LLM"
+        items:
+          - "Key achievement or task #1"
+          - "Achievement #2"
+      - group: "Computer vision"
+        items:
+          - "Achievement #3"
+  - start: "2021-01"   # put the real months here
+    end: "2022-12"
     role: "Junior Developer"
     company: "Another company"
     description: "What I worked on."

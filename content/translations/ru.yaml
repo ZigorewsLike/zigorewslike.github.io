@@ -29,6 +29,12 @@ project:
   stack: "Стек"
   tags: "Теги"
 
+experience:
+  total: "Общий стаж"
+
+publications:
+  abstract: "Аннотация"
+
 contacts:
   email: "Email"
   location: "Локация"

@@ -46,6 +46,9 @@ import frontmatter
 import markdown as md
 import yaml
 
+from portfolio.experience import with_experience
+from portfolio.richtext import render_profile
+
 # Поддерживаемые языки: код -> подпись в переключателе. Первый = по умолчанию.
 LANGUAGES: dict[str, str] = {
     "ru": "Русский",
@@ -236,7 +239,8 @@ class ContentStore:
             if not data and lang != DEFAULT_LANG:
                 data = _load_yaml(self.content_dir / f"profile.{DEFAULT_LANG}.yaml")
             self._profile_cache[lang] = data
-        return self._profile_cache[lang]
+        # Стаж считается от текущей даты, поэтому на каждый вызов.
+        return render_profile(with_experience(self._profile_cache[lang], lang))
 
     # --- UI-строки -----------------------------------------------------
     def translations(self, lang: str) -> dict:

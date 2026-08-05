@@ -78,6 +78,9 @@ img { max-width: 100%; display: block; }
 .section { padding: 48px 0; }
 .section--alt { background: var(--bg-alt); }
 .section__title { font-size: 1.6rem; margin: 0 0 24px; }
+.section__total {
+  font-size: 0.9rem; font-weight: 400; color: var(--text-dim); white-space: nowrap;
+}
 
 /* ---------- Filter ---------- */
 .filter { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
@@ -135,9 +138,17 @@ img { max-width: 100%; display: block; }
 }
 .timeline__item:first-child { border-top: none; }
 .timeline__period { color: var(--text-dim); font-size: 0.9rem; }
+.timeline__duration { display: block; margin-top: 4px; font-size: 0.82rem; opacity: 0.75; }
 .timeline__role { margin: 0 0 6px; font-size: 1.1rem; }
 .timeline__company { color: var(--accent); font-weight: 400; }
+.timeline__desc p { margin: 0 0 8px; }
+.timeline__desc p:last-child { margin-bottom: 0; }
+.timeline__desc a, .timeline__highlights a, .pub__desc a { text-decoration: underline; }
+.timeline__group {
+  margin: 14px 0 4px; font-size: 0.95rem; font-weight: 600; color: var(--text);
+}
 .timeline__highlights { margin: 8px 0 0; padding-left: 18px; color: var(--text-dim); }
+.timeline__highlights li { margin-bottom: 4px; }
 @media (max-width: 640px) { .timeline__item { grid-template-columns: 1fr; gap: 6px; } }
 
 /* ---------- Publications ---------- */
@@ -152,7 +163,13 @@ img { max-width: 100%; display: block; }
 .pub__meta { margin: 0 0 6px; color: var(--text-dim); font-size: 0.9rem; }
 .pub__authors::after { content: " · "; }
 .pub__venue { font-style: italic; }
-.pub__desc { margin: 0; color: var(--text-dim); }
+.pub__desc { margin: 8px 0 0; color: var(--text-dim); max-width: 80ch; }
+.pub__desc p { margin: 0 0 6px; }
+.pub__desc p:last-child { margin-bottom: 0; }
+.pub__abstract > summary {
+  cursor: pointer; width: fit-content; color: var(--accent); font-size: 0.9rem;
+}
+.pub__abstract > summary:hover { text-decoration: underline; }
 @media (max-width: 640px) { .pub { grid-template-columns: 1fr; gap: 4px; } }
 
 /* ---------- Contacts ---------- */
@@ -215,6 +232,10 @@ img { max-width: 100%; display: block; }
 .prose p { margin: 0 0 1em; }
 .prose ul, .prose ol { padding-left: 1.4em; margin: 0 0 1em; }
 .prose img { border-radius: var(--radius); margin: 1em 0; border: 1px solid var(--border); }
+/* Картинка с подписью внутри тела проекта. */
+.prose figure { margin: 1.4em 0; }
+.prose figure img { margin: 0; }
+.prose figcaption { color: var(--text-dim); font-size: 0.85rem; margin-top: 8px; text-align: center; }
 .prose a { text-decoration: underline; }
 .prose blockquote {
   margin: 1em 0; padding: 8px 18px; border-left: 3px solid var(--accent);
