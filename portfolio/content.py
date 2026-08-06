@@ -17,7 +17,8 @@ Frontmatter проекта (все поля кроме title/category опцио
   title:    "Название проекта"          (обязательно)
   category: python | shaders            (обязательно)
   summary:  "Короткое описание для карточки на главной"
-  date:     2025-06                      (для сортировки; строка или дата)
+  date:     2025-06                      (сортировка списка и подпись на карточке;
+                                          строка или дата)
   tags:     [numpy, cli]
   tech:     [Python, PyTorch]            (стек — показывается отдельным блоком)
   cover:    cover.png                     (файл в assets/ — обложка карточки на главной)
@@ -39,6 +40,7 @@ UI-строки:    content/translations/<lang>.yaml
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from datetime import date, datetime
 from pathlib import Path
@@ -60,7 +62,7 @@ DEFAULT_LANG = "ru"
 
 # Ключи категорий (человекочитаемые подписи берутся из translations/<lang>.yaml).
 # Порядок = порядок секций на главной.
-CATEGORY_KEYS: list[str] = ["python", "shaders"]
+CATEGORY_KEYS: list[str] = ["python", "shaders", "other"]
 
 _MD_EXTENSIONS = ["fenced_code", "codehilite", "tables", "toc", "attr_list", "smarty"]
 
@@ -86,6 +88,7 @@ class Project:
     category: str
     summary: str = ""
     date: str = ""
+    date_label: str = ""   # дата в виде "июль 2026" для показа на карточке
     tags: list[str] = field(default_factory=list)
     tech: list[str] = field(default_factory=list)
     cover: str | None = None
@@ -111,11 +114,11 @@ class Project:
         return self.asset_url(self.banner) if self.banner else None
 
     @property
-    def _sort_key(self) -> tuple[int, str]:
-        return (0 if self.featured else 1, self._neg_date())
-
-    def _neg_date(self) -> str:
-        return "".join(chr(255 - ord(c)) for c in str(self.date))
+    def _sort_key(self) -> tuple[int, int, int, str]:
+        """Сначала свежие проекты; при равной дате выше featured, затем по слагу.
+        Проекты без даты уходят в конец списка."""
+        year, month = _date_parts(self.date)
+        return (-year, -month, 0 if self.featured else 1, self.slug)
 
 
 def _normalize_link(raw: Any) -> Link | None:
@@ -150,6 +153,25 @@ def _stringify_date(value: Any) -> str:
     return "" if value is None else str(value)
 
 
+def _date_parts(value: str) -> tuple[int, int]:
+    """Год и месяц из строки вида "2026-07" или "2026". Без даты - нули."""
+    match = re.match(r"\s*(\d{4})(?:[-/.](\d{1,2}))?", value or "")
+    if not match:
+        return (0, 0)
+    return (int(match.group(1)), int(match.group(2) or 0))
+
+
+def _date_label(value: str, months: list[str]) -> str:
+    """Подпись даты для карточки: "июль 2026". Без месяца или без списка
+    названий остаётся исходная строка."""
+    year, month = _date_parts(value)
+    if not year:
+        return value
+    if not month or not (1 <= month <= len(months)):
+        return str(year)
+    return f"{months[month - 1]} {year}"
+
+
 def _resolve_lang(lang: str) -> str:
     return lang if lang in LANGUAGES else DEFAULT_LANG
 
@@ -165,7 +187,7 @@ def _project_file(project_dir: Path, lang: str) -> Path | None:
     return None
 
 
-def _load_project(project_dir: Path, lang: str) -> Project | None:
+def _load_project(project_dir: Path, lang: str, months: list[str]) -> Project | None:
     index = _project_file(project_dir, lang)
     if index is None:
         return None
@@ -187,6 +209,7 @@ def _load_project(project_dir: Path, lang: str) -> Project | None:
         )
 
     body_html = md.markdown(post.content, extensions=_MD_EXTENSIONS)
+    project_date = _stringify_date(meta.get("date"))
 
     gallery = [g for g in (_normalize_gallery_item(x) for x in _as_list(meta.get("gallery"))) if g]
     links = [l for l in (_normalize_link(x) for x in _as_list(meta.get("links"))) if l]
@@ -197,7 +220,8 @@ def _load_project(project_dir: Path, lang: str) -> Project | None:
         title=str(title),
         category=str(category),
         summary=str(meta.get("summary", "")),
-        date=_stringify_date(meta.get("date")),
+        date=project_date,
+        date_label=_date_label(project_date, months),
         tags=[str(t) for t in _as_list(meta.get("tags"))],
         tech=[str(t) for t in _as_list(meta.get("tech"))],
         cover=meta.get("cover"),
@@ -268,11 +292,13 @@ class ContentStore:
         if lang in self._projects_cache and not self.reload:
             return self._projects_cache[lang]
 
+        months = [str(m) for m in _as_list(self.translations(lang).get("months"))]
+
         projects: list[Project] = []
         if self.projects_dir.exists():
             for child in sorted(self.projects_dir.iterdir()):
                 if child.is_dir() and not child.name.startswith((".", "_")):
-                    project = _load_project(child, lang)
+                    project = _load_project(child, lang, months)
                     if project:
                         projects.append(project)
 

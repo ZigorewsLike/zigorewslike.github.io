@@ -15,5 +15,6 @@
         {% for tag in p.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
       </div>
     {% endif %}
+    {% if p.date_label %}<p class="card__date">{{ p.date_label }}</p>{% endif %}
   </div>
 </a>

@@ -113,10 +113,12 @@ img { max-width: 100%; display: block; }
   font-size: 3rem; font-weight: 700; color: var(--text-dim);
   background: linear-gradient(135deg, var(--surface-2), var(--surface));
 }
-.card__body { padding: 16px; }
+/* Колонка с растяжкой: дата прижата к низу карточки, у всех карточек в ряд она на одной линии. */
+.card__body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
 .card__title { margin: 0 0 6px; font-size: 1.1rem; }
 .card__summary { margin: 0 0 12px; color: var(--text-dim); font-size: 0.92rem; }
 .card__tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.card__date { margin: auto 0 0; padding-top: 12px; font-size: 0.78rem; color: var(--text-dim); }
 
 /* ---------- Tags / chips / badges ---------- */
 .tag, .chip {
@@ -129,6 +131,7 @@ img { max-width: 100%; display: block; }
   background: var(--accent); color: #fff; font-weight: 600;
 }
 .badge--shaders { background: var(--accent-2); }
+.badge--other { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
 
 /* ---------- Timeline (опыт / образование) ---------- */
 .timeline { list-style: none; padding: 0; margin: 0; }

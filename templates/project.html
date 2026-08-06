@@ -79,7 +79,7 @@
 
       <dl class="meta">
         {% if project.date %}
-          <dt>{{ t.project.date }}</dt><dd>{{ project.date }}</dd>
+          <dt>{{ t.project.date }}</dt><dd>{{ project.date_label or project.date }}</dd>
         {% endif %}
         <dt>{{ t.project.category }}</dt><dd>{{ t.categories[project.category] }}</dd>
         {% if project.tech %}

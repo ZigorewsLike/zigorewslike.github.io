@@ -18,8 +18,13 @@ sections:
 categories:
   python: "Python"
   shaders: "Shaders / Graphics"
+  other: "Other"
 
 filter_all: "All"
+
+# Month names for the project date label (January = first item).
+months: ["January", "February", "March", "April", "May", "June",
+         "July", "August", "September", "October", "November", "December"]
 
 project:
   back: "Back to all projects"
@@ -40,7 +45,7 @@ contacts:
   location: "Location"
 
 empty: "No projects yet. Add a folder to content/projects/."
-footer: "Built with Flask + Jinja2"
+footer: ""
 
 not_found:
   message: "This page does not exist."

@@ -18,8 +18,13 @@ sections:
 categories:
   python: "Python"
   shaders: "Shaders / Graphics"
+  other: "Другое"
 
 filter_all: "Все"
+
+# Названия месяцев для подписи даты проекта (январь = первый элемент).
+months: ["январь", "февраль", "март", "апрель", "май", "июнь",
+         "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]
 
 project:
   back: "Ко всем проектам"
@@ -40,7 +45,7 @@ contacts:
   location: "Локация"
 
 empty: "Пока нет ни одного проекта. Добавь папку в content/projects/."
-footer: "Собрано на Flask + Jinja2"
+footer: ""
 
 not_found:
   message: "Такой страницы нет."
