@@ -17,6 +17,18 @@
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
   --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+
+  /* Цвета подсветки кода (см. секцию Pygments ниже). */
+  --code-comment: #6b7394;
+  --code-keyword: #b48cff;
+  --code-type: #6ec7ff;
+  --code-builtin: #7fd6b3;
+  --code-func: #8fb4ff;
+  --code-number: #ffb877;
+  --code-string: #a9e28a;
+  --code-meta: #ff9d7a;
+  --code-punct: #a3aac4;
+  --code-error: #ff7b72;
 }
 
 @media (prefers-color-scheme: light) {
@@ -24,6 +36,17 @@
     --bg: #f6f7fb; --bg-alt: #eef0f6; --surface: #ffffff; --surface-2: #f2f4fa;
     --text: #1a1d27; --text-dim: #5b6070; --border: #e1e4ee;
     --shadow: 0 8px 30px rgba(20, 24, 40, 0.08);
+
+    --code-comment: #6a737d;
+    --code-keyword: #8250df;
+    --code-type: #0550ae;
+    --code-builtin: #0f766e;
+    --code-func: #1f6feb;
+    --code-number: #b45309;
+    --code-string: #0a7d33;
+    --code-meta: #b1560f;
+    --code-punct: #57606a;
+    --code-error: #b3261e;
   }
 }
 
@@ -265,6 +288,141 @@ img { max-width: 100%; display: block; }
 .prose pre code { background: none; padding: 0; }
 .prose table { border-collapse: collapse; width: 100%; margin: 1em 0; }
 .prose th, .prose td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+
+/* ---------- Подсветка кода (Pygments через расширение codehilite) ----------
+   Классы расставляет лексер, выбранный по языку в ограде: ```hlsl, ```python.
+   Токены без правила остаются цветом текста, поэтому список неполный намеренно. */
+.codehilite .c, .codehilite .ch, .codehilite .cm, .codehilite .c1, .codehilite .cs {
+  color: var(--code-comment); font-style: italic;
+}
+/* Директивы препроцессора: #ifdef, #include. */
+.codehilite .cp, .codehilite .cpf { color: var(--code-meta); }
+.codehilite .k, .codehilite .kc, .codehilite .kd, .codehilite .kn,
+.codehilite .kp, .codehilite .kr, .codehilite .nt { color: var(--code-keyword); }
+/* Типы: float3, half4, struct-имена. В шейдерах это основная масса токенов. */
+.codehilite .kt, .codehilite .nc, .codehilite .nn { color: var(--code-type); }
+/* Встроенные функции языка: normalize, saturate, lerp. */
+.codehilite .nb, .codehilite .bp { color: var(--code-builtin); }
+.codehilite .nf, .codehilite .fm { color: var(--code-func); }
+.codehilite .nd, .codehilite .na, .codehilite .nl { color: var(--code-meta); }
+.codehilite .m, .codehilite .mb, .codehilite .mf, .codehilite .mh,
+.codehilite .mi, .codehilite .mo, .codehilite .il, .codehilite .no { color: var(--code-number); }
+.codehilite .s, .codehilite .sa, .codehilite .sb, .codehilite .sc, .codehilite .dl,
+.codehilite .sd, .codehilite .s2, .codehilite .se, .codehilite .sh, .codehilite .si,
+.codehilite .sx, .codehilite .sr, .codehilite .s1, .codehilite .ss { color: var(--code-string); }
+.codehilite .o, .codehilite .ow, .codehilite .p { color: var(--code-punct); }
+.codehilite .err { color: var(--code-error); }
+/* Диффы и вывод команд в блоках с языком diff/console. */
+.codehilite .gd { color: var(--code-error); }
+.codehilite .gi { color: var(--code-string); }
+.codehilite .gh, .codehilite .gu { color: var(--code-func); font-weight: 600; }
+.codehilite .ge { font-style: italic; }
+.codehilite .gs { font-weight: 600; }
+
+/* ============================================================
+   Тема "stars": звёздный фон страницы проекта (theme: stars во frontmatter).
+   Два слоя точек из radial-gradient едут с разной скоростью, что даёт параллакс.
+   ============================================================ */
+.theme-stars {
+  /* Палитра фиксируется тёмной в обеих схемах: на светлом фоне звёзд не видно. */
+  --bg: #05070f;
+  --bg-alt: #090d1a;
+  --surface: #111629;
+  --surface-2: #171d33;
+  --text: #e6e8ee;
+  --text-dim: #9aa0b0;
+  --border: #232a44;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  /* Тёмная подсветка кода: в светлой схеме страница всё равно остаётся тёмной. */
+  --code-comment: #6b7394;
+  --code-keyword: #b48cff;
+  --code-type: #6ec7ff;
+  --code-builtin: #7fd6b3;
+  --code-func: #8fb4ff;
+  --code-number: #ffb877;
+  --code-string: #a9e28a;
+  --code-meta: #ff9d7a;
+  --code-punct: #a3aac4;
+  --code-error: #ff7b72;
+  /* Свечение у верхнего края, чтобы фон не был плоской заливкой. */
+  background:
+    /*radial-gradient(120% 70% at 50% 0%, #16203f 0%, rgba(5, 7, 15, 0) 70%),*/
+    var(--bg);
+  background-attachment: fixed;
+}
+
+.theme-stars::before,
+.theme-stars::after {
+  content: "";
+  position: fixed;
+  /* Запас сверху: слой уезжает вниз ровно на размер плитки и повторяется без шва. */
+  inset: -340px 0 0 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Дальний слой: мелкие тусклые звёзды, движение медленнее. */
+.theme-stars::before {
+  background-image:
+    radial-gradient(1px 1px at 23px 17px, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 78px 141px, rgba(210, 225, 255, 0.7), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 145px 53px, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 191px 98px, rgba(255, 240, 220, 0.7), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 62px 187px, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 12px 112px, rgba(200, 215, 255, 0.8), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 167px 172px, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 99px 29px, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 134px 119px, rgba(230, 240, 255, 0.6), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 47px 74px, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 183px 7px, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 7px 163px, rgba(255, 250, 235, 0.6), rgba(255, 255, 255, 0));
+  background-size: 200px 200px;
+  animation: stars-drift-far 300s linear infinite, stars-twinkle 9s ease-in-out infinite;
+}
+
+/* Ближний слой: крупнее и ярче, движение быстрее. */
+.theme-stars::after {
+  background-image:
+    radial-gradient(1.6px 1.6px at 41px 63px, #ffffff 45%, rgba(255, 255, 255, 0)),
+    radial-gradient(1.6px 1.6px at 212px 29px, #dce7ff 45%, rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 287px 151px, #ffffff 45%, rgba(255, 255, 255, 0)),
+    radial-gradient(1.6px 1.6px at 96px 241px, #fff3e0 45%, rgba(255, 255, 255, 0)),
+    radial-gradient(1.6px 1.6px at 159px 97px, #ffffff 45%, rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 263px 286px, #cfe0ff 45%, rgba(255, 255, 255, 0)),
+    radial-gradient(1.6px 1.6px at 24px 199px, #ffffff 45%, rgba(255, 255, 255, 0)),
+    radial-gradient(1.6px 1.6px at 301px 74px, #ffffff 45%, rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 128px 313px, #ffe9cc 45%, rgba(255, 255, 255, 0)),
+    radial-gradient(1.6px 1.6px at 188px 208px, #ffffff 45%, rgba(255, 255, 255, 0));
+  background-size: 340px 340px;
+  animation: stars-drift-near 170s linear infinite;
+}
+
+/* Содержимое поверх слоёв. Шапка позиционирована своим z-index и уже выше. */
+.theme-stars > main,
+.theme-stars > .site-footer { position: relative; z-index: 1; }
+
+/* Подвал закрывает звёзды собственной заливкой. */
+.theme-stars > .site-footer { background: var(--bg); }
+
+@keyframes stars-drift-far {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, 200px, 0); }
+}
+
+@keyframes stars-drift-near {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, 340px, 0); }
+}
+
+@keyframes stars-twinkle {
+  0%, 100% { opacity: 0.75; }
+  50%      { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-stars::before,
+  .theme-stars::after { animation: none; }
+}
 
 /* ---------- Misc ---------- */
 .empty { color: var(--text-dim); }

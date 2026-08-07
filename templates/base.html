@@ -22,7 +22,8 @@
 
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
+{# Класс страницы: сюда шаблоны подставляют оформление, например theme-stars. #}
+<body class="{% block body_class %}{% endblock %}">
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-header__brand" href="{{ url_for('index') }}">{{ brand }}</a>

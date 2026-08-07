@@ -2,6 +2,7 @@
 
 {% block title %}{{ project.title }} · {{ site_title }}{% endblock %}
 {% block description %}{{ project.summary }}{% endblock %}
+{% block body_class %}{% if project.theme %}theme-{{ project.theme }}{% endif %}{% endblock %}
 {% block head_extra %}
   {% if project.cover_url and site_base_url %}
     <meta property="og:image" content="{{ site_base_url }}{{ project.cover_url }}">

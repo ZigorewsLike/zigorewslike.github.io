@@ -25,6 +25,8 @@ Frontmatter проекта (все поля кроме title/category опцио
   banner:   banner.png                    (файл в assets/ — широкая картинка шапки
                                            страницы проекта; без неё шапка без картинки)
   featured: true                         (поднять в начало списка)
+  theme:    stars                        (оформление страницы: на <body> вешается
+                                          класс theme-stars, правила в style.css)
   links:                                 (кнопки-ссылки сбоку, itch-стиль)
     - {label: "GitHub", url: "https://...", icon: github}
   gallery:                               (скриншоты; если нет — блок не рендерится)
@@ -93,6 +95,7 @@ class Project:
     tech: list[str] = field(default_factory=list)
     cover: str | None = None
     banner: str | None = None
+    theme: str = ""      # имя оформления страницы, см. класс theme-* в style.css
     featured: bool = False
     links: list[Link] = field(default_factory=list)
     gallery: list[GalleryItem] = field(default_factory=list)
@@ -172,6 +175,12 @@ def _date_label(value: str, months: list[str]) -> str:
     return f"{months[month - 1]} {year}"
 
 
+def _theme_name(value: Any) -> str:
+    """Имя темы для класса на <body>. Лишние символы отбрасываются, потому что
+    значение идёт прямо в атрибут class."""
+    return re.sub(r"[^a-z0-9_-]", "", str(value or "").lower())
+
+
 def _resolve_lang(lang: str) -> str:
     return lang if lang in LANGUAGES else DEFAULT_LANG
 
@@ -226,6 +235,7 @@ def _load_project(project_dir: Path, lang: str, months: list[str]) -> Project | 
         tech=[str(t) for t in _as_list(meta.get("tech"))],
         cover=meta.get("cover"),
         banner=meta.get("banner"),
+        theme=_theme_name(meta.get("theme")),
         featured=bool(meta.get("featured", False)),
         links=links,
         gallery=gallery,

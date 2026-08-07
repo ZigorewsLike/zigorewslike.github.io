@@ -7,6 +7,7 @@ tags: [hlsl, raymarching, sdf, unigine, atmosphere]
 tech: [HLSL, Unigine, Ray marching, SDF, Post-process, Rayleigh scattering]
 banner: frame_614.png
 cover: frame_3.png
+theme: stars
 gallery:
     - { src: frame_5.png, caption: "Главный экран" }
     - frame_9.png
@@ -17,7 +18,7 @@ gallery:
 ## Проблематика
 
 <figure>
-  <img src="/projects/raymarching-planet/assets/hero.png" alt="" loading="lazy">
+  <img src="/projects/raymarching-planet/assets/hero2_2.png" alt="" loading="lazy">
 </figure>
 
 Планета в космической сцене задаётся сферой радиусом в тысячи единиц, из которой в кадр попадает
