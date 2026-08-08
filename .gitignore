@@ -9,3 +9,4 @@ env/
 instance/
 .idea
 build/
+.claude
