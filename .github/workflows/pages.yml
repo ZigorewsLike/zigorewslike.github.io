@@ -33,6 +33,8 @@ jobs:
 
       - id: pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - run: python freeze.py --output build --base-url "${{ steps.pages.outputs.base_url }}"
 
