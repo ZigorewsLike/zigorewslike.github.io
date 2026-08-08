@@ -9,10 +9,10 @@ banner: frame_614.png
 cover: frame_3.png
 theme: stars
 gallery:
-    - { src: frame_5.png, caption: "Главный экран" }
+    - frame_5.png
     - frame_9.png
-    - frame_10.png
     - frame_11.png
+    - frame_10.png
 ---
 
 ## Проблематика
