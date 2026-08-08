@@ -1,8 +1,10 @@
 /* ============================================================
-   Портфолио — базовая нейтральная тема.
-   Все цвета и отступы вынесены в переменные — правь под свой дизайн.
+   Портфолио, базовая тёмная тема.
+   Все цвета и отступы вынесены в переменные.
+   Схема зафиксирована тёмной, системная светлая не подхватывается.
    ============================================================ */
 :root {
+  color-scheme: dark;
   --bg: #0f1115;
   --bg-alt: #161923;
   --surface: #1c2030;
@@ -29,25 +31,6 @@
   --code-meta: #ff9d7a;
   --code-punct: #a3aac4;
   --code-error: #ff7b72;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f6f7fb; --bg-alt: #eef0f6; --surface: #ffffff; --surface-2: #f2f4fa;
-    --text: #1a1d27; --text-dim: #5b6070; --border: #e1e4ee;
-    --shadow: 0 8px 30px rgba(20, 24, 40, 0.08);
-
-    --code-comment: #6a737d;
-    --code-keyword: #8250df;
-    --code-type: #0550ae;
-    --code-builtin: #0f766e;
-    --code-func: #1f6feb;
-    --code-number: #b45309;
-    --code-string: #0a7d33;
-    --code-meta: #b1560f;
-    --code-punct: #57606a;
-    --code-error: #b3261e;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -324,26 +307,13 @@ img { max-width: 100%; display: block; }
    Два слоя точек из radial-gradient едут с разной скоростью, что даёт параллакс.
    ============================================================ */
 .theme-stars {
-  /* Палитра фиксируется тёмной в обеих схемах: на светлом фоне звёзд не видно. */
+  /* Фон холоднее и темнее базовой палитры, чтобы звёзды читались контрастнее. */
   --bg: #05070f;
   --bg-alt: #090d1a;
   --surface: #111629;
   --surface-2: #171d33;
-  --text: #e6e8ee;
-  --text-dim: #9aa0b0;
   --border: #232a44;
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-  /* Тёмная подсветка кода: в светлой схеме страница всё равно остаётся тёмной. */
-  --code-comment: #6b7394;
-  --code-keyword: #b48cff;
-  --code-type: #6ec7ff;
-  --code-builtin: #7fd6b3;
-  --code-func: #8fb4ff;
-  --code-number: #ffb877;
-  --code-string: #a9e28a;
-  --code-meta: #ff9d7a;
-  --code-punct: #a3aac4;
-  --code-error: #ff7b72;
   /* Свечение у верхнего края, чтобы фон не был плоской заливкой. */
   background:
     /*radial-gradient(120% 70% at 50% 0%, #16203f 0%, rgba(5, 7, 15, 0) 70%),*/
@@ -400,6 +370,15 @@ img { max-width: 100%; display: block; }
 /* Содержимое поверх слоёв. Шапка позиционирована своим z-index и уже выше. */
 .theme-stars > main,
 .theme-stars > .site-footer { position: relative; z-index: 1; }
+
+/* Заливка под содержимым страницы проекта: цвет совпадает с фоном, поэтому
+   видимой панели не появляется, звёзды под текстом просто гаснут.
+   Тень того же цвета растушёвывает края, чтобы не было чёткой границы. */
+.theme-stars .project__layout {
+  --veil: color-mix(in srgb, var(--bg) 88%, transparent);
+  background: var(--veil);
+  box-shadow: 0 0 60px 60px var(--veil);
+}
 
 /* Подвал закрывает звёзды собственной заливкой. */
 .theme-stars > .site-footer { background: var(--bg); }
