@@ -3,26 +3,26 @@
 # Education, Publications, Contacts sections. All sections optional.
 # ============================================================
 
-name: "First Last"
+name: "Igor Cherepanov"
 title: "Python Developer · Graphics Programming"
 
 # Browser tab title and the brand label in the site header.
 # Leave empty to fall back to name.
-site_title: "First Last · Portfolio"
+site_title: "Igor Cherepanov · Portfolio"
 brand: "code&shaders"
 
-tagline: "I build tools in Python and experiment with graphics and shaders."
+tagline: "I build tools in Python, train neural networks and experiment with graphics and shaders."
 
 # Avatar: put a file in static/ and reference it relative to static/, e.g. "img/avatar.jpg"
 avatar: ""
 
-email: "you@example.com"
-location: "City, Country"
+email: "zigorewslike@gmail.com"
+location: "Saint Petersburg, Russia"
 
 socials:
-  - { label: "GitHub", url: "https://github.com/username" }
-  - { label: "Telegram", url: "https://t.me/username" }
-  - { label: "ArtStation", url: "https://artstation.com/username" }
+  - { label: "GitHub", url: "https://github.com/ZigorewsLike" }
+  - { label: "Telegram", url: "https://t.me/interCoder" }
+#  - { label: "ArtStation", url: "https://artstation.com/username" }
 
 # ---------- Work experience ----------
 # start / end: "YYYY-MM" (or just "YYYY", meaning January).
@@ -45,44 +45,95 @@ socials:
 #     Second paragraph.
 # Inside quotes YAML folds the lines into one and the paragraphs are lost.
 experience:
-  - start: "2023-01"   # put the real starting month here
+  - start: "2021-10"
     end: ""
-    role: "Python Developer"
-    company: "Company"
-    description: "Short summary of the role and responsibilities."
+    role: "Lead Python Developer / ML Engineer"
+    company: "Control Systems LLC"
+    description: |
+      Development of AI solutions for large industrial companies (Gazstroyprom, NLMK and others),
+      software development, management of a team of ML engineers (team lead).
     highlights:
-      - group: "NLP / LLM"
+      - group: "NLP / LLM tasks"
         items:
-          - "Key achievement or task #1"
-          - "Achievement #2"
-      - group: "Computer vision"
+          - "Applying LLMs to text summarization and to answering user questions with database lookups via generated SQL queries. Work with llama_cpp."
+          - "Fine-tuning an LLM with LoRA on SQL data."
+          - "Automated filling of summary documentation using NLP and ML. Fine-tuning BERT via MLM / contrastive learning with an added fully connected layer for classification."
+          - "Splitting PDF documents by keywords using OCR. Use of Tesseract, EasyOCR (with fine-tuning) and DolphinOCR."
+          - "A service for generating meeting minutes based on Whisper."
+          - "Building and maintaining the FastAPI services for all of the above."
+          - "Automated construction of calendar-network schedules through NLP."
+      - group: "Computer vision tasks"
         items:
-          - "Achievement #3"
-  - start: "2021-01"   # put the real months here
-    end: "2022-12"
-    role: "Junior Developer"
-    company: "Another company"
-    description: "What I worked on."
+          - "Training a convolutional neural network for semantic segmentation of small objects on large X-ray images of up to 150,000 x 2,000 pixels."
+          - "A PyQt desktop application for annotating DICONDE images (along with the usual DCM, PNG, JPG, TIFF). Embedding the convolutional network into the application, weight quantization in ONNX, algorithm optimization: the application ran on laptops and servers without a GPU."
+          - "DCM to PNG converters and an API that splits DCM images into tiles. Backend service for online viewing of large images."
+          - "Detection of personal protective equipment (helmets, vests), a restricted zone intrusion detection system, detection of people and vehicles."
+          - "Equipment wear assessment in mining: missing excavator teeth, conveyor belt wear, segmentation of the granulometric composition of ore."
+      - group: "3D"
+        items:
+          - "3D object classification: classifying individual objects of a 3D site model."
+          - "Point cloud segmentation: data annotation in CloudCompare and training models to segment roads, road signs and quarries."
+          - "Algorithms for inverse voxelization and for splitting point clouds by camera matrices."
+      - group: "Other"
+        items:
+          - "Scripts for the backend stand, importing data into the portal from an XLSX file."
+          - "Designing the architecture of software solutions."
+          - "Running code reviews."
+          - "Setting up GitLab CI/CD."
+          - "Taking part in demos for the customer."
+  - start: "2019-01"
+    end: "2021-07"
+    role: "Software Engineer"
+    company: "Institute for System Dynamics and Control Theory, Siberian Branch of the Russian Academy of Sciences"
+    description: |
+      Worked in the laboratory on the TabbyPDF research project (automatic recognition
+      and extraction of tables from documents), funded by the Russian Science Foundation.
+
+      [Scopus profile](https://www.scopus.com/authid/detail.uri?authorId=57211335591)
+    highlights:
+      - group: "Research"
+        items:
+          - "Wrote a [paper](https://doi.org/10.23919/MIPRO48935.2020.9245241) published in the Scopus-indexed proceedings of the MIPRO 2020 conference. Co-authored 2 more Scopus-indexed papers (Q1)."
+      - group: "Responsibilities"
+        items:
+          - "Training a deep neural network for table detection in document images."
+          - "Writing scripts for dataset conversion."
+          - "Designing the overall pipeline for preparing training data."
+          - "Automating data preparation and deep neural network training."
 
 # ---------- Education ----------
 education:
-  - period: "2017 — 2021"
-    degree: "BSc, Applied Mathematics"
-    school: "University"
-    description: "Specialization, if relevant."
+  - period: "2023 – 2025"
+    degree: "Master's degree"
+    school: "Saint Petersburg State University of Aerospace Instrumentation"
+    description: "Computer Science and Engineering"
+  - period: "2021 – 2022"
+    degree: "Certificate program"
+    school: "Lesta Games Academy"
+    description: "Game project development"
+  - period: "2017 – 2021"
+    degree: "Bachelor's degree"
+    school: "Irkutsk State University"
+    description: "Software and Administration of Information Systems"
 
 # ---------- Publications ----------
 # Papers, talks, posts. url/venue/description are optional.
 publications:
-  - title: "Paper or talk title"
-    authors: "Last F., Coauthor A."
-    venue: "Journal / conference name"
-    year: 2024
-    url: "https://doi.org/..."
-    description: "One or two sentences about the work."
-  - title: "Second talk / paper"
-    authors: "Last F."
-    venue: "Conference XYZ"
-    year: 2023
-    url: ""
-    description: ""
+  - title: "On automated workflow for fine-tuning deepneural network models for table detection in document images"
+    authors: "Igor Cherepanov, Andrey Mikhailov, Alexey Shigarov, and Viacheslav Paramonov"
+    venue: "43rd International Convention on Information, Communication and Electronic Technology, MIPRO 2020 - Proceedings, 2020, pages 1130–1133"
+    year: 2020
+    url: "https://doi.org/10.23919/MIPRO48935.2020.9245241"
+    description: "Nowadays methods and software for extracting tables from document images and portable documents (PDF) continue to be actively developed. One of the promising approaches to this task is the usage of fine-tuned object detection models. However, this approach involves many manipulations with data preparation and training process configuration. This paper proposes an automated workflow for fine-tuning deep neural network models for the table detection in document images. It enables us to automate two sub-tasks: (i) preparing a training dataset in the PascalVOC format with image transformation and augmentation; (ii) training a table detection model by using the well-known Faster R-CNN architecture. Implementation of the workflow design simplifies the use of the approach proposed by decreasing the number of required manipulations."
+  - title: "On Graph-Based Verification for PDF Table Detection"
+    authors: "Andrey Mikhailov, Alexey Shigarov, Egor Rozhkov, and Igor Cherepanov"
+    venue: "Ivannikov Ispras Open Conference (ISPRAS)"
+    year: 2020
+    url: "https://doi.org/10.1109/ISPRAS51486.2020.00020"
+    description: "Many non-editable documents are shared in PDF (Portable Document Format). They are typically not accompanied by tags for annotating the page layout, including table positions. One of the important challenges of the analysis and understanding of such documents is table detection. This paper outlines a novel two-phase approach to the table detection in untagged PDF documents. The first phase uses deep neural networks (DNN) to predict some table candidates. The second phase selects probable tables from the candidates by verifying their graph representation. We build a weighted directed graph from text blocks inside a predicted area of a table. A set of such graphs produced from the “ICDAR 2013 Table Competition” dataset allowed us to train a verification model based on the Random Forest technique. The empirical results for competitive dataset demonstrated high performance of our implementation of this approach. We showed that additional verification enables reduction of errors and improvement of results of the PDF table detection."
+  - title: "Towards end-to-end transformation of arbitrary tables from untagged portable documents (PDF) to linked data"
+    authors: "Alexey Shigarov, Igor Cherepanov, Evgeniy Cherkashin, Nikita Dorodnykh, Vasiliy Khristyuk, Andrey Mikhailov , Viacheslav Paramonov, Egor Rozhkow, and Alexandr Yurin"
+    venue: "CEUR Workshop Proceedings, 2463, pages 1–12"
+    year: 2019
+    url: "http://ceur-ws.org/Vol-2463/paper1.pdf"
+    description: "The paper is devoted to the problem of an end-to-end table transformation from untagged portable documents (PDF) to linked data. It covers the issues of the table extraction from documents, the reconstruction of logical table structure, the conceptualization of their natural-language content, and the linking of extracted data with external vocabularies. We consider some perspective approaches for the deeplearning-based table detection, heuristic-based table structure recognition, rule-based table analysis, and knowledge-based table interpretation. They can be used as a basis to develop a consistent solution for this problem. Our application experience confirms that such solutions are demanded for populating databases and generating ontologies with tabular data being extracted from weakly and semi-structured documents."

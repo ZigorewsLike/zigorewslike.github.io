@@ -5,7 +5,7 @@ summary: "Приложение для Windows, применяющее матри
 date: 2021-01
 tags: [cuda, gpu, image-processing, csharp]
 tech: [C#, .NET Framework 4.7.2, Windows Forms, CUDA 11, C++, P/Invoke]
-cover: workflow.gif
+cover: workflow.png
 links:
   - { label: "GitHub", url: "https://github.com/ZigorewsLike/cuda_convolution_image", icon: github }
 ---

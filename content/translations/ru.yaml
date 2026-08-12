@@ -45,7 +45,7 @@ contacts:
   location: "Локация"
 
 empty: "Пока нет ни одного проекта. Добавь папку в content/projects/."
-footer: ""
+footer: "Портфолио"
 
 not_found:
   message: "Такой страницы нет."

@@ -45,7 +45,7 @@ contacts:
   location: "Location"
 
 empty: "No projects yet. Add a folder to content/projects/."
-footer: ""
+footer: "Portfolio"
 
 not_found:
   message: "This page does not exist."
