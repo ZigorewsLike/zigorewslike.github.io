@@ -17,21 +17,12 @@ Flask-приложение портфолио (двуязычное: RU/EN).
 from __future__ import annotations
 
 from flask import (
-    Flask,
-    abort,
-    g,
-    redirect,
-    render_template,
-    send_from_directory,
-    url_for,
+    Flask, abort, g, redirect, render_template, send_from_directory, url_for,
 )
 
 from config import Config
 from portfolio.content import (
-    CATEGORY_KEYS,
-    DEFAULT_LANG,
-    LANGUAGES,
-    ContentStore,
+    CATEGORY_KEYS, DEFAULT_LANG, LANGUAGES, ContentStore,
 )
 
 
