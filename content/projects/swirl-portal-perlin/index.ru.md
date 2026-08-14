@@ -99,7 +99,10 @@ float lod   = max(0.0, -depth - 1.0);  // explicit mip: no seam + no center alia
 
 ## Карта шума
 
-<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/7f3SR7?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
+<figure>
+  <img src="/projects/swirl-portal-perlin/assets/noise-super-perlin.png" alt="Карта шума Super Perlin 512x512" loading="lazy" width="512">
+  <figcaption>Super Perlin 11, 512x512, используется единственная карта на все четыре выборки</figcaption>
+</figure>
 
 Шейдер читает красный канал одной текстуры. Требования к карте следуют из устройства расчёта:
 
