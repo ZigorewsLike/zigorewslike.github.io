@@ -36,17 +36,25 @@ Your browser does not support the video tag or this video format. You can downlo
 Your browser does not support the video tag or this video format. You can download the video anyway.
 </video>
 
-## Интерактивная демонстрация
+[//]: # (## Интерактивная демонстрация)
 
-Порт эффекта на GLSL, расчёт тот же: карта шума подключена каналом, параметры зашиты константами.
+[//]: # ()
+[//]: # (Порт эффекта на GLSL, расчёт тот же: карта шума подключена каналом, параметры зашиты константами.)
 
-<div class="embed-16x9">
-<iframe src="https://www.shadertoy.com/embed/7f3SR7?gui=true&amp;t=10&amp;paused=false&amp;muted=true"
-          title="Swirl Portal Perlin на Shadertoy"
-          frameborder="0" allowfullscreen
-          allow="accelerometer; gyroscope; fullscreen">
-</iframe>
-</div>
+[//]: # ()
+[//]: # (<div class="embed-16x9">)
+
+[//]: # (<iframe src="https://www.shadertoy.com/embed/7f3SR7?gui=true&amp;t=10&amp;paused=false&amp;muted=true")
+
+[//]: # (          title="Swirl Portal Perlin на Shadertoy")
+
+[//]: # (          frameborder="0" allowfullscreen)
+
+[//]: # (          allow="accelerometer; gyroscope; fullscreen">)
+
+[//]: # (</iframe>)
+
+[//]: # (</div>)
 
 ## Логарифмически-полярные координаты
 
@@ -91,10 +99,7 @@ float lod   = max(0.0, -depth - 1.0);  // explicit mip: no seam + no center alia
 
 ## Карта шума
 
-<figure>
-  <img src="/projects/swirl-portal-perlin/assets/noise-super-perlin.png" alt="Карта шума Super Perlin 512x512" loading="lazy" width="512">
-  <figcaption>Super Perlin 11, 512x512, используется единственная карта на все четыре выборки</figcaption>
-</figure>
+<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/7f3SR7?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
 
 Шейдер читает красный канал одной текстуры. Требования к карте следуют из устройства расчёта:
 

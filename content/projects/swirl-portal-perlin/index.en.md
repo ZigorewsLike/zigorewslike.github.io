@@ -36,18 +36,27 @@ the center.
 Your browser does not support the video tag or this video format. You can download the video anyway.
 </video>
 
-## Interactive demo
+[//]: # (## Interactive demo)
 
-A port of the effect to GLSL, the computation is the same: the noise map is bound as a channel, the
-parameters are hardcoded as constants.
+[//]: # ()
+[//]: # (A port of the effect to GLSL, the computation is the same: the noise map is bound as a channel, the)
 
-<div class="embed-16x9">
-<iframe src="https://www.shadertoy.com/embed/7f3SR7?gui=true&amp;t=10&amp;paused=false&amp;muted=true"
-          title="Swirl Portal Perlin on Shadertoy"
-          frameborder="0" allowfullscreen
-          allow="accelerometer; gyroscope; fullscreen">
-</iframe>
-</div>
+[//]: # (parameters are hardcoded as constants.)
+
+[//]: # ()
+[//]: # (<div class="embed-16x9">)
+
+[//]: # (<iframe src="https://www.shadertoy.com/embed/7f3SR7?gui=true&amp;t=10&amp;paused=false&amp;muted=true")
+
+[//]: # (          title="Swirl Portal Perlin on Shadertoy")
+
+[//]: # (          frameborder="0" allowfullscreen)
+
+[//]: # (          allow="accelerometer; gyroscope; fullscreen">)
+
+[//]: # (</iframe>)
+
+[//]: # (</div>)
 
 ## Log-polar coordinates
 
