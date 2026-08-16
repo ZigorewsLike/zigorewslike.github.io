@@ -25,7 +25,7 @@ Your browser does not support the video tag or this video format. You can downlo
 
 ## Problem statement
 
-An activation effect for the space gate in the FreedomSpace space simulator on the Unigine engine: a
+An activation effect for the space gate in the Anthropic Principle space simulator on the Unigine engine: a
 funnel with a spiral pattern, an uneven boundary and a glowing core. The whole picture is built in a
 fragment shader on a single quad of an unlit material from one grayscale noise map. The funnel, depth
 and rotation are obtained by transforming coordinates before sampling: a point on the quad is mapped
